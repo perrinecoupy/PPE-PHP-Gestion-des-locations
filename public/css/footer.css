@@ -1,0 +1,25 @@
+li {
+    margin-left: 60px;
+    margin-right: 190px;
+}
+
+.email-contact {
+    color: white;
+    list-style: none;
+}
+
+.infos {
+    color: white;
+    list-style-type: none;
+}
+
+.infos-footer {
+    display: flex;
+}
+
+#footerText {
+    display: flex;
+    background-color: #000000;
+    padding: 50px;
+    margin-top: 15%;
+}

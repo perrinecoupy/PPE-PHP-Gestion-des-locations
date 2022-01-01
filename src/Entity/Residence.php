@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ResidenceRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ResidenceRepository::class)]
@@ -37,8 +39,13 @@ class Residence
     #[ORM\ManyToOne(targetEntity: Rent::class, inversedBy: 'representative_id_residence')]
     private $representative_id;
 
-    #[ORM\ManyToOne(targetEntity: Rent::class, inversedBy: 'residence_id')]
-    private $residence_id_rent;
+    #[ORM\OneToMany(mappedBy: 'residence_id', targetEntity: Rent::class)]
+    private $residence_id;
+
+    public function __construct()
+    {
+        $this->residence_id = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -141,14 +148,32 @@ class Residence
         return $this;
     }
 
-    public function getResidenceIdRent(): ?Rent
+    /**
+     * @return Collection|Rent[]
+     */
+    public function getResidenceId(): Collection
     {
-        return $this->residence_id_rent;
+        return $this->residence_id;
     }
 
-    public function setResidenceIdRent(?Rent $residence_id_rent): self
+    public function addResidenceId(Rent $residenceId): self
     {
-        $this->residence_id_rent = $residence_id_rent;
+        if (!$this->residence_id->contains($residenceId)) {
+            $this->residence_id[] = $residenceId;
+            $residenceId->setResidenceId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeResidenceId(Rent $residenceId): self
+    {
+        if ($this->residence_id->removeElement($residenceId)) {
+            // set the owning side to null (unless already changed)
+            if ($residenceId->getResidenceId() === $this) {
+                $residenceId->setResidenceId(null);
+            }
+        }
 
         return $this;
     }

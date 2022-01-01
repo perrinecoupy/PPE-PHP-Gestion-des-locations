@@ -42,13 +42,10 @@ class Rent
     #[ORM\Column(type: 'datetime')]
     private $representative_validated_at;
 
-    #[ORM\OneToMany(mappedBy: 'representative_id', targetEntity: Residence::class)]
-    private $representative_id_residence;
-
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'tenant_id_user')]
     private $tenant_id;
 
-    #[ORM\OneToMany(mappedBy: 'residence_id_rent', targetEntity: Residence::class)]
+    #[ORM\ManyToOne(targetEntity: Residence::class, inversedBy: 'residence_id')]
     private $residence_id;
 
     public function __construct()
@@ -170,36 +167,6 @@ class Rent
         return $this;
     }
 
-    /**
-     * @return Collection|Residence[]
-     */
-    public function getRepresentativeIdResidence(): Collection
-    {
-        return $this->representative_id_residence;
-    }
-
-    public function addRepresentativeIdResidence(Residence $representativeIdResidence): self
-    {
-        if (!$this->representative_id_residence->contains($representativeIdResidence)) {
-            $this->representative_id_residence[] = $representativeIdResidence;
-            $representativeIdResidence->setRepresentativeId($this);
-        }
-
-        return $this;
-    }
-
-    public function removeRepresentativeIdResidence(Residence $representativeIdResidence): self
-    {
-        if ($this->representative_id_residence->removeElement($representativeIdResidence)) {
-            // set the owning side to null (unless already changed)
-            if ($representativeIdResidence->getRepresentativeId() === $this) {
-                $representativeIdResidence->setRepresentativeId(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function getTenantId(): ?User
     {
         return $this->tenant_id;
@@ -212,32 +179,14 @@ class Rent
         return $this;
     }
 
-    /**
-     * @return Collection|Residence[]
-     */
-    public function getResidenceId(): Collection
+    public function getResidenceId(): ?Residence
     {
         return $this->residence_id;
     }
 
-    public function addResidenceId(Residence $residenceId): self
+    public function setResidenceId(?Residence $residence_id): self
     {
-        if (!$this->residence_id->contains($residenceId)) {
-            $this->residence_id[] = $residenceId;
-            $residenceId->setResidenceIdRent($this);
-        }
-
-        return $this;
-    }
-
-    public function removeResidenceId(Residence $residenceId): self
-    {
-        if ($this->residence_id->removeElement($residenceId)) {
-            // set the owning side to null (unless already changed)
-            if ($residenceId->getResidenceIdRent() === $this) {
-                $residenceId->setResidenceIdRent(null);
-            }
-        }
+        $this->residence_id = $residence_id;
 
         return $this;
     }
