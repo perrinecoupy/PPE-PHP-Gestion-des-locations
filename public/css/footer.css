@@ -6,11 +6,14 @@ li {
 .email-contact {
     color: white;
     list-style: none;
+    font-weight: 100;
 }
 
 .infos {
     color: white;
     list-style-type: none;
+    font-weight: 100;
+    padding-bottom: 10px;
 }
 
 .infos-footer {
@@ -21,5 +24,15 @@ li {
     display: flex;
     background-color: #000000;
     padding: 50px;
-    margin-top: 15%;
+    margin-top: 19px;
+}
+
+.infos-version {
+    color: white;
+    font-weight:100;
+    list-style-type: none;
+}
+
+.footerRight {
+    padding-left: 25%;
 }
