@@ -64,15 +64,20 @@ p.errorMessage {
 /* Liens de la barre de navigation */
 .links-navbar {
     color: #9D4907;
-    padding-left: 20px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 25px;
+    padding-bottom: 20px;
     font-family: 'Roboto', sans-serif;
 }
 
 .links-navbar-accueil {
     color: #FFFFFF;
-    padding-left: 20px;
+    padding-left: 30px;
     font-family: 'Roboto', sans-serif;
     text-decoration: underline;
+    font-size: 20px;
+    font-weight: 100;
 }
 
 /* Liens de la barre de navigation quand il y a le survol de la souris */
@@ -90,7 +95,22 @@ p.errorMessage {
 .navbar-background {
     background-color: #9D4907;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
+}
+
+/* Formulaire de connexion */
+.titre-form {
+    padding-top: 40px;
+    padding-left: 5px;
+    font-weight: 500;
+    font-family: inherit;
+    letter-spacing: -3px;
+    font-size: 40px;
+}
+
+.row {
+    padding-top: 40px;
+    letter-spacing: -1px;
 }
 
 /* Responsive de la page de connexion et d'inscription */
@@ -107,3 +127,4 @@ p.errorMessage {
         padding: 20px 0px;
     }
 }
+

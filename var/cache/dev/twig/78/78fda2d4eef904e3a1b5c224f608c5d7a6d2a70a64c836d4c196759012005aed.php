@@ -112,6 +112,6 @@ class __TwigTemplate_58515dde9971402c08aee17fa1ad4685e2980e4f6122c569c17da11525b
             <div class=\"infos-user\">
             </div>
         </nav>
-{% endblock %} ", "includes/_head.html.twig", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\includes\\_head.html.twig");
+{% endblock %} ", "includes/_head.html.twig", "C:\\Users\\perri\\PPE-PHP-Gestion-des-locations\\templates\\includes\\_head.html.twig");
     }
 }
