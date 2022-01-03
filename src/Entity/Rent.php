@@ -16,43 +16,37 @@ class Rent
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $inventory_file;
+    private $inventoryFile;
 
     #[ORM\Column(type: 'datetime')]
-    private $arrival_date;
+    private $arrivalDate;
 
     #[ORM\Column(type: 'datetime')]
-    private $departure_date;
+    private $departureDate;
 
     #[ORM\Column(type: 'text')]
-    private $tenant_comments;
+    private $tenantComments;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $tenant_signature;
+    private $tenantSignature;
 
     #[ORM\Column(type: 'string', length: 45)]
-    private $tenant_validated_at;
+    private $tenantValidatedAt;
 
     #[ORM\Column(type: 'text')]
-    private $representative_comments;
+    private $representativeComments;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $representative_signature;
+    private $representativeSignature;
 
     #[ORM\Column(type: 'datetime')]
-    private $representative_validated_at;
+    private $representativeValidatedAt;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'tenant_id_user')]
     private $tenant;
 
     #[ORM\ManyToOne(targetEntity: Residence::class, inversedBy: 'residence_id')]
     private $residence;
-
-    public function __construct()
-    {
-        $this->representative_id_residence = new ArrayCollection();
-        $this->residence_id = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -61,108 +55,108 @@ class Rent
 
     public function getInventoryFile(): ?string
     {
-        return $this->inventory_file;
+        return $this->inventoryFile;
     }
 
-    public function setInventoryFile(string $inventory_file): self
+    public function setInventoryFile(string $inventoryFile): self
     {
-        $this->inventory_file = $inventory_file;
+        $this->inventoryFile = $inventoryFile;
 
         return $this;
     }
 
     public function getArrivalDate(): ?\DateTimeInterface
     {
-        return $this->arrival_date;
+        return $this->arrivalDate;
     }
 
-    public function setArrivalDate(\DateTimeInterface $arrival_date): self
+    public function setArrivalDate(\DateTimeInterface $arrivalDate): self
     {
-        $this->arrival_date = $arrival_date;
+        $this->arrivalDate = $arrivalDate;
 
         return $this;
     }
 
     public function getDepartureDate(): ?\DateTimeInterface
     {
-        return $this->departure_date;
+        return $this->departureDate;
     }
 
-    public function setDepartureDate(\DateTimeInterface $departure_date): self
+    public function setDepartureDate(\DateTimeInterface $departureDate): self
     {
-        $this->departure_date = $departure_date;
+        $this->departureDate = $departureDate;
 
         return $this;
     }
 
     public function getTenantComments(): ?string
     {
-        return $this->tenant_comments;
+        return $this->tenantComments;
     }
 
-    public function setTenantComments(string $tenant_comments): self
+    public function setTenantComments(string $tenantComments): self
     {
-        $this->tenant_comments = $tenant_comments;
+        $this->tenantComments = $tenantComments;
 
         return $this;
     }
 
     public function getTenantSignature(): ?string
     {
-        return $this->tenant_signature;
+        return $this->tenantSignature;
     }
 
-    public function setTenantSignature(string $tenant_signature): self
+    public function setTenantSignature(string $tenantSignature): self
     {
-        $this->tenant_signature = $tenant_signature;
+        $this->tenantSignature = $tenantSignature;
 
         return $this;
     }
 
     public function getTenantValidatedAt(): ?string
     {
-        return $this->tenant_validated_at;
+        return $this->tenantValidatedAt;
     }
 
-    public function setTenantValidatedAt(string $tenant_validated_at): self
+    public function setTenantValidatedAt(string $tenantValidatedAt): self
     {
-        $this->tenant_validated_at = $tenant_validated_at;
+        $this->tenantValidatedAt = $tenantValidatedAt;
 
         return $this;
     }
 
     public function getRepresentativeComments(): ?string
     {
-        return $this->representative_comments;
+        return $this->representativeComments;
     }
 
-    public function setRepresentativeComments(string $representative_comments): self
+    public function setRepresentativeComments(string $representativeComments): self
     {
-        $this->representative_comments = $representative_comments;
+        $this->representativeComments = $representativeComments;
 
         return $this;
     }
 
     public function getRepresentativeSignature(): ?string
     {
-        return $this->representative_signature;
+        return $this->representativeSignature;
     }
 
-    public function setRepresentativeSignature(string $representative_signature): self
+    public function setRepresentativeSignature(string $representativeSignature): self
     {
-        $this->representative_signature = $representative_signature;
+        $this->representativeSignature = $representativeSignature;
 
         return $this;
     }
 
     public function getRepresentativeValidatedAt(): ?\DateTimeInterface
     {
-        return $this->representative_validated_at;
+        return $this->representativeValidatedAt;
     }
 
-    public function setRepresentativeValidatedAt(\DateTimeInterface $representative_validated_at): self
+    public function setRepresentativeValidatedAt(\DateTimeInterface $representativeValidatedAt): self
     {
-        $this->representative_validated_at = $representative_validated_at;
+        $this->representativeValidatedAt = $representativeValidatedAt;
 
         return $this;
     }
@@ -174,7 +168,7 @@ class Rent
 
     public function setTenantId(?User $tenant): self
     {
-        $this->tenant_id = $tenant;
+        $this->tenant = $tenant;
 
         return $this;
     }
