@@ -43,10 +43,10 @@ class Rent
     private $representative_validated_at;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'tenant_id_user')]
-    private $tenant_id;
+    private $tenant;
 
     #[ORM\ManyToOne(targetEntity: Residence::class, inversedBy: 'residence_id')]
-    private $residence_id;
+    private $residence;
 
     public function __construct()
     {
@@ -169,24 +169,24 @@ class Rent
 
     public function getTenantId(): ?User
     {
-        return $this->tenant_id;
+        return $this->tenant;
     }
 
-    public function setTenantId(?User $tenant_id): self
+    public function setTenantId(?User $tenant): self
     {
-        $this->tenant_id = $tenant_id;
+        $this->tenant_id = $tenant;
 
         return $this;
     }
 
     public function getResidenceId(): ?Residence
     {
-        return $this->residence_id;
+        return $this->residence;
     }
 
-    public function setResidenceId(?Residence $residence_id): self
+    public function setResidenceId(?Residence $residence): self
     {
-        $this->residence_id = $residence_id;
+        $this->residence = $residence;
 
         return $this;
     }
