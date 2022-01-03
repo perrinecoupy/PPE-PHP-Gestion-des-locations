@@ -34,13 +34,13 @@ class Residence
     private $inventory_file;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'owner_id_user')]
-    private $owner_id;
+    private $owner;
 
     #[ORM\ManyToOne(targetEntity: Rent::class, inversedBy: 'representative_id_residence')]
-    private $representative_id;
+    private $representative;
 
     #[ORM\OneToMany(mappedBy: 'residence_id', targetEntity: Rent::class)]
-    private $residence_id;
+    private $residence;
 
     public function __construct()
     {
@@ -126,24 +126,24 @@ class Residence
 
     public function getOwnerId(): ?User
     {
-        return $this->owner_id;
+        return $this->owner;
     }
 
-    public function setOwnerId(?User $owner_id): self
+    public function setOwnerId(?User $owner): self
     {
-        $this->owner_id = $owner_id;
+        $this->owner_id = $owner;
 
         return $this;
     }
 
     public function getRepresentativeId(): ?Rent
     {
-        return $this->representative_id;
+        return $this->representative;
     }
 
     public function setRepresentativeId(?Rent $representative_id): self
     {
-        $this->representative_id = $representative_id;
+        $this->representative = $representative;
 
         return $this;
     }
@@ -153,7 +153,7 @@ class Residence
      */
     public function getResidenceId(): Collection
     {
-        return $this->residence_id;
+        return $this->residence;
     }
 
     public function addResidenceId(Rent $residenceId): self

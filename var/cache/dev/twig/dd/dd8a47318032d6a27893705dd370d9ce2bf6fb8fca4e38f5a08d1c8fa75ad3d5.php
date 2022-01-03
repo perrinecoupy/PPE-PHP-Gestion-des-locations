@@ -122,6 +122,6 @@ class __TwigTemplate_ac97a8b2bd517676fc2fad2761ff01d52b60cb70cc4ceb0dd66a5888cbd
             </ul>
         </div>
     </div>
-{% endblock %} ", "includes/_footer.html.twig", "C:\\Users\\perri\\PPE-PHP-Gestion-des-locations\\templates\\includes\\_footer.html.twig");
+{% endblock %} ", "includes/_footer.html.twig", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\includes\\_footer.html.twig");
     }
 }

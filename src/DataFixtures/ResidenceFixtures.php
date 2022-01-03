@@ -19,6 +19,9 @@ class ResidenceFixtures extends Fixture
             $residence->setZipCode("75000");
             $residence->setCountry("France");
             $residence->setInventoryFile("fichier.pdf");
+            //$residence->setOwnerId(rand(1, 6));
+            //$residence->setRepresentativeId(rand(1,6));
+            //$residence->setResidenceId(rand(1,6));
 
             $manager->persist($residence);
         }

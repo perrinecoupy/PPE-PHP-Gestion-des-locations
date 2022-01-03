@@ -25,6 +25,9 @@ class RentFixtures extends Fixture
             $rent->setRepresentativeComments("Lorem Ipsum");
             $rent->setRepresentativeSignature("perrine");
             $rent->setRepresentativeValidatedAt($date);
+            //$rent->setTenantId($this->getReference('user'.rand(1,6)));
+            //$rent->setResidenceId($this->getReference('user'.rand(1,6)));
+            //$this->addReference('residence'.$i, $residence);
 
             $manager->persist($rent);
         }
