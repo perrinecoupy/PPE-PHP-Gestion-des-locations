@@ -161,24 +161,24 @@ class Rent
         return $this;
     }
 
-    public function getTenantId(): ?User
+    public function getTenant(): ?User
     {
         return $this->tenant;
     }
 
-    public function setTenantId(?User $tenant): self
+    public function setTenant(?User $tenant): self
     {
         $this->tenant = $tenant;
 
         return $this;
     }
 
-    public function getResidenceId(): ?Residence
+    public function getResidence(): ?Residence
     {
         return $this->residence;
     }
 
-    public function setResidenceId(?Residence $residence): self
+    public function setResidence(?Residence $residence): self
     {
         $this->residence = $residence;
 

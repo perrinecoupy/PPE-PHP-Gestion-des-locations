@@ -28,15 +28,15 @@ class User
     private $isVerified;
 
     #[ORM\OneToMany(mappedBy: 'owner_id', targetEntity: Residence::class)]
-    private $ownerIdUser;
+    private $ownerUser;
 
     #[ORM\OneToMany(mappedBy: 'tenant_id', targetEntity: Rent::class)]
-    private $tenantIdUser;
+    private $tenantUser;
 
     public function __construct()
     {
-        $this->ownerIdUser = new ArrayCollection();
-        $this->tenantIdUser = new ArrayCollection();
+        $this->ownerUser = new ArrayCollection();
+        $this->tenantUser = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -95,27 +95,27 @@ class User
     /**
      * @return Collection|Residence[]
      */
-    public function getOwnerIdUser(): Collection
+    public function getOwnerUser(): Collection
     {
-        return $this->ownerIdUser;
+        return $this->ownerUser;
     }
 
-    public function addOwnerIdUser(Residence $ownerIdUser): self
+    public function addOwnerUser(Residence $ownerUser): self
     {
-        if (!$this->ownerIdUser->contains($ownerIdUser)) {
-            $this->ownerIdUuser[] = $ownerIdUser;
-            $ownerIdUser->setOwner($this);
+        if (!$this->ownerUser->contains($ownerUser)) {
+            $this->ownerUuser[] = $ownerUser;
+            $ownerUser->setOwner($this);
         }
 
         return $this;
     }
 
-    public function removeOwnerIdUser(Residence $ownerIdUser): self
+    public function removeOwnerUser(Residence $ownerUser): self
     {
-        if ($this->ownerIdUser->removeElement($ownerIdUser)) {
+        if ($this->ownerUser->removeElement($ownerUser)) {
             // set the owning side to null (unless already changed)
-            if ($ownerIdUser->getOwnerId() === $this) {
-                $ownerIdUser->setOwnerId(null);
+            if ($ownerUser->getOwner() === $this) {
+                $ownerUser->setOwner(null);
             }
         }
 
@@ -125,16 +125,16 @@ class User
     /**
      * @return Collection|Rent[]
      */
-    public function getTenantIdUser(): Collection
+    public function getTenantUser(): Collection
     {
-        return $this->tenantIdUser;
+        return $this->tenantUser;
     }
 
-    public function addTenantIdUser(Rent $tenantIdUser): self
+    public function addTenantUser(Rent $tenantUser): self
     {
-        if (!$this->tenantIdUser->contains($tenantIdUser)) {
-            $this->tenantIdUser[] = $tenantIdUser;
-            $tenantIdUser->setTenant($this);
+        if (!$this->tenantUser->contains($tenantUser)) {
+            $this->tenantUser[] = $tenantUser;
+            $tenantUser->setTenant($this);
         }
 
         return $this;
