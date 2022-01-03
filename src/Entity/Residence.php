@@ -25,13 +25,13 @@ class Residence
     private $city;
 
     #[ORM\Column(type: 'string', length: 45)]
-    private $zip_code;
+    private $zipCode;
 
     #[ORM\Column(type: 'string', length: 255)]
     private $country;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $inventory_file;
+    private $inventoryFile;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'owner_id_user')]
     private $owner;
@@ -44,7 +44,7 @@ class Residence
 
     public function __construct()
     {
-        $this->residence_id = new ArrayCollection();
+        $this->residence = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -114,34 +114,34 @@ class Residence
 
     public function getInventoryFile(): ?string
     {
-        return $this->inventory_file;
+        return $this->inventoryFile;
     }
 
     public function setInventoryFile(string $inventory_file): self
     {
-        $this->inventory_file = $inventory_file;
+        $this->inventoryFile = $inventoryFile;
 
         return $this;
     }
 
-    public function getOwnerId(): ?User
+    public function getOwner(): ?User
     {
         return $this->owner;
     }
 
-    public function setOwnerId(?User $owner): self
+    public function setOwner(?User $owner): self
     {
-        $this->owner_id = $owner;
+        $this->owner = $owner;
 
         return $this;
     }
 
-    public function getRepresentativeId(): ?Rent
+    public function getRepresentative(): ?Rent
     {
         return $this->representative;
     }
 
-    public function setRepresentativeId(?Rent $representative_id): self
+    public function setRepresentative(?Rent $representative): self
     {
         $this->representative = $representative;
 
@@ -151,27 +151,27 @@ class Residence
     /**
      * @return Collection|Rent[]
      */
-    public function getResidenceId(): Collection
+    public function getResidence(): Collection
     {
         return $this->residence;
     }
 
-    public function addResidenceId(Rent $residenceId): self
+    public function addResidence(Rent $residenceId): self
     {
-        if (!$this->residence_id->contains($residenceId)) {
-            $this->residence_id[] = $residenceId;
-            $residenceId->setResidenceId($this);
+        if (!$this->residence->contains($residence)) {
+            $this->residence[] = $residence;
+            $residence->setResidence($this);
         }
 
         return $this;
     }
 
-    public function removeResidenceId(Rent $residenceId): self
+    public function removeResidenceId(Rent $residence): self
     {
-        if ($this->residence_id->removeElement($residenceId)) {
+        if ($this->residence->removeElement($residence)) {
             // set the owning side to null (unless already changed)
-            if ($residenceId->getResidenceId() === $this) {
-                $residenceId->setResidenceId(null);
+            if ($residence->getResidence() === $this) {
+                $residence->setResidence(null);
             }
         }
 

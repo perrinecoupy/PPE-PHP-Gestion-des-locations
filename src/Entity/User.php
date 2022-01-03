@@ -25,18 +25,18 @@ class User
     private $password;
 
     #[ORM\Column(type: 'integer')]
-    private $is_verified;
+    private $isVerified;
 
     #[ORM\OneToMany(mappedBy: 'owner_id', targetEntity: Residence::class)]
-    private $owner_id_user;
+    private $ownerIdUser;
 
     #[ORM\OneToMany(mappedBy: 'tenant_id', targetEntity: Rent::class)]
-    private $tenant_id_user;
+    private $tenantIdUser;
 
     public function __construct()
     {
-        $this->owner_id_user = new ArrayCollection();
-        $this->tenant_id_user = new ArrayCollection();
+        $this->ownerIdUser = new ArrayCollection();
+        $this->tenantIdUser = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -82,12 +82,12 @@ class User
 
     public function getIsVerified(): ?int
     {
-        return $this->is_verified;
+        return $this->isVerified;
     }
 
     public function setIsVerified(int $is_verified): self
     {
-        $this->is_verified = $is_verified;
+        $this->isVerified = $isVerified;
 
         return $this;
     }
@@ -97,14 +97,14 @@ class User
      */
     public function getOwnerIdUser(): Collection
     {
-        return $this->owner_id_user;
+        return $this->ownerIdUser;
     }
 
     public function addOwnerIdUser(Residence $ownerIdUser): self
     {
-        if (!$this->owner_id_user->contains($ownerIdUser)) {
-            $this->owner_id_user[] = $ownerIdUser;
-            $ownerIdUser->setOwnerId($this);
+        if (!$this->ownerIdUser->contains($ownerIdUser)) {
+            $this->ownerIdUuser[] = $ownerIdUser;
+            $ownerIdUser->setOwner($this);
         }
 
         return $this;
@@ -112,7 +112,7 @@ class User
 
     public function removeOwnerIdUser(Residence $ownerIdUser): self
     {
-        if ($this->owner_id_user->removeElement($ownerIdUser)) {
+        if ($this->ownerIdUser->removeElement($ownerIdUser)) {
             // set the owning side to null (unless already changed)
             if ($ownerIdUser->getOwnerId() === $this) {
                 $ownerIdUser->setOwnerId(null);
@@ -127,14 +127,14 @@ class User
      */
     public function getTenantIdUser(): Collection
     {
-        return $this->tenant_id_user;
+        return $this->tenantIdUser;
     }
 
     public function addTenantIdUser(Rent $tenantIdUser): self
     {
-        if (!$this->tenant_id_user->contains($tenantIdUser)) {
-            $this->tenant_id_user[] = $tenantIdUser;
-            $tenantIdUser->setTenantId($this);
+        if (!$this->tenantIdUser->contains($tenantIdUser)) {
+            $this->tenantIdUser[] = $tenantIdUser;
+            $tenantIdUser->setTenant($this);
         }
 
         return $this;
@@ -142,10 +142,10 @@ class User
 
     public function removeTenantIdUser(Rent $tenantIdUser): self
     {
-        if ($this->tenant_id_user->removeElement($tenantIdUser)) {
+        if ($this->tenantIdUser->removeElement($tenantIdUser)) {
             // set the owning side to null (unless already changed)
-            if ($tenantIdUser->getTenantId() === $this) {
-                $tenantIdUser->setTenantId(null);
+            if ($tenantIdUser->getTenant() === $this) {
+                $tenantIdUser->setTenant(null);
             }
         }
 

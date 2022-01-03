@@ -232,6 +232,6 @@ class __TwigTemplate_86ce7b94892bed9c85b9ccb1d0519399b6fa9641234cc9c40e8adaedb89
             {% include 'includes/_footer.html.twig' %}
         {% endblock %}
     </body>
-</html>", "base.html.twig", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\base.html.twig");
+</html>", "base.html.twig", "C:\\Users\\perri\\PPE-PHP-Gestion-des-locations\\templates\\base.html.twig");
     }
 }

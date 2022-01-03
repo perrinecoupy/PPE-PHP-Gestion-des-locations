@@ -214,6 +214,10 @@
         <parameter>twig</parameter>
         <parameter>@WebProfiler/Collector/twig.html.twig</parameter>
       </parameter>
+      <parameter key="data_collector.http_client" type="collection">
+        <parameter>http_client</parameter>
+        <parameter>@WebProfiler/Collector/http_client.html.twig</parameter>
+      </parameter>
       <parameter key="data_collector.doctrine" type="collection">
         <parameter>db</parameter>
         <parameter>@Doctrine/Collector/db.html.twig</parameter>
@@ -381,10 +385,12 @@
         <argument key="cache.annotations" type="service" id="cache.annotations" on-invalid="ignore_uninitialized"/>
         <argument key="cache.property_info" type="service" id="cache.property_info" on-invalid="ignore_uninitialized"/>
         <argument key="session_listener" type="service" id="session_listener" on-invalid="ignore_uninitialized"/>
+        <argument key="http_client" type="service" id=".debug.http_client" on-invalid="ignore_uninitialized"/>
         <argument key="profiler" type="service" id="profiler" on-invalid="ignore_uninitialized"/>
         <argument key="debug.stopwatch" type="service" id="debug.stopwatch" on-invalid="ignore_uninitialized"/>
         <argument key="debug.event_dispatcher" type="service" id="debug.event_dispatcher" on-invalid="ignore_uninitialized"/>
         <argument key="doctrine" type="service" id="doctrine" on-invalid="ignore_uninitialized"/>
+        <argument key=".debug.http_client" type="service" id=".debug.http_client" on-invalid="ignore_uninitialized"/>
       </argument>
       <argument type="collection">
         <argument key="cache.app" type="collection">
@@ -408,6 +414,9 @@
         <argument key="session_listener" type="collection">
           <argument>reset</argument>
         </argument>
+        <argument key="http_client" type="collection">
+          <argument>?reset</argument>
+        </argument>
         <argument key="profiler" type="collection">
           <argument>reset</argument>
         </argument>
@@ -418,6 +427,9 @@
           <argument>reset</argument>
         </argument>
         <argument key="doctrine" type="collection">
+          <argument>reset</argument>
+        </argument>
+        <argument key=".debug.http_client" type="collection">
           <argument>reset</argument>
         </argument>
       </argument>
@@ -1087,13 +1099,20 @@
     <service id="assets.empty_version_strategy" class="Symfony\Component\Asset\VersionStrategy\EmptyVersionStrategy"/>
     <service id="assets.json_manifest_version_strategy" class="Symfony\Component\Asset\VersionStrategy\JsonManifestVersionStrategy" abstract="true">
       <argument type="abstract">manifest path</argument>
-      <argument type="service" id="http_client" on-invalid="null"/>
+      <argument type="service" id=".debug.http_client" on-invalid="null"/>
       <argument>false</argument>
     </service>
     <service id="assets._default_package" class="Symfony\Component\Asset\PathPackage">
       <argument></argument>
       <argument type="service" id="assets.empty_version_strategy"/>
       <argument type="service" id="assets.context"/>
+    </service>
+    <service id="http_client.abstract_retry_strategy" class="Symfony\Component\HttpClient\Retry\GenericRetryStrategy" abstract="true">
+      <argument type="abstract">http codes</argument>
+      <argument type="abstract">delay ms</argument>
+      <argument type="abstract">multiplier</argument>
+      <argument type="abstract">max delay ms</argument>
+      <argument type="abstract">jitter</argument>
     </service>
     <service id="profiler" class="Symfony\Component\HttpKernel\Profiler\Profiler" public="true">
       <tag name="monolog.logger" channel="profiler"/>
@@ -1131,6 +1150,9 @@
       </call>
       <call method="add">
         <argument type="service" id="data_collector.twig"/>
+      </call>
+      <call method="add">
+        <argument type="service" id="data_collector.http_client"/>
       </call>
       <call method="add">
         <argument type="service" id="data_collector.doctrine"/>
@@ -1248,6 +1270,13 @@
         <argument>cache.validator</argument>
         <argument>cache.serializer</argument>
       </argument>
+    </service>
+    <service id="data_collector.http_client" class="Symfony\Component\HttpClient\DataCollector\HttpClientDataCollector">
+      <tag name="data_collector" template="@WebProfiler/Collector/http_client.html.twig" id="http_client" priority="250"/>
+      <call method="registerClient">
+        <argument>http_client</argument>
+        <argument type="service" id=".debug.http_client"/>
+      </call>
     </service>
     <service id="debug.debug_handlers_listener" class="Symfony\Component\HttpKernel\EventListener\DebugHandlersListener">
       <tag name="kernel.event_subscriber"/>
@@ -3161,6 +3190,13 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
+    <service id=".debug.http_client" class="Symfony\Component\HttpClient\TraceableHttpClient">
+      <tag name="monolog.logger" channel="http_client"/>
+      <tag name="kernel.reset" method="reset"/>
+      <tag name="http_client.client"/>
+      <argument type="service" id=".debug.http_client.inner"/>
+      <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
+    </service>
     <service id=".service_locator.QXcJQkF" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -3307,6 +3343,14 @@
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <argument type="service" id=".service_locator.zxMugcL"/>
+    </service>
+    <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
+      <argument type="collection"/>
+      <argument>6</argument>
+      <call method="setLogger">
+        <argument type="service" id="logger" on-invalid="ignore"/>
+      </call>
+      <factory class="Symfony\Component\HttpClient\HttpClient" method="create"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -3910,6 +3954,7 @@
     <service id="session.storage.factory" alias="session.storage.factory.native"/>
     <service id="session.handler" alias="session.handler.native_file"/>
     <service id="Symfony\Component\Asset\Packages" alias="assets.packages"/>
+    <service id="Symfony\Contracts\HttpClient\HttpClientInterface" alias=".debug.http_client"/>
     <service id="Symfony\Component\HttpKernel\Debug\FileLinkFormatter" alias="debug.file_link_formatter"/>
     <service id="Symfony\Component\Stopwatch\Stopwatch" alias="debug.stopwatch"/>
     <service id="router" alias="router.default" public="true"/>
@@ -3960,6 +4005,7 @@
     <service id="argument_resolver.default" alias="debug.argument_resolver.default"/>
     <service id="argument_resolver.variadic" alias="debug.argument_resolver.variadic"/>
     <service id="argument_resolver.not_tagged_controller" alias="debug.argument_resolver.not_tagged_controller"/>
+    <service id="http_client" alias=".debug.http_client"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator._5g_Wvc" alias=".service_locator.KfwZsne"/>
     <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
