@@ -146,9 +146,9 @@ class __TwigTemplate_86ce7b94892bed9c85b9ccb1d0519399b6fa9641234cc9c40e8adaedb89
                     <div class=\"col-sm-5 col-xs-12\">
                         <form method=\"POST\" action=\"\">
                             <div class=\"form-group\">
-                                <label for=\"email\">Email</label>
+                                <label for=\"email\">Email</label>   
                                 <input type=\"text\" id=\"subject\" class=\"form-control\" name=\"email\">
-                            </div>
+                             </div>
                             <div class=\"form-group\">
                                 <label for=\"password\">Mot de passe</label>
                                 <input type=\"password\" id=\"event\" class=\"form-control\" name=\"mdp\">
@@ -213,9 +213,9 @@ class __TwigTemplate_86ce7b94892bed9c85b9ccb1d0519399b6fa9641234cc9c40e8adaedb89
                     <div class=\"col-sm-5 col-xs-12\">
                         <form method=\"POST\" action=\"\">
                             <div class=\"form-group\">
-                                <label for=\"email\">Email</label>
+                                <label for=\"email\">Email</label>   
                                 <input type=\"text\" id=\"subject\" class=\"form-control\" name=\"email\">
-                            </div>
+                             </div>
                             <div class=\"form-group\">
                                 <label for=\"password\">Mot de passe</label>
                                 <input type=\"password\" id=\"event\" class=\"form-control\" name=\"mdp\">
