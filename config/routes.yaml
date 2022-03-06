@@ -1,7 +1,74 @@
-controllers:
-    resource: ../src/Controller/
-    type: annotation
+index:
+    path: /
+    methods: ["GET"] # Pour avoir que du GET. Donc pas de POST.
+    controller: App\Controller\DefaultController::index
 
-kernel:
-    resource: ../src/Kernel.php
-    type: annotation
+locataires:
+    path: /locataires
+    controller: App\Controller\DefaultController::locataires
+
+mandataires:
+    path: /mandataires
+    controller: App\Controller\DefaultController::mandataires
+
+ajoutLocataire:
+    path: /locataires/create
+    methods: ["GET", "POST"]
+    controller: App\Controller\LocataireController::createUser
+
+ajoutMandataire:
+    path: /mandataires/create
+    methods: ["GET", "POST"]
+    controller: App\Controller\MandataireController::createUser
+
+show:
+    path: /show/{id}
+    controller: App\Controller\DefaultController::show
+    requirements:
+        id: '\d+'  # Expression régulière = REGEX
+                 # d = digit (nombre entier) ; + = infini  ->  0 - [infini]
+
+series:
+    path: /series
+    controller: App\Controller\DefaultController::series
+
+author:
+    path: /author
+    controller: App\Controller\AuthorController::author
+
+showAuthor:
+    path: /showAuthor/{id}
+    controller: App\Controller\AuthorController::showAuthor
+    requirements:
+        id: '\d+'
+
+article:
+    path: /article/{id}
+    controller: App\Controller\AuthorController::article
+    requirements:
+        id: '\d+'
+
+admin_category_create:
+    path: /admin/category/create
+    methods: ["GET", "POST"]
+    controller: App\Controller\Admin\CategoryController::createCategory
+
+admin_category_edit:
+    path: /admin/category/edit/{id}
+    methods: ["GET", "POST"]
+    controller: App\Controller\Admin\CategoryController::editCategory
+
+admin_article_create:
+    path: /admin/article/create
+    methods: ["GET", "POST"]
+    controller: App\Controller\Admin\ArticleController::createArticle
+
+admin_article_edit:
+    path: /admin/article/edit/{id}
+    methods: ["GET", "POST"]
+    controller: App\Controller\Admin\ArticleController::editArticle
+
+coin_cap_index:
+    path: /cryptos
+    methods: ["GET"]
+    controller: App\Controller\CoinCapController::index

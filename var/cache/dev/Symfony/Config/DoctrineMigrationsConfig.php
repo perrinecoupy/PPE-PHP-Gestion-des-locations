@@ -10,6 +10,8 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * This class is automatically generated to help creating config.
+ *
+ * @experimental in 5.3
  */
 class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInterface
 {
@@ -25,12 +27,12 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
     private $customTemplate;
     private $organizeMigrations;
     private $enableProfiler;
-    private $transactional;
     
     /**
+     * @param ParamConfigurator|mixed $value
      * @return $this
      */
-    public function migrationsPath(string $namespace, mixed $value): static
+    public function migrationsPath(string $namespace, $value): self
     {
         $this->migrationsPaths[$namespace] = $value;
     
@@ -38,9 +40,10 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
     }
     
     /**
+     * @param ParamConfigurator|mixed $value
      * @return $this
      */
-    public function services(string $service, mixed $value): static
+    public function services(string $service, $value): self
     {
         $this->services[$service] = $value;
     
@@ -48,9 +51,10 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
     }
     
     /**
+     * @param ParamConfigurator|mixed $value
      * @return $this
      */
-    public function factories(string $factory, mixed $value): static
+    public function factories(string $factory, $value): self
     {
         $this->factories[$factory] = $value;
     
@@ -69,11 +73,10 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
     }
     
     /**
-     * @param ParamConfigurator|list<ParamConfigurator|mixed> $value
-     *
+     * @param ParamConfigurator|list<mixed|ParamConfigurator> $value
      * @return $this
      */
-    public function migrations(ParamConfigurator|array $value): static
+    public function migrations($value): self
     {
         $this->migrations = $value;
     
@@ -86,7 +89,7 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
      * @param ParamConfigurator|mixed $value
      * @return $this
      */
-    public function connection($value): static
+    public function connection($value): self
     {
         $this->connection = $value;
     
@@ -99,7 +102,7 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
      * @param ParamConfigurator|mixed $value
      * @return $this
      */
-    public function em($value): static
+    public function em($value): self
     {
         $this->em = $value;
     
@@ -112,7 +115,7 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
      * @param ParamConfigurator|mixed $value
      * @return $this
      */
-    public function allOrNothing($value): static
+    public function allOrNothing($value): self
     {
         $this->allOrNothing = $value;
     
@@ -125,7 +128,7 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
      * @param ParamConfigurator|mixed $value
      * @return $this
      */
-    public function checkDatabasePlatform($value): static
+    public function checkDatabasePlatform($value): self
     {
         $this->checkDatabasePlatform = $value;
     
@@ -138,7 +141,7 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
      * @param ParamConfigurator|mixed $value
      * @return $this
      */
-    public function customTemplate($value): static
+    public function customTemplate($value): self
     {
         $this->customTemplate = $value;
     
@@ -151,7 +154,7 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
      * @param ParamConfigurator|mixed $value
      * @return $this
      */
-    public function organizeMigrations($value): static
+    public function organizeMigrations($value): self
     {
         $this->organizeMigrations = $value;
     
@@ -164,22 +167,9 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
      * @param ParamConfigurator|bool $value
      * @return $this
      */
-    public function enableProfiler($value): static
+    public function enableProfiler($value): self
     {
         $this->enableProfiler = $value;
-    
-        return $this;
-    }
-    
-    /**
-     * Whether or not to wrap migrations in a single transaction.
-     * @default true
-     * @param ParamConfigurator|bool $value
-     * @return $this
-     */
-    public function transactional($value): static
-    {
-        $this->transactional = $value;
     
         return $this;
     }
@@ -188,6 +178,7 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
     {
         return 'doctrine_migrations';
     }
+            
     
     public function __construct(array $value = [])
     {
@@ -252,15 +243,11 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
             unset($value['enable_profiler']);
         }
     
-        if (isset($value['transactional'])) {
-            $this->transactional = $value['transactional'];
-            unset($value['transactional']);
-        }
-    
         if ([] !== $value) {
             throw new InvalidConfigurationException(sprintf('The following keys are not supported by "%s": ', __CLASS__).implode(', ', array_keys($value)));
         }
     }
+    
     
     public function toArray(): array
     {
@@ -301,11 +288,9 @@ class DoctrineMigrationsConfig implements \Symfony\Component\Config\Builder\Conf
         if (null !== $this->enableProfiler) {
             $output['enable_profiler'] = $this->enableProfiler;
         }
-        if (null !== $this->transactional) {
-            $output['transactional'] = $this->transactional;
-        }
     
         return $output;
     }
+    
 
 }

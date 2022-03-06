@@ -142,7 +142,7 @@ abstract class AbstractHydrator
      * @param Result|ResultStatement $stmt
      * @psalm-param array<string, mixed> $hints
      *
-     * @return Generator<array-key, mixed>
+     * @return Generator<int, mixed>
      *
      * @final
      */
@@ -194,12 +194,9 @@ abstract class AbstractHydrator
             $this->hydrateRowData($row, $result);
 
             $this->cleanupAfterRowIteration();
+
             if (count($result) === 1) {
-                if (count($resultSetMapping->indexByMap) === 0) {
-                    yield end($result);
-                } else {
-                    yield from $result;
-                }
+                yield end($result);
             } else {
                 yield $result;
             }

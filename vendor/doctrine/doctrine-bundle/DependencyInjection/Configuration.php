@@ -408,7 +408,7 @@ class Configuration implements ConfigurationInterface
                     ->children()
                         ->scalarNode('default_entity_manager')->end()
                         ->scalarNode('auto_generate_proxy_classes')->defaultValue(false)
-                            ->info('Auto generate mode possible values are: "NEVER", "ALWAYS", "FILE_NOT_EXISTS", "EVAL", "FILE_NOT_EXISTS_OR_CHANGED"')
+                            ->info('Auto generate mode possible values are: "NEVER", "ALWAYS", "FILE_NOT_EXISTS", "EVAL"')
                             ->validate()
                                 ->ifTrue(function ($v) {
                                     $generationModes = $this->getAutoGenerateModes();
@@ -422,7 +422,7 @@ class Configuration implements ConfigurationInterface
                                     }
 
                                     if (is_string($v)) {
-                                        if (in_array(strtoupper($v), $generationModes['names']/*array('NEVER', 'ALWAYS', 'FILE_NOT_EXISTS', 'EVAL', 'FILE_NOT_EXISTS_OR_CHANGED')*/)) {
+                                        if (in_array(strtoupper($v), $generationModes['names']/*array('NEVER', 'ALWAYS', 'FILE_NOT_EXISTS', 'EVAL')*/)) {
                                             return false;
                                         }
                                     }
@@ -731,7 +731,12 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('pool')->end()
             ->end();
 
-        if ($name !== 'metadata_cache_driver') {
+        if ($name === 'metadata_cache_driver') {
+            $node->setDeprecated(...$this->getDeprecationMsg(
+                'The "metadata_cache_driver" configuration key is deprecated. Remove the configuration to have the cache created automatically.',
+                '2.3'
+            ));
+        } else {
             $node->addDefaultsIfNotSet();
         }
 

@@ -11,7 +11,7 @@
 
 namespace Symfony\Flex;
 
-use Composer\Cache;
+use Composer\Cache as ComposerCache;
 use Composer\Composer;
 use Composer\DependencyResolver\Operation\OperationInterface;
 use Composer\DependencyResolver\Operation\UninstallOperation;
@@ -29,8 +29,8 @@ use Composer\Util\Loop;
 class Downloader
 {
     private const DEFAULT_ENDPOINTS = [
-        'https://raw.githubusercontent.com/symfony/recipes/flex/main/index.json',
-        'https://raw.githubusercontent.com/symfony/recipes-contrib/flex/main/index.json',
+        'https://api.github.com/repos/symfony/recipes/contents/index.json?ref=flex/main',
+        'https://api.github.com/repos/symfony/recipes-contrib/contents/index.json?ref=flex/main',
     ];
     private const MAX_LENGTH = 1000;
 
@@ -41,7 +41,8 @@ class Downloader
     private $sess;
     private $cache;
 
-    private HttpDownloader $rfs;
+    /** @var HttpDownloader|ParallelDownloader */
+    private $rfs;
     private $degradedMode = false;
     private $endpoints;
     private $index;
@@ -49,7 +50,7 @@ class Downloader
     private $caFile;
     private $enabled = true;
 
-    public function __construct(Composer $composer, IoInterface $io, HttpDownloader $rfs)
+    public function __construct(Composer $composer, IoInterface $io, $rfs)
     {
         if (getenv('SYMFONY_CAFILE')) {
             $this->caFile = getenv('SYMFONY_CAFILE');
@@ -57,11 +58,13 @@ class Downloader
 
         if (null === $endpoint = $composer->getPackage()->getExtra()['symfony']['endpoint'] ?? null) {
             $this->endpoints = self::DEFAULT_ENDPOINTS;
+
+            if (!filter_var(getenv('FLEX_SERVERLESS'), \FILTER_VALIDATE_BOOLEAN)) {
+                $this->endpoints = null;
+                $this->legacyEndpoint = 'https://flex.symfony.com';
+            }
         } elseif (\is_array($endpoint) || false !== strpos($endpoint, '.json') || 'flex://defaults' === $endpoint) {
             $this->endpoints = array_values((array) $endpoint);
-            if (\is_string($endpoint) && false !== strpos($endpoint, '.json')) {
-                $this->endpoints[] = 'flex://defaults';
-            }
         } else {
             $this->legacyEndpoint = rtrim($endpoint, '/');
         }
@@ -88,13 +91,18 @@ class Downloader
         $this->io = $io;
         $config = $composer->getConfig();
         $this->rfs = $rfs;
-        $this->cache = new Cache($io, $config->get('cache-repo-dir').'/flex');
+        $this->cache = new ComposerCache($io, $config->get('cache-repo-dir').'/flex');
         $this->sess = bin2hex(random_bytes(16));
     }
 
     public function getSessionId(): string
     {
         return $this->sess;
+    }
+
+    public function setFlexId(string $id = null)
+    {
+        // No-op to support downgrading to v1.12.x
     }
 
     public function isEnabled()
@@ -265,7 +273,7 @@ class Downloader
         $options = [];
 
         foreach ($urls as $url) {
-            $cacheKey = self::generateCacheKey($url);
+            $cacheKey = preg_replace('{[^a-z0-9.]}i', '-', $url);
             $headers = [];
 
             if (preg_match('{^https?://api\.github\.com/}', $url)) {
@@ -288,19 +296,37 @@ class Downloader
             $options[$url] = $this->getOptions($headers);
         }
 
-        $loop = new Loop($this->rfs);
-        $jobs = [];
-        foreach ($urls as $url) {
-            $jobs[] = $this->rfs->add($url, $options[$url])->then(function (ComposerResponse $response) use ($url, &$responses) {
-                if (200 === $response->getStatusCode()) {
-                    $cacheKey = self::generateCacheKey($url);
-                    $responses[$url] = $this->parseJson($response->getBody(), $url, $cacheKey, $response->getHeaders())->getBody();
+        if ($this->rfs instanceof HttpDownloader) {
+            $loop = new Loop($this->rfs);
+            $jobs = [];
+            foreach ($urls as $url) {
+                $jobs[] = $this->rfs->add($url, $options[$url])->then(function (ComposerResponse $response) use ($url, &$responses) {
+                    if (200 === $response->getStatusCode()) {
+                        $cacheKey = preg_replace('{[^a-z0-9.]}i', '-', $url);
+                        $responses[$url] = $this->parseJson($response->getBody(), $url, $cacheKey, $response->getHeaders())->getBody();
+                    }
+                }, function (\Exception $e) use ($url, &$retries) {
+                    $retries[] = [$url, $e];
+                });
+            }
+            $loop->wait($jobs);
+        } else {
+            foreach ($urls as $i => $url) {
+                $urls[$i] = [$url];
+            }
+            $this->rfs->download($urls, function ($url) use ($options, &$responses, &$retries, &$error) {
+                try {
+                    $cacheKey = preg_replace('{[^a-z0-9.]}i', '-', $url);
+                    $origin = method_exists($this->rfs, 'getOrigin') ? $this->rfs::getOrigin($url) : parse_url($url, \PHP_URL_HOST);
+                    $json = $this->rfs->getContents($origin, $url, false, $options[$url]);
+                    if (200 === $this->rfs->findStatusCode($this->rfs->getLastHeaders())) {
+                        $responses[$url] = $this->parseJson($json, $url, $cacheKey, $this->rfs->getLastHeaders())->getBody();
+                    }
+                } catch (\Exception $e) {
+                    $retries[] = [$url, $e];
                 }
-            }, function (\Exception $e) use ($url, &$retries) {
-                $retries[] = [$url, $e];
             });
         }
-        $loop->wait($jobs);
 
         if (!$retries) {
             return $responses;
@@ -387,13 +413,5 @@ class Downloader
             unset($config['recipes'], $config['versions'], $config['aliases']);
             $this->endpoints[$endpoint] = $config;
         }
-    }
-
-    private static function generateCacheKey(string $url): string
-    {
-        $url = preg_replace('{^https://api.github.com/repos/([^/]++/[^/]++)/contents/}', '$1/', $url);
-        $url = preg_replace('{^https://raw.githubusercontent.com/([^/]++/[^/]++)/}', '$1/', $url);
-
-        return preg_replace('{[^a-z0-9.]}i', '-', $url);
     }
 }

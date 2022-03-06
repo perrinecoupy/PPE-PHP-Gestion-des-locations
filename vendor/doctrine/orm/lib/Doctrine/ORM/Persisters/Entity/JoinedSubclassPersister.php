@@ -13,6 +13,7 @@ use Doctrine\ORM\Utility\PersisterHelper;
 
 use function array_combine;
 use function implode;
+use function is_array;
 
 /**
  * The joined subclass persister maps a single entity instance to several tables in the
@@ -411,15 +412,14 @@ class JoinedSubclassPersister extends AbstractEntityInheritancePersister
         }
 
         $columnList       = [];
-        $discrColumn      = $this->class->getDiscriminatorColumn();
-        $discrColumnName  = $discrColumn['name'];
-        $discrColumnType  = $discrColumn['type'];
+        $discrColumn      = $this->class->discriminatorColumn['name'];
+        $discrColumnType  = $this->class->discriminatorColumn['type'];
         $baseTableAlias   = $this->getSQLTableAlias($this->class->name);
-        $resultColumnName = $this->getSQLResultCasing($this->platform, $discrColumnName);
+        $resultColumnName = $this->getSQLResultCasing($this->platform, $discrColumn);
 
         $this->currentPersisterContext->rsm->addEntityResult($this->class->name, 'r');
         $this->currentPersisterContext->rsm->setDiscriminatorColumn('r', $resultColumnName);
-        $this->currentPersisterContext->rsm->addMetaResult('r', $resultColumnName, $discrColumnName, false, $discrColumnType);
+        $this->currentPersisterContext->rsm->addMetaResult('r', $resultColumnName, $discrColumn, false, $discrColumnType);
 
         // Add regular columns
         foreach ($this->class->fieldMappings as $fieldName => $mapping) {
@@ -457,7 +457,7 @@ class JoinedSubclassPersister extends AbstractEntityInheritancePersister
             ? $baseTableAlias
             : $this->getSQLTableAlias($this->class->rootEntityName);
 
-        $columnList[] = $tableAlias . '.' . $discrColumnName;
+        $columnList[] = $tableAlias . '.' . $discrColumn;
 
         // sub tables
         foreach ($this->class->subClasses as $subClassName) {
@@ -540,7 +540,7 @@ class JoinedSubclassPersister extends AbstractEntityInheritancePersister
 
         // Add discriminator column if it is the topmost class.
         if ($this->class->name === $this->class->rootEntityName) {
-            $columns[] = $this->class->getDiscriminatorColumn()['name'];
+            $columns[] = $this->class->discriminatorColumn['name'];
         }
 
         return $columns;

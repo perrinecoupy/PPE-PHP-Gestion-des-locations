@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Les auteurs</h1>
+<ul>
+    {% for author in author %}
+        <li>Auteur n°{{ author.id }}</li>
+        <li><a href="{{ path('showAuthor', {id: author.id})}}">Informations</a></li>
+        <br>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+        <li>Article n°{{ article.id }}</li>
+        <li>{{ article.title }}</li>
+        <li>{{ article.content }}</li>
+        <li>{{ article.resume }}</li>
+        <li>{{ article.date|date('d/m/Y à H\\hi') }}</li>
+
+{% endblock %}

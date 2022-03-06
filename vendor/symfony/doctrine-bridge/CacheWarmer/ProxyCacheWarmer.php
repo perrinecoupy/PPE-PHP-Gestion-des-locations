@@ -33,8 +33,10 @@ class ProxyCacheWarmer implements CacheWarmerInterface
 
     /**
      * This cache warmer is not optional, without proxies fatal error occurs!
+     *
+     * @return false
      */
-    public function isOptional(): bool
+    public function isOptional()
     {
         return false;
     }
@@ -44,7 +46,7 @@ class ProxyCacheWarmer implements CacheWarmerInterface
      *
      * @return string[] A list of files to preload on PHP 7.4+
      */
-    public function warmUp(string $cacheDir): array
+    public function warmUp(string $cacheDir)
     {
         $files = [];
         foreach ($this->registry->getManagers() as $em) {

@@ -20,7 +20,7 @@ final class UuidGenerator extends AbstractIdGenerator
 {
     private $protoFactory;
     private $factory;
-    private ?string $entityGetter = null;
+    private $entityGetter;
 
     public function __construct(UuidFactory $factory = null)
     {
@@ -40,7 +40,12 @@ final class UuidGenerator extends AbstractIdGenerator
         return $this->factory->create();
     }
 
-    public function nameBased(string $entityGetter, Uuid|string $namespace = null): static
+    /**
+     * @param Uuid|string|null $namespace
+     *
+     * @return static
+     */
+    public function nameBased(string $entityGetter, $namespace = null): self
     {
         $clone = clone $this;
         $clone->factory = $clone->protoFactory->nameBased($namespace);
@@ -49,7 +54,10 @@ final class UuidGenerator extends AbstractIdGenerator
         return $clone;
     }
 
-    public function randomBased(): static
+    /**
+     * @return static
+     */
+    public function randomBased(): self
     {
         $clone = clone $this;
         $clone->factory = $clone->protoFactory->randomBased();
@@ -58,7 +66,12 @@ final class UuidGenerator extends AbstractIdGenerator
         return $clone;
     }
 
-    public function timeBased(Uuid|string $node = null): static
+    /**
+     * @param Uuid|string|null $node
+     *
+     * @return static
+     */
+    public function timeBased($node = null): self
     {
         $clone = clone $this;
         $clone->factory = $clone->protoFactory->timeBased($node);

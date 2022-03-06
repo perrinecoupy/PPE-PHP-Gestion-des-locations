@@ -11,7 +11,6 @@
 
 namespace Symfony\Bundle\WebProfilerBundle\EventListener;
 
-use Symfony\Bundle\FullStack;
 use Symfony\Bundle\WebProfilerBundle\Csp\ContentSecurityPolicyHandler;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -40,11 +39,11 @@ class WebDebugToolbarListener implements EventSubscriberInterface
     public const DISABLED = 1;
     public const ENABLED = 2;
 
-    private $twig;
-    private $urlGenerator;
-    private bool $interceptRedirects;
-    private int $mode;
-    private string $excludedAjaxPaths;
+    protected $twig;
+    protected $urlGenerator;
+    protected $interceptRedirects;
+    protected $mode;
+    protected $excludedAjaxPaths;
     private $cspHandler;
     private $dumpDataCollector;
 
@@ -143,7 +142,6 @@ class WebDebugToolbarListener implements EventSubscriberInterface
             $toolbar = "\n".str_replace("\n", '', $this->twig->render(
                 '@WebProfiler/Profiler/toolbar_js.html.twig',
                 [
-                    'full_stack' => class_exists(FullStack::class),
                     'excluded_ajax_paths' => $this->excludedAjaxPaths,
                     'token' => $response->headers->get('X-Debug-Token'),
                     'request' => $request,

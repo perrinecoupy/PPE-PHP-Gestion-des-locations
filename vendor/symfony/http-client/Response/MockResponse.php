@@ -30,24 +30,24 @@ class MockResponse implements ResponseInterface, StreamableInterface
         doDestruct as public __destruct;
     }
 
-    private string|iterable $body;
-    private array $requestOptions = [];
-    private string $requestUrl;
-    private string $requestMethod;
+    private $body;
+    private $requestOptions = [];
+    private $requestUrl;
+    private $requestMethod;
 
-    private static ClientState $mainMulti;
-    private static int $idSequence = 0;
+    private static $mainMulti;
+    private static $idSequence = 0;
 
     /**
      * @param string|string[]|iterable $body The response body as a string or an iterable of strings,
      *                                       yielding an empty string simulates an idle timeout,
-     *                                       throwing an exception yields an ErrorChunk
+     *                                       exceptions are turned to TransportException
      *
      * @see ResponseInterface::getInfo() for possible info, e.g. "response_headers"
      */
-    public function __construct(string|iterable $body = '', array $info = [])
+    public function __construct($body = '', array $info = [])
     {
-        $this->body = $body;
+        $this->body = is_iterable($body) ? $body : (string) $body;
         $this->info = $info + ['http_code' => 200] + $this->info;
 
         if (!isset($info['response_headers'])) {
@@ -93,7 +93,7 @@ class MockResponse implements ResponseInterface, StreamableInterface
     /**
      * {@inheritdoc}
      */
-    public function getInfo(string $type = null): mixed
+    public function getInfo(string $type = null)
     {
         return null !== $type ? $this->info[$type] ?? null : $this->info;
     }
@@ -106,7 +106,7 @@ class MockResponse implements ResponseInterface, StreamableInterface
         $this->info['canceled'] = true;
         $this->info['error'] = 'Response has been canceled.';
         try {
-            unset($this->body);
+            $this->body = null;
         } catch (TransportException $e) {
             // ignore errors when canceling
         }
@@ -159,7 +159,7 @@ class MockResponse implements ResponseInterface, StreamableInterface
      */
     protected static function schedule(self $response, array &$runningResponses): void
     {
-        if (!isset($response->id)) {
+        if (!$response->id) {
             throw new InvalidArgumentException('MockResponse instances must be issued by MockHttpClient before processing.');
         }
 
@@ -180,7 +180,7 @@ class MockResponse implements ResponseInterface, StreamableInterface
         foreach ($responses as $response) {
             $id = $response->id;
 
-            if (!isset($response->body)) {
+            if (null === $response->body) {
                 // Canceled response
                 $response->body = [];
             } elseif ([] === $response->body) {
@@ -208,9 +208,6 @@ class MockResponse implements ResponseInterface, StreamableInterface
                     $multi->handlesActivity[$id][] = null;
                     $multi->handlesActivity[$id][] = $e;
                 }
-            } elseif ($chunk instanceof \Throwable) {
-                $multi->handlesActivity[$id][] = null;
-                $multi->handlesActivity[$id][] = $chunk;
             } else {
                 // Data or timeout chunk
                 $multi->handlesActivity[$id][] = $chunk;
@@ -288,10 +285,6 @@ class MockResponse implements ResponseInterface, StreamableInterface
             'http_code' => $response->info['http_code'],
         ] + $info + $response->info;
 
-        if (null !== $response->info['error']) {
-            throw new TransportException($response->info['error']);
-        }
-
         if (!isset($response->info['total_time'])) {
             $response->info['total_time'] = microtime(true) - $response->info['start_time'];
         }
@@ -303,20 +296,16 @@ class MockResponse implements ResponseInterface, StreamableInterface
         $body = $mock instanceof self ? $mock->body : $mock->getContent(false);
 
         if (!\is_string($body)) {
-            try {
-                foreach ($body as $chunk) {
-                    if ('' === $chunk = (string) $chunk) {
-                        // simulate an idle timeout
-                        $response->body[] = new ErrorChunk($offset, sprintf('Idle timeout reached for "%s".', $response->info['url']));
-                    } else {
-                        $response->body[] = $chunk;
-                        $offset += \strlen($chunk);
-                        // "notify" download progress
-                        $onProgress($offset, $dlSize, $response->info);
-                    }
+            foreach ($body as $chunk) {
+                if ('' === $chunk = (string) $chunk) {
+                    // simulate an idle timeout
+                    $response->body[] = new ErrorChunk($offset, sprintf('Idle timeout reached for "%s".', $response->info['url']));
+                } else {
+                    $response->body[] = $chunk;
+                    $offset += \strlen($chunk);
+                    // "notify" download progress
+                    $onProgress($offset, $dlSize, $response->info);
                 }
-            } catch (\Throwable $e) {
-                $response->body[] = $e;
             }
         } elseif ('' !== $body) {
             $response->body[] = $body;

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Articles</h1>
+<ul>
+    {% for articles in articles %}
+        <li>Article n°{{ articles.id }}</li>
+        <li>Nom : {{ articles.title }}</li>
+        <li>Contenu : {{ articles.content }}</li>
+        <li>Résumé : {{ articles.resume }}</li>
+        <li>Date : {{ articles.date|date('d:m:Y à H\\hi') }}</li>
+        <li><a href="{{ path('show', {id: articles.id})}}">Lire la même chose sur une autre page</a></li>
+        <br>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -53,7 +53,7 @@ class DoctrineTokenProvider implements TokenProviderInterface, TokenVerifierInte
     /**
      * {@inheritdoc}
      */
-    public function loadTokenBySeries(string $series): PersistentTokenInterface
+    public function loadTokenBySeries(string $series)
     {
         // the alias for lastUsed works around case insensitivity in PostgreSQL
         $sql = 'SELECT class, username, value, lastUsed AS last_used FROM rememberme_token WHERE series=:series';
@@ -118,7 +118,8 @@ class DoctrineTokenProvider implements TokenProviderInterface, TokenVerifierInte
         $sql = 'INSERT INTO rememberme_token (class, username, series, value, lastUsed) VALUES (:class, :username, :series, :value, :lastUsed)';
         $paramValues = [
             'class' => $token->getClass(),
-            'username' => $token->getUserIdentifier(),
+            // @deprecated since Symfony 5.3, change to $token->getUserIdentifier() in 6.0
+            'username' => method_exists($token, 'getUserIdentifier') ? $token->getUserIdentifier() : $token->getUsername(),
             'series' => $token->getSeries(),
             'value' => $token->getTokenValue(),
             'lastUsed' => $token->getLastUsed(),

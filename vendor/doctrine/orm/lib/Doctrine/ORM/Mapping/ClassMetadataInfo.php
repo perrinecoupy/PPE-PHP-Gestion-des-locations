@@ -20,7 +20,6 @@ use Doctrine\ORM\Id\AbstractIdGenerator;
 use Doctrine\Persistence\Mapping\ClassMetadata;
 use Doctrine\Persistence\Mapping\ReflectionService;
 use InvalidArgumentException;
-use LogicException;
 use ReflectionClass;
 use ReflectionNamedType;
 use ReflectionProperty;
@@ -70,26 +69,6 @@ use const PHP_VERSION_ID;
  *
  * @template-covariant T of object
  * @template-implements ClassMetadata<T>
- * @psalm-type FieldMapping = array{
- *      type: string,
- *      fieldName: string,
- *      columnName?: string,
- *      length?: int,
- *      id?: bool,
- *      nullable?: bool,
- *      columnDefinition?: string,
- *      precision?: int,
- *      scale?: int,
- *      unique?: string,
- *      inherited?: class-string,
- *      originalClass?: class-string,
- *      originalField?: string,
- *      quoted?: bool,
- *      requireSQLConversion?: bool,
- *      declared?: class-string,
- *      declaredField?: string,
- *      options?: array<string, mixed>
- * }
  */
 class ClassMetadataInfo implements ClassMetadata
 {
@@ -447,7 +426,25 @@ class ClassMetadataInfo implements ClassMetadata
      * Whether a unique constraint should be generated for the column.
      *
      * @var mixed[]
-     * @psalm-var array<string, FieldMapping>
+     * @psalm-var array<string, array{
+     *      type: string,
+     *      fieldName: string,
+     *      columnName?: string,
+     *      length?: int,
+     *      id?: bool,
+     *      nullable?: bool,
+     *      columnDefinition?: string,
+     *      precision?: int,
+     *      scale?: int,
+     *      unique?: string,
+     *      inherited?: class-string,
+     *      originalClass?: class-string,
+     *      originalField?: string,
+     *      quoted?: bool,
+     *      requireSQLConversion?: bool,
+     *      declaredField?: string,
+     *      options: array<mixed>
+     * }>
      */
     public $fieldMappings = [];
 
@@ -498,7 +495,7 @@ class ClassMetadataInfo implements ClassMetadata
      * READ-ONLY: The definition of the discriminator column used in JOINED and SINGLE_TABLE
      * inheritance mappings.
      *
-     * @psalm-var array<string, mixed>|null
+     * @psalm-var array<string, mixed>
      */
     public $discriminatorColumn;
 
@@ -512,14 +509,7 @@ class ClassMetadataInfo implements ClassMetadata
      * uniqueConstraints => array
      *
      * @var mixed[]
-     * @psalm-var array{
-     *               name: string,
-     *               schema: string,
-     *               indexes: array,
-     *               uniqueConstraints: array,
-     *               options: array<string, mixed>,
-     *               quoted?: bool
-     *           }
+     * @psalm-var array{name: string, schema: string, indexes: array, uniqueConstraints: array}
      */
     public $table;
 
@@ -675,7 +665,7 @@ class ClassMetadataInfo implements ClassMetadata
     /**
      * The ReflectionClass instance of the mapped class.
      *
-     * @var ReflectionClass|null
+     * @var ReflectionClass
      */
     public $reflClass;
 
@@ -1286,7 +1276,18 @@ class ClassMetadataInfo implements ClassMetadata
      * @param string $fieldName The field name.
      *
      * @return mixed[] The field mapping.
-     * @psalm-return FieldMapping
+     * @psalm-return array{
+     *      type: string,
+     *      fieldName: string,
+     *      columnName?: string,
+     *      inherited?: class-string,
+     *      nullable?: bool,
+     *      originalClass?: class-string,
+     *      originalField?: string,
+     *      scale?: int,
+     *      precision?: int,
+     *      length?: int
+     * }
      *
      * @throws MappingException
      */
@@ -3087,18 +3088,6 @@ class ClassMetadataInfo implements ClassMetadata
 
             $this->discriminatorColumn = $columnDef;
         }
-    }
-
-    /**
-     * @return array<string, mixed>
-     */
-    final public function getDiscriminatorColumn(): array
-    {
-        if ($this->discriminatorColumn === null) {
-            throw new LogicException('The discriminator column was not set.');
-        }
-
-        return $this->discriminatorColumn;
     }
 
     /**

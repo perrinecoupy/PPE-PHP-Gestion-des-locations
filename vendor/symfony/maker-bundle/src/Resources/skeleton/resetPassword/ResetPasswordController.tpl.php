@@ -16,12 +16,10 @@ class <?= $class_name ?> extends AbstractController
     use ResetPasswordControllerTrait;
 
     private $resetPasswordHelper;
-    private $entityManager;
 
-    public function __construct(ResetPasswordHelperInterface $resetPasswordHelper, EntityManagerInterface $entityManager)
+    public function __construct(ResetPasswordHelperInterface $resetPasswordHelper)
     {
         $this->resetPasswordHelper = $resetPasswordHelper;
-        $this->entityManager = $entityManager;
     }
 
     /**
@@ -84,7 +82,7 @@ class <?= $class_name ?> extends AbstractController
      * @Route("/reset/{token}", name="app_reset_password")
      */
 <?php } ?>
-    public function reset(Request $request, <?= $password_hasher_class_details->getShortName() ?> <?= $password_hasher_variable_name ?>, string $token = null): Response
+    public function reset(Request $request, <?= $password_class_details->getShortName() ?> <?= $password_variable_name ?>, string $token = null): Response
     {
         if ($token) {
             // We store the token in session and remove it from the URL, to avoid the URL being
@@ -119,13 +117,13 @@ class <?= $class_name ?> extends AbstractController
             $this->resetPasswordHelper->removeResetRequest($token);
 
             // Encode(hash) the plain password, and set it.
-            $encodedPassword = <?= $password_hasher_variable_name ?>-><?= $use_password_hasher ? 'hashPassword' : 'encodePassword' ?>(
+            $encodedPassword = <?= $password_variable_name ?>-><?= $use_password_hasher ? 'hashPassword' : 'encodePassword' ?>(
                 $user,
                 $form->get('plainPassword')->getData()
             );
 
             $user-><?= $password_setter ?>($encodedPassword);
-            $this->entityManager->flush();
+            $this->getDoctrine()->getManager()->flush();
 
             // The session is cleaned up after the password has been changed.
             $this->cleanSessionAfterReset();
@@ -140,7 +138,7 @@ class <?= $class_name ?> extends AbstractController
 
     private function processSendingPasswordResetEmail(string $emailFormData, MailerInterface $mailer): RedirectResponse
     {
-        $user = $this->entityManager->getRepository(<?= $user_class_name ?>::class)->findOneBy([
+        $user = $this->getDoctrine()->getRepository(<?= $user_class_name ?>::class)->findOneBy([
             '<?= $email_field ?>' => $emailFormData,
         ]);
 

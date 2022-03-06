@@ -34,15 +34,15 @@ class ClosureLoader extends Loader
     /**
      * {@inheritdoc}
      */
-    public function load(mixed $resource, string $type = null): mixed
+    public function load($resource, string $type = null)
     {
-        return $resource($this->container, $this->env);
+        $resource($this->container, $this->env);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function supports(mixed $resource, string $type = null): bool
+    public function supports($resource, string $type = null)
     {
         return $resource instanceof \Closure;
     }

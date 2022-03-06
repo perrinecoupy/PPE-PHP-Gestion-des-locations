@@ -31,7 +31,7 @@ use const DIRECTORY_SEPARATOR;
  */
 class EntityRepositoryGenerator
 {
-    /** @psalm-var class-string|null */
+    /** @psalm-var class-string */
     private $repositoryName;
 
     /** @var string */

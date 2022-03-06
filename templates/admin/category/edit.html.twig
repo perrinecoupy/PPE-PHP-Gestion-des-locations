@@ -1,0 +1,11 @@
+{% extends 'admin/category/create.html.twig' %}
+
+{% block body %}
+    <h2>Editer Catégorie</h2>
+    {{ parent() }}
+    {% for message in app.flashes('success') %}
+        <div class="flash-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endblock body %}

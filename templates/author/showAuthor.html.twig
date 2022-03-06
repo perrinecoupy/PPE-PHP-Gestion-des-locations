@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h3>Auteur n°{{ author.id }}</h3>
+<h3>{{ author.firstname }}</h3>
+<h3>{{ author.lastname }}</h3>
+<br>
+<h4>Liste des articles de l'auteur:
+
+	{% for articleAuthor in articleAuthor %}
+        <li>Article n°{{ articleAuthor.id }}</li>
+        <li>{{ articleAuthor.title }}</li>
+        <li>{{ articleAuthor.content }}</li>
+        <li>{{ articleAuthor.resume }}</li>
+        <li>{{ articleAuthor.date|date('d/m/Y à H\\hi') }}</li>
+        <li><a href="{{ path('article', {id: articleAuthor.id})}}">Lien vers l'article</a></li>
+        <br>
+    {% endfor %}
+
+{% endblock %}
+
+{# {% include 'common/_article_item.html.twig' with { article : article } only %} On précise le with {} pour spécifier les variables à passer à la vue. Si on ne le fait pas : toutes les variables seront par défaut inclus dans la vue .#}

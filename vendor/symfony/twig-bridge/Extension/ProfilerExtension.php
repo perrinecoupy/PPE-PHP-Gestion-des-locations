@@ -12,7 +12,6 @@
 namespace Symfony\Bridge\Twig\Extension;
 
 use Symfony\Component\Stopwatch\Stopwatch;
-use Symfony\Component\Stopwatch\StopwatchEvent;
 use Twig\Extension\ProfilerExtension as BaseProfilerExtension;
 use Twig\Profiler\Profile;
 
@@ -22,11 +21,7 @@ use Twig\Profiler\Profile;
 final class ProfilerExtension extends BaseProfilerExtension
 {
     private $stopwatch;
-
-    /**
-     * @var \SplObjectStorage<Profile, StopwatchEvent>
-     */
-    private \SplObjectStorage $events;
+    private $events;
 
     public function __construct(Profile $profile, Stopwatch $stopwatch = null)
     {

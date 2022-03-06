@@ -15,26 +15,26 @@ use Doctrine\Common\Annotations\Annotation\NamedArgumentConstructor;
 #[Attribute(Attribute::TARGET_PROPERTY)]
 final class Column implements Annotation
 {
-    /** @var string|null */
+    /** @var string */
     public $name;
 
     /** @var mixed */
     public $type;
 
-    /** @var int|null */
+    /** @var int */
     public $length;
 
     /**
      * The precision for a decimal (exact numeric) column (Applies only for decimal column).
      *
-     * @var int|null
+     * @var int
      */
     public $precision = 0;
 
     /**
      * The scale for a decimal (exact numeric) column (Applies only for decimal column).
      *
-     * @var int|null
+     * @var int
      */
     public $scale = 0;
 
@@ -47,7 +47,7 @@ final class Column implements Annotation
     /** @var array<string,mixed> */
     public $options = [];
 
-    /** @var string|null */
+    /** @var string */
     public $columnDefinition;
 
     /**

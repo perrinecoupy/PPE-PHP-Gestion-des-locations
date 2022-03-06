@@ -184,7 +184,9 @@ class ClassMetadataFactory extends AbstractClassMetadataFactory
                 $class->setPrimaryTable($parent->table);
             }
 
-            $this->addInheritedIndexes($class, $parent);
+            if ($parent) {
+                $this->addInheritedIndexes($class, $parent);
+            }
 
             if ($parent->cache) {
                 $class->cache = $parent->cache;
@@ -274,7 +276,7 @@ class ClassMetadataFactory extends AbstractClassMetadataFactory
             } else {
                 assert($parent instanceof ClassMetadataInfo); // https://github.com/doctrine/orm/issues/8746
                 if (
-                    ! $class->reflClass->isAbstract()
+                    (! $class->reflClass || ! $class->reflClass->isAbstract())
                     && ! in_array($class->name, $class->discriminatorMap, true)
                 ) {
                     throw MappingException::mappedClassNotPartOfDiscriminatorMap($class->name, $class->rootEntityName);

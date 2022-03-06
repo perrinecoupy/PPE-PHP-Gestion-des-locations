@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h6>Nom : {{ article.title }}</h6>
+<li>Cotenu : {{ article.content }}</li>
+<li>Résumé : {{ article.resume }}</li>
+<li>Date : {{ article.date|date('d:m:Y à H\\hi') }}</li>
+<br>
+<a href="{{ path('articles') }}">Retour</a>
+{% endblock %}

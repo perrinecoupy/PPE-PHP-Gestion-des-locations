@@ -12,8 +12,10 @@ use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\ServiceRepositor
 use Doctrine\Bundle\DoctrineBundle\EventSubscriber\EventSubscriberInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface;
 use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Connections\MasterSlaveConnection;
 use Doctrine\DBAL\Connections\PrimaryReadReplicaConnection;
 use Doctrine\DBAL\Logging\LoggerChain;
+use Doctrine\DBAL\SQLParserUtils;
 use Doctrine\DBAL\Tools\Console\Command\ImportCommand;
 use Doctrine\DBAL\Tools\Console\ConnectionProvider;
 use Doctrine\ORM\EntityManagerInterface;
@@ -27,7 +29,6 @@ use Symfony\Bridge\Doctrine\IdGenerator\UuidGenerator;
 use Symfony\Bridge\Doctrine\Messenger\DoctrineClearEntityManagerWorkerSubscriber;
 use Symfony\Bridge\Doctrine\Messenger\DoctrineTransactionMiddleware;
 use Symfony\Bridge\Doctrine\PropertyInfo\DoctrineExtractor;
-use Symfony\Bridge\Doctrine\SchemaListener\DoctrineDbalCacheAdapterSchemaSubscriber;
 use Symfony\Bridge\Doctrine\SchemaListener\MessengerTransportDoctrineSchemaSubscriber;
 use Symfony\Bridge\Doctrine\SchemaListener\PdoCacheAdapterDoctrineSchemaSubscriber;
 use Symfony\Bridge\Doctrine\SchemaListener\RememberMeTokenProviderDoctrineSchemaSubscriber;
@@ -52,7 +53,6 @@ use function array_intersect_key;
 use function array_keys;
 use function class_exists;
 use function interface_exists;
-use function is_dir;
 use function method_exists;
 use function reset;
 use function sprintf;
@@ -107,7 +107,12 @@ class DoctrineExtension extends AbstractDoctrineExtension
         $loader->load('dbal.xml');
         $chainLogger = $container->getDefinition('doctrine.dbal.logger.chain');
         $logger      = new Reference('doctrine.dbal.logger');
-        $chainLogger->addArgument([$logger]);
+        if (! method_exists(SQLParserUtils::class, 'getPositionalPlaceholderPositions') && method_exists(LoggerChain::class, 'addLogger')) {
+            // doctrine/dbal < 2.10.0
+            $chainLogger->addMethodCall('addLogger', [$logger]);
+        } else {
+            $chainLogger->addArgument([$logger]);
+        }
 
         if (class_exists(ImportCommand::class)) {
             $container->register('doctrine.database_import_command', ImportDoctrineCommand::class)
@@ -176,7 +181,12 @@ class DoctrineExtension extends AbstractDoctrineExtension
                     'doctrine.dbal.logger.chain',
                     LoggerChain::class
                 );
-                $chainLogger->addArgument([$logger, $profilingLogger]);
+                if (! method_exists(SQLParserUtils::class, 'getPositionalPlaceholderPositions') && method_exists(LoggerChain::class, 'addLogger')) {
+                    // doctrine/dbal < 2.10.0
+                    $chainLogger->addMethodCall('addLogger', [$profilingLogger]);
+                } else {
+                    $chainLogger->addArgument([$logger, $profilingLogger]);
+                }
 
                 $loggerId = 'doctrine.dbal.logger.chain.' . $name;
                 $container->setDefinition($loggerId, $chainLogger);
@@ -305,7 +315,7 @@ class DoctrineExtension extends AbstractDoctrineExtension
                 'options' => 'driverOptions',
                 'driver_class' => 'driverClass',
                 'wrapper_class' => 'wrapperClass',
-                'keep_slave' => 'keepReplica',
+                'keep_slave' => class_exists(PrimaryReadReplicaConnection::class) ? 'keepReplica' : 'keepSlave',
                 'keep_replica' => 'keepReplica',
                 'replicas' => 'replica',
                 'shard_choser' => 'shardChoser',
@@ -354,13 +364,15 @@ class DoctrineExtension extends AbstractDoctrineExtension
                     continue;
                 }
 
-                $options['primary'][$key] = $value;
+                $options[class_exists(PrimaryReadReplicaConnection::class) ? 'primary' : 'master'][$key] = $value;
                 unset($options[$key]);
             }
 
             if (empty($options['wrapperClass'])) {
                 // Change the wrapper class only if user did not configure custom one.
-                $options['wrapperClass'] = PrimaryReadReplicaConnection::class;
+                $options['wrapperClass'] = class_exists(PrimaryReadReplicaConnection::class) ?
+                    PrimaryReadReplicaConnection::class : // dbal >= 2.11
+                    MasterSlaveConnection::class; // dbal < 2.11
             }
         } else {
             unset($options['slaves'], $options['replica']);
@@ -437,12 +449,7 @@ class DoctrineExtension extends AbstractDoctrineExtension
             $container->getDefinition('form.type.entity')->addTag('kernel.reset', ['method' => 'reset']);
         }
 
-        // available in Symfony 5.4 and higher
-        if (! class_exists(DoctrineDbalCacheAdapterSchemaSubscriber::class)) {
-            $container->removeDefinition('doctrine.orm.listeners.doctrine_dbal_cache_adapter_schema_subscriber');
-        }
-
-        // available in Symfony 5.1 and up to Symfony 5.4 (deprecated)
+        // available in Symfony 5.1 and higher
         if (! class_exists(PdoCacheAdapterDoctrineSchemaSubscriber::class)) {
             $container->removeDefinition('doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber');
         }
@@ -863,12 +870,8 @@ class DoctrineExtension extends AbstractDoctrineExtension
         return 'Entity';
     }
 
-    protected function getMappingResourceConfigDirectory(?string $bundleDir = null): string
+    protected function getMappingResourceConfigDirectory(): string
     {
-        if ($bundleDir !== null && is_dir($bundleDir . '/config/doctrine')) {
-            return 'config/doctrine';
-        }
-
         return 'Resources/config/doctrine';
     }
 

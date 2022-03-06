@@ -1,0 +1,26 @@
+{% include 'includes/admin_head.html.twig' %}
+<h1 style="float: left">Gestion des mandataires</h1>
+<a href="{{ path('ajoutMandataire') }}"><button type="button" class="btn btn-success">Nouveau mandataire</button></a>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Nombre de locations</th>
+        <th scope="col" style="width: 71rem;">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for users in users %}
+        <tr>
+            <th scope="row">{{ users.id }}</th>
+            <td>{{ users.name }}</td>
+            <td>{{ users.firstname }}</td>
+            <td>0</td>
+            <td><a href="#">Mettre à jour</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% include 'includes/_footer.html.twig' %}

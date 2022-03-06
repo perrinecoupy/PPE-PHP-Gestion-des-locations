@@ -69,10 +69,7 @@ class PackageJsonSynchronizer
 
         foreach (['dependencies' => $jsDependencies, 'devDependencies' => $jsDevDependencies] as $key => $packages) {
             foreach ($packages as $name => $version) {
-                if ('@' !== $name[0] || 0 !== strpos($version, 'file:'.$this->vendorDir.'/') || false === strpos($version, '/assets')) {
-                    continue;
-                }
-                if (file_exists($this->rootDir.'/'.substr($version, 5).'/package.json')) {
+                if ('@' !== $name[0] || 0 !== strpos($version, 'file:') || false === strpos($version, '/assets')) {
                     continue;
                 }
 
@@ -228,10 +225,12 @@ class PackageJsonSynchronizer
      */
     private function compactConstraints(array $constraints): string
     {
-        foreach ($constraints as $k1 => $constraint1) {
-            foreach ($constraints as $k2 => $constraint2) {
-                if ($k1 !== $k2 && Intervals::isSubsetOf($constraint1, $constraint2)) {
-                    unset($constraints[$k2]);
+        if (method_exists(Intervals::class, 'isSubsetOf')) {
+            foreach ($constraints as $k1 => $constraint1) {
+                foreach ($constraints as $k2 => $constraint2) {
+                    if ($k1 !== $k2 && Intervals::isSubsetOf($constraint1, $constraint2)) {
+                        unset($constraints[$k2]);
+                    }
                 }
             }
         }

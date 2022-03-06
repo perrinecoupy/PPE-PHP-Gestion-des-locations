@@ -30,16 +30,20 @@ abstract class ManagerRegistry extends AbstractManagerRegistry
 
     /**
      * {@inheritdoc}
+     *
+     * @return object
      */
-    protected function getService($name): object
+    protected function getService($name)
     {
         return $this->container->get($name);
     }
 
     /**
      * {@inheritdoc}
+     *
+     * @return void
      */
-    protected function resetService($name): void
+    protected function resetService($name)
     {
         if (!$this->container->initialized($name)) {
             return;
@@ -55,7 +59,7 @@ abstract class ManagerRegistry extends AbstractManagerRegistry
                     $name = $this->aliases[$name];
                 }
                 if (isset($this->fileMap[$name])) {
-                    $wrappedInstance = $this->load($this->fileMap[$name], false);
+                    $wrappedInstance = $this->load($this->fileMap[$name]);
                 } else {
                     $wrappedInstance = $this->{$this->methodMap[$name]}(false);
                 }

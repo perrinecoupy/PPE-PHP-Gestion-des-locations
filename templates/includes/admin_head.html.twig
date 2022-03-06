@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Menu de navigation -->
+    <nav class="navbar-background">
+        <div class="infos-accueil">
+            <a href="{{ path('index')}}" class="link-home links-navbar">LOGO</a>
+            <a href="{{ path('index') }}" class="links-navbar-accueil">ACCUEIL</a>
+            <a href="#" class="links-navbar-accueil">BIENS</a>
+            <a href="{{ path('locataires') }}" class="links-navbar-accueil">LOCATAIRES</a>
+            <a href="{{ path('mandataires') }}" class="links-navbar-accueil">MANDATAIRES</a>
+        </div>
+        <div class="infos-user">
+            <i class="far fa-user-circle fa-2x"></i><a href="profil.php" class="links-navbar">Mon profil</a>
+            <a href="logout.php" class="links-navbar">Déconnexion</a>
+        </div>
+    </nav>
+{% endblock %}
