@@ -1,27 +1,30 @@
 {% extends 'base.html.twig' %}
+
 {% block content %}
-<h1 style="float: left">Gestion des mandataires</h1>
-<a href="{{ path('ajoutMandataire') }}"><button type="button" class="btn btn-success">Nouveau mandataire</button></a>
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nom</th>
-        <th scope="col">Prénom</th>
-        <th scope="col">Nombre de locations</th>
-        <th scope="col" style="width: 71rem;">Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for users in users %}
-        <tr>
-            <th scope="row">{{ users.id }}</th>
-            <td>{{ users.name }}</td>
-            <td>{{ users.firstname }}</td>
-            <td>0</td>
-            <td><a href="{{ path('modificationMandataire', {id: users.id}) }}">Mettre à jour</a></td>
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
+    <div class="block">
+        <h1 style="float: left">Gestion des mandataires</h1>
+        <a href="{{ path('ajoutMandataire') }}"><button type="button" class="btn btn-success btn-ajout">Nouveau mandataire</button></a>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Nombre de locations</th>
+                <th scope="col" style="width: 71rem;">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for users in users %}
+                <tr>
+                    <th scope="row">{{ users.id }}</th>
+                    <td>{{ users.name }}</td>
+                    <td>{{ users.firstname }}</td>
+                    <td>0</td>
+                    <td><button class="btn btn-secondary"><a href="{{ path('modificationMandataire', {id: users.id}) }}" class="link-update">Mettre à jour</a></button></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

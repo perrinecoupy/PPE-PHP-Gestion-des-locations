@@ -73,11 +73,14 @@ class __TwigTemplate_35f380ddf3df52032bfd659e13d177f2ed320668c3b676bbb02b3433297
         echo " ";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 5, $this->source); })()), "user", [], "any", false, false, false, 5), "name", [], "any", false, false, false, 5), "html", null, true);
         echo "</h1>
-            <p>Vous êtes inscrit en tant que <strong>locataire</strong> sur la plateforme</p>
+            <p>Vous êtes inscrit en tant que <strong>";
+        // line 6
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 6, $this->source); })()), "user", [], "any", false, false, false, 6), "roles", [], "any", false, false, false, 6), 0, [], "array", false, false, false, 6), "html", null, true);
+        echo "</strong> sur la plateforme</p>
 
             <h2>Actions :</h2>
-            <a href=\"\">>Afficher mes locations</a>
-            <br><a href=\"\">>Supprimer mon compte</a>
+            <a href=\"#\" class=\"user-infos\">>Afficher mes locations</a>
+            <br><a href=\"#\" class=\"user-infos\">>Supprimer mon compte</a>
         </div>
 
         </div>
@@ -102,7 +105,7 @@ class __TwigTemplate_35f380ddf3df52032bfd659e13d177f2ed320668c3b676bbb02b3433297
 
     public function getDebugInfo()
     {
-        return array (  72 => 5,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  78 => 6,  72 => 5,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -112,11 +115,11 @@ class __TwigTemplate_35f380ddf3df52032bfd659e13d177f2ed320668c3b676bbb02b3433297
 
         <div style=\"margin-left: 5%;margin-top: 3%\">
             <h1>{{ app.user.firstname }} {{ app.user.name }}</h1>
-            <p>Vous êtes inscrit en tant que <strong>locataire</strong> sur la plateforme</p>
+            <p>Vous êtes inscrit en tant que <strong>{{ app.user.roles[0] }}</strong> sur la plateforme</p>
 
             <h2>Actions :</h2>
-            <a href=\"\">>Afficher mes locations</a>
-            <br><a href=\"\">>Supprimer mon compte</a>
+            <a href=\"#\" class=\"user-infos\">>Afficher mes locations</a>
+            <br><a href=\"#\" class=\"user-infos\">>Supprimer mon compte</a>
         </div>
 
         </div>

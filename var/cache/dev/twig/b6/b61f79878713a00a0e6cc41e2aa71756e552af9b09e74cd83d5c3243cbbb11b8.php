@@ -52,18 +52,43 @@ class __TwigTemplate_316af53266f1b626e91fa59c3055bc9e1b8273c7bcbb8c4dda1730f1ecb
         // line 6
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
         echo "\" class=\"links-navbar-accueil\">ACCUEIL</a>
-                <a href=\"#\" class=\"links-navbar-accueil\">BIENS</a>
-            <a href=\"";
-        // line 8
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("locataires");
-        echo "\" class=\"links-navbar-accueil\">LOCATAIRES</a>
-            <a href=\"";
-        // line 9
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mandataires");
-        echo "\" class=\"links-navbar-accueil\">MANDATAIRES</a>
-        </div>
+            ";
+        // line 7
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 8
+            echo "                <a href=\"#\" class=\"links-navbar-accueil\">BIENS</a>
+                <a href=\"";
+            // line 9
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("locataires");
+            echo "\" class=\"links-navbar-accueil\">LOCATAIRES</a>
+                <a href=\"";
+            // line 10
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mandataires");
+            echo "\" class=\"links-navbar-accueil\">MANDATAIRES</a>
+            ";
+        }
+        // line 12
+        echo "            ";
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_TENANT")) {
+            // line 13
+            echo "                <a href=\"#\" class=\"links-navbar-accueil\">BIENS</a>
+                <a href=\"";
+            // line 14
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mandataires");
+            echo "\" class=\"links-navbar-accueil\">MANDATAIRES</a>
+            ";
+        }
+        // line 16
+        echo "            ";
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_REPRESENTATIVE")) {
+            // line 17
+            echo "                <a href=\"#\" class=\"links-navbar-accueil\">BIENS</a>
+            ";
+        }
+        // line 19
+        echo "        </div>
         <div class=\"infos-user\">
-            <i class=\"far fa-user-circle fa-2x\"></i><a href=\"#\" class=\"links-navbar\">MON PROFIL</a>
+            <a href=\"#\" class=\"links-navbar profil\"><i class=\"far fa-user-circle fa-2x\"></i>MON PROFIL</a>
         </div>
     </nav>";
         
@@ -86,7 +111,7 @@ class __TwigTemplate_316af53266f1b626e91fa59c3055bc9e1b8273c7bcbb8c4dda1730f1ecb
 
     public function getDebugInfo()
     {
-        return array (  62 => 9,  58 => 8,  53 => 6,  49 => 5,  43 => 1,);
+        return array (  89 => 19,  85 => 17,  82 => 16,  77 => 14,  74 => 13,  71 => 12,  66 => 10,  62 => 9,  59 => 8,  57 => 7,  53 => 6,  49 => 5,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -97,12 +122,21 @@ class __TwigTemplate_316af53266f1b626e91fa59c3055bc9e1b8273c7bcbb8c4dda1730f1ecb
         <div class=\"infos-accueil\">
             <a href=\"{{ path('index')}}\" class=\"link-home links-navbar\">LOGO</a>
             <a href=\"{{ path('index') }}\" class=\"links-navbar-accueil\">ACCUEIL</a>
+            {% if is_granted('ROLE_ADMIN') %}
                 <a href=\"#\" class=\"links-navbar-accueil\">BIENS</a>
-            <a href=\"{{ path('locataires') }}\" class=\"links-navbar-accueil\">LOCATAIRES</a>
-            <a href=\"{{ path('mandataires') }}\" class=\"links-navbar-accueil\">MANDATAIRES</a>
+                <a href=\"{{ path('locataires') }}\" class=\"links-navbar-accueil\">LOCATAIRES</a>
+                <a href=\"{{ path('mandataires') }}\" class=\"links-navbar-accueil\">MANDATAIRES</a>
+            {% endif %}
+            {% if is_granted('ROLE_TENANT') %}
+                <a href=\"#\" class=\"links-navbar-accueil\">BIENS</a>
+                <a href=\"{{ path('mandataires') }}\" class=\"links-navbar-accueil\">MANDATAIRES</a>
+            {% endif %}
+            {% if is_granted('ROLE_REPRESENTATIVE') %}
+                <a href=\"#\" class=\"links-navbar-accueil\">BIENS</a>
+            {% endif %}
         </div>
         <div class=\"infos-user\">
-            <i class=\"far fa-user-circle fa-2x\"></i><a href=\"#\" class=\"links-navbar\">MON PROFIL</a>
+            <a href=\"#\" class=\"links-navbar profil\"><i class=\"far fa-user-circle fa-2x\"></i>MON PROFIL</a>
         </div>
     </nav>", "includes/admin_head.html.twig", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\includes\\admin_head.html.twig");
     }

@@ -50,16 +50,17 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css\" integrity=\"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2\" crossorigin=\"anonymous\">
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx\" crossorigin=\"anonymous\"></script>
     <script src=\"script.js\"></script>
+    <script src=\"https://kit.fontawesome.com/d8cf10d130.js\" crossorigin=\"anonymous\"></script>
     ";
-        // line 8
+        // line 9
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 12
+        // line 14
         echo "</head>
 <body>
 ";
-        // line 14
+        // line 16
         $this->displayBlock('body', $context, $blocks);
-        // line 34
+        // line 36
         echo "
     </body>
 </html>";
@@ -71,7 +72,7 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
 
     }
 
-    // line 8
+    // line 9
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -81,13 +82,17 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 9
+        // line 10
         echo "        <link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/head.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 10
+        // line 11
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/footer.css"), "html", null, true);
+        echo "\">
+        <link rel=\"stylesheet\" href=\"";
+        // line 12
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/style.css"), "html", null, true);
         echo "\">
     ";
         
@@ -98,7 +103,7 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
 
     }
 
-    // line 14
+    // line 16
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -108,15 +113,15 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 15
+        // line 17
         echo "    ";
-        $this->loadTemplate("includes/admin_head.html.twig", "base.html.twig", 15)->display($context);
-        // line 16
+        $this->loadTemplate("includes/admin_head.html.twig", "base.html.twig", 17)->display($context);
+        // line 18
         echo "    ";
         $this->displayBlock('content', $context, $blocks);
-        // line 32
+        // line 34
         echo "        ";
-        $this->loadTemplate("includes/_footer.html.twig", "base.html.twig", 32)->display($context);
+        $this->loadTemplate("includes/_footer.html.twig", "base.html.twig", 34)->display($context);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -125,7 +130,7 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
 
     }
 
-    // line 16
+    // line 18
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -135,7 +140,7 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 17
+        // line 19
         echo "    <div id=\"footerText\">
         <div class=\"footerLeft\">
             <ul>
@@ -166,7 +171,7 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
 
     public function getDebugInfo()
     {
-        return array (  139 => 17,  129 => 16,  118 => 32,  115 => 16,  112 => 15,  102 => 14,  90 => 10,  85 => 9,  75 => 8,  63 => 34,  61 => 14,  57 => 12,  55 => 8,  46 => 1,);
+        return array (  144 => 19,  134 => 18,  123 => 34,  120 => 18,  117 => 17,  107 => 16,  95 => 12,  91 => 11,  86 => 10,  76 => 9,  64 => 36,  62 => 16,  58 => 14,  56 => 9,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -178,9 +183,11 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css\" integrity=\"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2\" crossorigin=\"anonymous\">
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx\" crossorigin=\"anonymous\"></script>
     <script src=\"script.js\"></script>
+    <script src=\"https://kit.fontawesome.com/d8cf10d130.js\" crossorigin=\"anonymous\"></script>
     {% block stylesheets %}
         <link rel=\"stylesheet\" href=\"{{ asset('css/head.css') }}\">
         <link rel=\"stylesheet\" href=\"{{ asset('css/footer.css') }}\">
+        <link rel=\"stylesheet\" href=\"{{ asset('css/style.css') }}\">
     {% endblock %}
 </head>
 <body>

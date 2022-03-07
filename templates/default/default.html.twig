@@ -3,11 +3,11 @@
 
         <div style="margin-left: 5%;margin-top: 3%">
             <h1>{{ app.user.firstname }} {{ app.user.name }}</h1>
-            <p>Vous êtes inscrit en tant que <strong>locataire</strong> sur la plateforme</p>
+            <p>Vous êtes inscrit en tant que <strong>{{ app.user.roles[0] }}</strong> sur la plateforme</p>
 
             <h2>Actions :</h2>
-            <a href="">>Afficher mes locations</a>
-            <br><a href="">>Supprimer mon compte</a>
+            <a href="#" class="user-infos">>Afficher mes locations</a>
+            <br><a href="#" class="user-infos">>Supprimer mon compte</a>
         </div>
 
         </div>

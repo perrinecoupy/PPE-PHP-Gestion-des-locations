@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cefe9744-1f9e-4256-877a-27b52c0e1de2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/head.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/head.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/head.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/css/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/css/head.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/css/head.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/default/default.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/default.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/includes/admin_head.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/admin_head.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/locataires/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/locataires/create.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/locataires/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/locataires/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/mandataires/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mandataires/create.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/mandataires/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mandataires/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/App_KernelDevDebugContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/App_KernelDevDebugContainer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/App_KernelDevDebugContainer.preload.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/App_KernelDevDebugContainer.preload.php" afterDir="false" />
@@ -225,102 +222,102 @@
       <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/VKERtSTfq9/Z/D/JyIRr7K-LTF0sngJypQQ" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/VKERtSTfq9/Z/D/JyIRr7K-LTF0sngJypQQ" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/VKERtSTfq9/Z/K/KcgTDbcpZNtTZQlXTpsw" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/VKERtSTfq9/Z/K/KcgTDbcpZNtTZQlXTpsw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/VKERtSTfq9/Z/T/0GmLZYjDMDOZlPrYdK3A" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/VKERtSTfq9/Z/T/0GmLZYjDMDOZlPrYdK3A" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/03/1d/331d03" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/04/f9/7af904" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/08/19/be1908" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/0b/fd/51fd0b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/11/8d/268d11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/18/91/269118" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/19/78/677819" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/1a/64/98641a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/1a/72/49721a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/1a/82/18821a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/1a/eb/86eb1a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/1e/24/c6241e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/23/88/f48823" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/24/15/341524" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/25/9c/b19c25" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/29/72/9d7229" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/3c/de/0dde3c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/43/b8/2db843" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/45/b8/92b845" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/48/6a/3f6a48" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/4a/f6/8af64a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/4b/79/4f794b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/51/8d/388d51" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/54/f2/8ff254" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/55/01/fe0155" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/58/41/b04158" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/59/6b/5b6b59" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/5d/76/a7765d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/66/4d/974d66" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/66/78/ad7866" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/66/e2/d7e266" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/6b/36/58366b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/6e/c9/a8c96e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/70/99/5c9970" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/73/9c/159c73" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/74/ca/38ca74" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/75/55/d35575" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/77/3d/d93d77" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/79/18/de1879" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/7c/67/3b677c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/7c/86/1d867c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/7c/dc/c2dc7c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/81/0c/ef0c81" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/82/e3/25e382" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/83/6a/d96a83" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/84/a0/1fa084" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/88/d7/3dd788" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/89/46/374689" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/8c/e3/87e38c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/8e/b9/ffb98e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/8e/eb/c0eb8e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/8f/df/4cdf8f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/95/4e/9c4e95" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/95/9c/dc9c95" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/9c/ec/66ec9c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/9d/2a/cb2a9d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/9f/fd/3ffd9f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/a0/83/e483a0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/a1/c6/02c6a1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/a4/a1/58a1a4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/a5/39/4a39a5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/b2/72/5772b2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/b3/ab/8dabb3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/b4/e3/8ee3b4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/c0/fd/78fdc0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/c6/6d/d66dc6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/c9/16/1d16c9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/c9/3b/ee3bc9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/cc/83/ec83cc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/cc/df/b9dfcc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/cd/e3/53e3cd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/d7/de/16ded7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/da/f5/7cf5da" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/db/fa/18fadb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/df/8c/858cdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/e0/aa/65aae0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/e1/b8/64b8e1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/e2/ba/1fbae2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/e3/be/f5bee3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/e5/ae/33aee5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/e6/78/bb78e6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/e7/1f/dd1fe7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/e7/96/6d96e7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/ee/b5/77b5ee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/ef/ab/c4abef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/f0/40/a740f0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/f1/70/6070f1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/fa/2b/712bfa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/01/b5/9fb501" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/02/9d/5e9d02" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/0d/ed/4eed0d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/14/7f/8e7f14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/14/aa/94aa14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/17/a0/d1a017" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/1a/03/5b031a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/1a/50/66501a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/1b/82/6f821b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/1c/01/d6011c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/1e/c3/01c31e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/1f/35/a3351f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/20/5b/bc5b20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/25/4e/f44e25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/26/a2/75a226" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/27/64/5e6427" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/29/98/539829" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/2b/03/3b032b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/2b/9e/ce9e2b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/32/bc/98bc32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/34/69/3e6934" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/37/4b/0c4b37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/38/e0/60e038" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/3d/76/40763d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/3f/c1/4fc13f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/42/d2/8bd242" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/4c/cd/18cd4c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/51/ef/60ef51" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/53/72/187253" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/58/19/731958" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/59/3b/e03b59" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/5b/f4/67f45b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/5c/f7/fff75c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/5f/a6/30a65f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/61/a0/79a061" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/61/d2/1cd261" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/64/9c/ce9c64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/70/4a/e14a70" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/74/7f/ed7f74" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/75/2f/412f75" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/79/72/ef7279" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/7c/8a/968a7c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/7f/06/81067f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/7f/48/4f487f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/83/83/f08383" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/85/f8/b7f885" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/88/a2/0ea288" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/89/18/641889" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/8c/b7/f9b78c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/9e/bc/d1bc9e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/9e/da/ceda9e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/a0/8e/f18ea0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/a0/ac/a6aca0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/a3/2c/ae2ca3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/ad/fa/fdfaad" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/b1/e7/d1e7b1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/b3/46/5846b3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/b3/ca/57cab3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/b9/b0/ccb0b9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/bf/fb/21fbbf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/c2/2f/a42fc2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/c2/8d/ad8dc2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/c4/a9/4ea9c4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/c5/f2/3cf2c5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/cb/fe/5cfecb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/d0/a8/59a8d0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/d0/b7/91b7d0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/d1/10/4f10d1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/d2/9a/519ad2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/d7/7b/367bd7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/d9/be/90bed9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/da/1e/351eda" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/da/b9/6eb9da" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/dc/89/b289dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/dc/a0/09a0dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/de/d0/c9d0de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/e1/66/6a66e1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/e8/86/9386e8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/ef/e2/ebe2ef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/f0/33/d733f0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/f1/b7/85b7f1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/f2/25/2725f2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/f3/25/a625f3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/f4/5a/bc5af4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/f4/85/7c85f4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/f8/56/1656f8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/f8/a4/cba4f8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/f9/e8/36e8f9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/fa/87/fe87fa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/fc/9d/199dfc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/38/380d5c1bcf5650c4b77d024b9b1fa6f79fb29ede700b56b8b80265fe9e3005ee.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/38/380d5c1bcf5650c4b77d024b9b1fa6f79fb29ede700b56b8b80265fe9e3005ee.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/51/51989cc762f987341fb38bafe0910fec2ba4ef62ee34607b3126ddb17a9d2989.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/51/51989cc762f987341fb38bafe0910fec2ba4ef62ee34607b3126ddb17a9d2989.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/7a/7ab38caf061386a35564c1fce0dd3995d0988cb3bba7a4a46c24d64ae776942d.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/7a/7ab38caf061386a35564c1fce0dd3995d0988cb3bba7a4a46c24d64ae776942d.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/94/94b491387b9965971cb7ae701d14ba9ad6b39b286abe06c700fbcacd0b5c75bd.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/94/94b491387b9965971cb7ae701d14ba9ad6b39b286abe06c700fbcacd0b5c75bd.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/9b/9b5d9b22f7c682a5ef484aa8e035f1d2f0a41ff6522a10ed732bae7f3cdb4804.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/9b/9b5d9b22f7c682a5ef484aa8e035f1d2f0a41ff6522a10ed732bae7f3cdb4804.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/b6/b61f79878713a00a0e6cc41e2aa71756e552af9b09e74cd83d5c3243cbbb11b8.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/b6/b61f79878713a00a0e6cc41e2aa71756e552af9b09e74cd83d5c3243cbbb11b8.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/cc/cc286b3d2f3e2cb90b021a06477a624431665ad8b460cb01534a32f39198f695.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/cc/cc286b3d2f3e2cb90b021a06477a624431665ad8b460cb01534a32f39198f695.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/d3/d39613d50a96e90bcd631f0ee5bdcb355496c1a91bfc1230777cc41602d4478e.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/d3/d39613d50a96e90bcd631f0ee5bdcb355496c1a91bfc1230777cc41602d4478e.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/d4/d4da4547617be92b181091113e488bcd7afd21c8a875d631f8161c08a0bfe330.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/d4/d4da4547617be92b181091113e488bcd7afd21c8a875d631f8161c08a0bfe330.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/e3/e3f20bbe31baba83d3aea002aeb369f300d1f9ccf72ffddcf511bb5246052256.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/e3/e3f20bbe31baba83d3aea002aeb369f300d1f9ccf72ffddcf511bb5246052256.php" afterDir="false" />
     </list>
@@ -332,6 +329,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -441,6 +445,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -461,7 +466,7 @@
       <workItem from="1646641553914" duration="182000" />
       <workItem from="1646642507359" duration="7449000" />
       <workItem from="1646651473202" duration="699000" />
-      <workItem from="1646655664162" duration="1524000" />
+      <workItem from="1646655664162" duration="6842000" />
     </task>
     <servers />
   </component>

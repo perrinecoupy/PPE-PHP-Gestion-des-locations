@@ -15,7 +15,7 @@ p.errorMessage {
 .fa-user-circle {
     color: #FFFFFF;
     position: absolute;
-    margin-left: -20px;
+    margin-left: -40px;
 }
 
 /* Taille des input dans le formulaire de connexion */
@@ -111,6 +111,15 @@ p.errorMessage {
     font-family: inherit;
     letter-spacing: -3px;
     font-size: 40px;
+}
+
+.profil {
+    color: #FFFFFF;
+}
+
+.profil:hover {
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 .row {
