@@ -1,8 +1,8 @@
-{% include 'includes/admin_head.html.twig' %}
+{% extends 'base.html.twig' %}
 {% block body %}
 
         <div style="margin-left: 5%;margin-top: 3%">
-            <h1>White Gordon</h1>
+            <h1>{{ app.user.firstname }} {{ app.user.name }}</h1>
             <p>Vous êtes inscrit en tant que <strong>locataire</strong> sur la plateforme</p>
 
             <h2>Actions :</h2>
@@ -12,4 +12,3 @@
 
         </div>
 {% endblock %}
-{% include 'includes/_footer.html.twig' %}

@@ -46,10 +46,10 @@ class __TwigTemplate_6ff1f8145f805486058ebc332b2e9ec397dfbea4423662595b6131daba6
 <div class=\"detail-serie\">
     <h2 class=\"title-detail-serie\">3 biens</h2>
     <a href=\"view.php\" class=\"link-view-serie\"><div>
-            <img src=\"ressources/img/test.png\" alt=\"Image de la série\" class=\"img-serie\">
+            <img src=\"ressources/img/test.png\" alt=\"Image de la sï¿½rie\" class=\"img-serie\">
         </div>
         <div class=\"title-series\">
-            <h4>Grey's Anatomy</h4>
+            <h4>#</h4>
             <p class=\"info-serie\"><i class=\"fas fa-calendar-week\"></i>#</p>
             <p class=\"info-serie\"><i class=\"fas fa-exclamation-circle space-info\"></i>#</p>
             <p class=\"info-serie space-info bg-status-serie\">#</p>
@@ -91,10 +91,10 @@ class __TwigTemplate_6ff1f8145f805486058ebc332b2e9ec397dfbea4423662595b6131daba6
 <div class=\"detail-serie\">
     <h2 class=\"title-detail-serie\">3 biens</h2>
     <a href=\"view.php\" class=\"link-view-serie\"><div>
-            <img src=\"ressources/img/test.png\" alt=\"Image de la série\" class=\"img-serie\">
+            <img src=\"ressources/img/test.png\" alt=\"Image de la sï¿½rie\" class=\"img-serie\">
         </div>
         <div class=\"title-series\">
-            <h4>Grey's Anatomy</h4>
+            <h4>#</h4>
             <p class=\"info-serie\"><i class=\"fas fa-calendar-week\"></i>#</p>
             <p class=\"info-serie\"><i class=\"fas fa-exclamation-circle space-info\"></i>#</p>
             <p class=\"info-serie space-info bg-status-serie\">#</p>

@@ -24,11 +24,15 @@ class __TwigTemplate_35f380ddf3df52032bfd659e13d177f2ed320668c3b676bbb02b3433297
 
         $this->source = $this->getSourceContext();
 
-        $this->parent = false;
-
         $this->blocks = [
             'body' => [$this, 'block_body'],
         ];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 1
+        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -40,12 +44,8 @@ class __TwigTemplate_35f380ddf3df52032bfd659e13d177f2ed320668c3b676bbb02b3433297
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "default/default.html.twig"));
 
-        // line 1
-        $this->loadTemplate("includes/admin_head.html.twig", "default/default.html.twig", 1)->display($context);
-        // line 2
-        $this->displayBlock('body', $context, $blocks);
-        // line 15
-        $this->loadTemplate("includes/_footer.html.twig", "default/default.html.twig", 15)->display($context);
+        $this->parent = $this->loadTemplate("base.html.twig", "default/default.html.twig", 1);
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -67,7 +67,12 @@ class __TwigTemplate_35f380ddf3df52032bfd659e13d177f2ed320668c3b676bbb02b3433297
         // line 3
         echo "
         <div style=\"margin-left: 5%;margin-top: 3%\">
-            <h1>White Gordon</h1>
+            <h1>";
+        // line 5
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 5, $this->source); })()), "user", [], "any", false, false, false, 5), "firstname", [], "any", false, false, false, 5), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 5, $this->source); })()), "user", [], "any", false, false, false, 5), "name", [], "any", false, false, false, 5), "html", null, true);
+        echo "</h1>
             <p>Vous êtes inscrit en tant que <strong>locataire</strong> sur la plateforme</p>
 
             <h2>Actions :</h2>
@@ -97,16 +102,16 @@ class __TwigTemplate_35f380ddf3df52032bfd659e13d177f2ed320668c3b676bbb02b3433297
 
     public function getDebugInfo()
     {
-        return array (  68 => 3,  58 => 2,  48 => 15,  46 => 2,  44 => 1,);
+        return array (  72 => 5,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% include 'includes/admin_head.html.twig' %}
+        return new Source("{% extends 'base.html.twig' %}
 {% block body %}
 
         <div style=\"margin-left: 5%;margin-top: 3%\">
-            <h1>White Gordon</h1>
+            <h1>{{ app.user.firstname }} {{ app.user.name }}</h1>
             <p>Vous êtes inscrit en tant que <strong>locataire</strong> sur la plateforme</p>
 
             <h2>Actions :</h2>
@@ -116,6 +121,6 @@ class __TwigTemplate_35f380ddf3df52032bfd659e13d177f2ed320668c3b676bbb02b3433297
 
         </div>
 {% endblock %}
-{% include 'includes/_footer.html.twig' %}", "default/default.html.twig", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\default\\default.html.twig");
+", "default/default.html.twig", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\default\\default.html.twig");
     }
 }

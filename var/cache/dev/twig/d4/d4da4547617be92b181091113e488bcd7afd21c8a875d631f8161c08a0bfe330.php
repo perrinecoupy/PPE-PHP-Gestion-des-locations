@@ -57,8 +57,12 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
 <body>
 ";
         // line 14
+        $this->loadTemplate("includes/admin_head.html.twig", "base.html.twig", 14)->display($context);
+        // line 15
         $this->displayBlock('body', $context, $blocks);
-        // line 96
+        // line 31
+        $this->loadTemplate("includes/_footer.html.twig", "base.html.twig", 31)->display($context);
+        // line 32
         echo "    </body>
 </html>";
         
@@ -96,7 +100,7 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
 
     }
 
-    // line 14
+    // line 15
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -106,93 +110,22 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 15
-        echo "    ";
-        $this->loadTemplate("includes/_head.html.twig", "base.html.twig", 15)->display($context);
         // line 16
-        echo "        <!--<img src=\"<br />
-        <b>Warning</b>:  Undefined variable \$donnees in <b>C:\\xampp\\htdocs\\My Series Companion\\serie.php</b> on line <b>21</b><br />
-        <br />
-        <b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\\xampp\\htdocs\\My Series Companion\\serie.php</b> on line <b>21</b><br />
-        images/\" alt=\"...\">-->
-
-        <h1>Mes Séries</h1>
-
-        <div class=\"btnSerie\">
-            <div>
-                <img src=\"img/marsu.jpg\" alt=\"...\"></div>
-                <div>
-                    <div>
-                        <h3>Marsupilami</h3>
-                    </div>
-                    <div class=\"serieInfo\">
-                        <p><i class=\"fas fa-calendar\"></i> 2021-10-09</p>
-                        <p><i class=\"fas fa-exclamation-circle\"></i> Saison 4</p>
-                        <p>Episode 1</p>
-                        <p class=\"duree\">Terminer</p>
-                        <p class=\"cat\">Aventure</p>
-                    </div>
-                    <div>
-                        <p>Le marsupilami</p>
-                    </div>
-                </div>
-                <div>
-                    <a class=\"btn\" href=\"\"><h1>></h1></a>
-                </div>
-            </div>
+        echo "    <div id=\"footerText\">
+        <div class=\"footerLeft\">
+            <ul>
+                <li class=\"infos\">Gestion locative</li>
+                <li class=\"infos\">Contact telephone : 06 06 06 06 06</li>
+                <li class=\"email-contact\">Contact email : contact@gestionlocative.fr</li>
+            </ul>
         </div>
-        <div class=\"btnSerie\">
-            <div>
-                <img src=\"img/f2r.jpg\" alt=\"...\"></div>
-                <div>
-                    <div>
-                        <h3>Foot 2 Rue</h3>
-                    </div>
-                    <div class=\"serieInfo\">
-                        <p><i class=\"fas fa-calendar\"></i> 2021-10-09</p>
-                        <p><i class=\"fas fa-exclamation-circle\"></i> Saison 2</p>
-                        <p>Episode 6</p>
-                        <p class=\"duree\">Terminer</p>
-                        <p class=\"cat\">Sport</p>
-                    </div>
-                    <div>
-                        <p>Tag l'orphelin joue au foot avec des clodos.</p>
-                    </div>
-                </div>
-                <div>
-                    <a class=\"btn\" href=\"\"><h1>></h1></a>
-                </div>
-            </div>
+        <div class=\"footerRight\">
+            <ul>
+                <li class=\"infos-version\">Version 1.0</li>
+            </ul>
         </div>
-        <div class=\"btnSerie\">
-            <div>
-                <img src=\"img/tortues.jpg\" alt=\"...\"></div>
-                <div>
-                    <div>
-                        <h3>Tortues Ninja</h3>
-                    </div>
-                    <div class=\"serieInfo\">
-                        <p><i class=\"fas fa-calendar\"></i> 2012-10-09</p>
-                        <p><i class=\"fas fa-exclamation-circle\"></i> Saison 1</p>
-                        <p>Episode 11</p>
-                        <p class=\"duree\">Terminer</p>
-                        <p class=\"cat\">Action</p>
-                    </div>
-                    <div>
-                        <p>Tortues mutans contre un méchant</p>
-                    </div>
-                </div>
-                <div>
-                    <a class=\"btn\" href=\"\"><h1>></h1></a>
-                </div>
-            </div>
-        </div>
-
-        ";
-        // line 94
-        $this->loadTemplate("footer.html.twig", "base.html.twig", 94)->display($context);
-        // line 95
-        echo "        ";
+    </div>
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -206,9 +139,14 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  195 => 95,  193 => 94,  113 => 16,  110 => 15,  100 => 14,  88 => 10,  83 => 9,  73 => 8,  62 => 96,  60 => 14,  56 => 12,  54 => 8,  45 => 1,);
+        return array (  114 => 16,  104 => 15,  92 => 10,  87 => 9,  77 => 8,  66 => 32,  64 => 31,  62 => 15,  60 => 14,  56 => 12,  54 => 8,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -226,88 +164,24 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
     {% endblock %}
 </head>
 <body>
+{% include 'includes/admin_head.html.twig' %}
 {% block body %}
-    {% include 'includes/_head.html.twig' %}
-        <!--<img src=\"<br />
-        <b>Warning</b>:  Undefined variable \$donnees in <b>C:\\xampp\\htdocs\\My Series Companion\\serie.php</b> on line <b>21</b><br />
-        <br />
-        <b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\\xampp\\htdocs\\My Series Companion\\serie.php</b> on line <b>21</b><br />
-        images/\" alt=\"...\">-->
-
-        <h1>Mes Séries</h1>
-
-        <div class=\"btnSerie\">
-            <div>
-                <img src=\"img/marsu.jpg\" alt=\"...\"></div>
-                <div>
-                    <div>
-                        <h3>Marsupilami</h3>
-                    </div>
-                    <div class=\"serieInfo\">
-                        <p><i class=\"fas fa-calendar\"></i> 2021-10-09</p>
-                        <p><i class=\"fas fa-exclamation-circle\"></i> Saison 4</p>
-                        <p>Episode 1</p>
-                        <p class=\"duree\">Terminer</p>
-                        <p class=\"cat\">Aventure</p>
-                    </div>
-                    <div>
-                        <p>Le marsupilami</p>
-                    </div>
-                </div>
-                <div>
-                    <a class=\"btn\" href=\"\"><h1>></h1></a>
-                </div>
-            </div>
+    <div id=\"footerText\">
+        <div class=\"footerLeft\">
+            <ul>
+                <li class=\"infos\">Gestion locative</li>
+                <li class=\"infos\">Contact telephone : 06 06 06 06 06</li>
+                <li class=\"email-contact\">Contact email : contact@gestionlocative.fr</li>
+            </ul>
         </div>
-        <div class=\"btnSerie\">
-            <div>
-                <img src=\"img/f2r.jpg\" alt=\"...\"></div>
-                <div>
-                    <div>
-                        <h3>Foot 2 Rue</h3>
-                    </div>
-                    <div class=\"serieInfo\">
-                        <p><i class=\"fas fa-calendar\"></i> 2021-10-09</p>
-                        <p><i class=\"fas fa-exclamation-circle\"></i> Saison 2</p>
-                        <p>Episode 6</p>
-                        <p class=\"duree\">Terminer</p>
-                        <p class=\"cat\">Sport</p>
-                    </div>
-                    <div>
-                        <p>Tag l'orphelin joue au foot avec des clodos.</p>
-                    </div>
-                </div>
-                <div>
-                    <a class=\"btn\" href=\"\"><h1>></h1></a>
-                </div>
-            </div>
+        <div class=\"footerRight\">
+            <ul>
+                <li class=\"infos-version\">Version 1.0</li>
+            </ul>
         </div>
-        <div class=\"btnSerie\">
-            <div>
-                <img src=\"img/tortues.jpg\" alt=\"...\"></div>
-                <div>
-                    <div>
-                        <h3>Tortues Ninja</h3>
-                    </div>
-                    <div class=\"serieInfo\">
-                        <p><i class=\"fas fa-calendar\"></i> 2012-10-09</p>
-                        <p><i class=\"fas fa-exclamation-circle\"></i> Saison 1</p>
-                        <p>Episode 11</p>
-                        <p class=\"duree\">Terminer</p>
-                        <p class=\"cat\">Action</p>
-                    </div>
-                    <div>
-                        <p>Tortues mutans contre un méchant</p>
-                    </div>
-                </div>
-                <div>
-                    <a class=\"btn\" href=\"\"><h1>></h1></a>
-                </div>
-            </div>
-        </div>
-
-        {% include 'footer.html.twig' %}
-        {% endblock %}
+    </div>
+{% endblock %}
+{% include 'includes/_footer.html.twig' %}
     </body>
 </html>", "base.html.twig", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\base.html.twig");
     }

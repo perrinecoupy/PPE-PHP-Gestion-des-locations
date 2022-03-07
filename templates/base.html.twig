@@ -11,87 +11,23 @@
     {% endblock %}
 </head>
 <body>
+{% include 'includes/admin_head.html.twig' %}
 {% block body %}
-    {% include 'includes/_head.html.twig' %}
-        <!--<img src="<br />
-        <b>Warning</b>:  Undefined variable $donnees in <b>C:\xampp\htdocs\My Series Companion\serie.php</b> on line <b>21</b><br />
-        <br />
-        <b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\My Series Companion\serie.php</b> on line <b>21</b><br />
-        images/" alt="...">-->
-
-        <h1>Mes Séries</h1>
-
-        <div class="btnSerie">
-            <div>
-                <img src="img/marsu.jpg" alt="..."></div>
-                <div>
-                    <div>
-                        <h3>Marsupilami</h3>
-                    </div>
-                    <div class="serieInfo">
-                        <p><i class="fas fa-calendar"></i> 2021-10-09</p>
-                        <p><i class="fas fa-exclamation-circle"></i> Saison 4</p>
-                        <p>Episode 1</p>
-                        <p class="duree">Terminer</p>
-                        <p class="cat">Aventure</p>
-                    </div>
-                    <div>
-                        <p>Le marsupilami</p>
-                    </div>
-                </div>
-                <div>
-                    <a class="btn" href=""><h1>></h1></a>
-                </div>
-            </div>
+    <div id="footerText">
+        <div class="footerLeft">
+            <ul>
+                <li class="infos">Gestion locative</li>
+                <li class="infos">Contact telephone : 06 06 06 06 06</li>
+                <li class="email-contact">Contact email : contact@gestionlocative.fr</li>
+            </ul>
         </div>
-        <div class="btnSerie">
-            <div>
-                <img src="img/f2r.jpg" alt="..."></div>
-                <div>
-                    <div>
-                        <h3>Foot 2 Rue</h3>
-                    </div>
-                    <div class="serieInfo">
-                        <p><i class="fas fa-calendar"></i> 2021-10-09</p>
-                        <p><i class="fas fa-exclamation-circle"></i> Saison 2</p>
-                        <p>Episode 6</p>
-                        <p class="duree">Terminer</p>
-                        <p class="cat">Sport</p>
-                    </div>
-                    <div>
-                        <p>Tag l'orphelin joue au foot avec des clodos.</p>
-                    </div>
-                </div>
-                <div>
-                    <a class="btn" href=""><h1>></h1></a>
-                </div>
-            </div>
+        <div class="footerRight">
+            <ul>
+                <li class="infos-version">Version 1.0</li>
+            </ul>
         </div>
-        <div class="btnSerie">
-            <div>
-                <img src="img/tortues.jpg" alt="..."></div>
-                <div>
-                    <div>
-                        <h3>Tortues Ninja</h3>
-                    </div>
-                    <div class="serieInfo">
-                        <p><i class="fas fa-calendar"></i> 2012-10-09</p>
-                        <p><i class="fas fa-exclamation-circle"></i> Saison 1</p>
-                        <p>Episode 11</p>
-                        <p class="duree">Terminer</p>
-                        <p class="cat">Action</p>
-                    </div>
-                    <div>
-                        <p>Tortues mutans contre un méchant</p>
-                    </div>
-                </div>
-                <div>
-                    <a class="btn" href=""><h1>></h1></a>
-                </div>
-            </div>
-        </div>
-
-        {% include 'footer.html.twig' %}
-        {% endblock %}
+    </div>
+{% endblock %}
+{% include 'includes/_footer.html.twig' %}
     </body>
 </html>
