@@ -44,6 +44,7 @@ class __TwigTemplate_4270475e94a76acab165b7377bd55b90d8cca1214a987d7c2e26a634844
 \tdisplay: flex;
 \tbackground-color: rgba(0, 0, 0, 0.9);
 \tpadding: 50px;
+\tcolor: white;
 }
 
 li {
@@ -89,6 +90,7 @@ li {
 \tdisplay: flex;
 \tbackground-color: rgba(0, 0, 0, 0.9);
 \tpadding: 50px;
+\tcolor: white;
 }
 
 li {

@@ -29,6 +29,7 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
         $this->blocks = [
             'stylesheets' => [$this, 'block_stylesheets'],
             'body' => [$this, 'block_body'],
+            'content' => [$this, 'block_content'],
         ];
     }
 
@@ -57,13 +58,10 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
 <body>
 ";
         // line 14
-        $this->loadTemplate("includes/admin_head.html.twig", "base.html.twig", 14)->display($context);
-        // line 15
         $this->displayBlock('body', $context, $blocks);
-        // line 31
-        $this->loadTemplate("includes/_footer.html.twig", "base.html.twig", 31)->display($context);
-        // line 32
-        echo "    </body>
+        // line 34
+        echo "
+    </body>
 </html>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -100,7 +98,7 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
 
     }
 
-    // line 15
+    // line 14
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -110,7 +108,34 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
+        // line 15
+        echo "    ";
+        $this->loadTemplate("includes/admin_head.html.twig", "base.html.twig", 15)->display($context);
         // line 16
+        echo "    ";
+        $this->displayBlock('content', $context, $blocks);
+        // line 32
+        echo "        ";
+        $this->loadTemplate("includes/_footer.html.twig", "base.html.twig", 32)->display($context);
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 16
+    public function block_content($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
+
+        // line 17
         echo "    <div id=\"footerText\">
         <div class=\"footerLeft\">
             <ul>
@@ -125,7 +150,7 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
             </ul>
         </div>
     </div>
-";
+        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -139,14 +164,9 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
         return "base.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  114 => 16,  104 => 15,  92 => 10,  87 => 9,  77 => 8,  66 => 32,  64 => 31,  62 => 15,  60 => 14,  56 => 12,  54 => 8,  45 => 1,);
+        return array (  139 => 17,  129 => 16,  118 => 32,  115 => 16,  112 => 15,  102 => 14,  90 => 10,  85 => 9,  75 => 8,  63 => 34,  61 => 14,  57 => 12,  55 => 8,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -164,8 +184,9 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
     {% endblock %}
 </head>
 <body>
-{% include 'includes/admin_head.html.twig' %}
 {% block body %}
+    {% include 'includes/admin_head.html.twig' %}
+    {% block content %}
     <div id=\"footerText\">
         <div class=\"footerLeft\">
             <ul>
@@ -180,8 +201,10 @@ class __TwigTemplate_2fc2d92998f78732018e7b0d5549d041b357354f4b010cba8f2ad4b2c22
             </ul>
         </div>
     </div>
+        {% endblock %}
+        {% include 'includes/_footer.html.twig' %}
 {% endblock %}
-{% include 'includes/_footer.html.twig' %}
+
     </body>
 </html>", "base.html.twig", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\base.html.twig");
     }

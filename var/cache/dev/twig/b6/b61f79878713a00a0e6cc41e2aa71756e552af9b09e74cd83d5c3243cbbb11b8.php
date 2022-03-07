@@ -52,7 +52,7 @@ class __TwigTemplate_316af53266f1b626e91fa59c3055bc9e1b8273c7bcbb8c4dda1730f1ecb
         // line 6
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
         echo "\" class=\"links-navbar-accueil\">ACCUEIL</a>
-            <a href=\"#\" class=\"links-navbar-accueil\">BIENS</a>
+                <a href=\"#\" class=\"links-navbar-accueil\">BIENS</a>
             <a href=\"";
         // line 8
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("locataires");
@@ -97,7 +97,7 @@ class __TwigTemplate_316af53266f1b626e91fa59c3055bc9e1b8273c7bcbb8c4dda1730f1ecb
         <div class=\"infos-accueil\">
             <a href=\"{{ path('index')}}\" class=\"link-home links-navbar\">LOGO</a>
             <a href=\"{{ path('index') }}\" class=\"links-navbar-accueil\">ACCUEIL</a>
-            <a href=\"#\" class=\"links-navbar-accueil\">BIENS</a>
+                <a href=\"#\" class=\"links-navbar-accueil\">BIENS</a>
             <a href=\"{{ path('locataires') }}\" class=\"links-navbar-accueil\">LOCATAIRES</a>
             <a href=\"{{ path('mandataires') }}\" class=\"links-navbar-accueil\">MANDATAIRES</a>
         </div>

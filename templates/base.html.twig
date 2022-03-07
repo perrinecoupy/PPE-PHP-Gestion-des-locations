@@ -11,8 +11,9 @@
     {% endblock %}
 </head>
 <body>
-{% include 'includes/admin_head.html.twig' %}
 {% block body %}
+    {% include 'includes/admin_head.html.twig' %}
+    {% block content %}
     <div id="footerText">
         <div class="footerLeft">
             <ul>
@@ -27,7 +28,9 @@
             </ul>
         </div>
     </div>
+        {% endblock %}
+        {% include 'includes/_footer.html.twig' %}
 {% endblock %}
-{% include 'includes/_footer.html.twig' %}
+
     </body>
 </html>

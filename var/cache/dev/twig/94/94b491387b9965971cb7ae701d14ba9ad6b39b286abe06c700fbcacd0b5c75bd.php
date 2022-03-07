@@ -24,11 +24,15 @@ class __TwigTemplate_9d3fa80ad81d1bf2c265089562fd033f28a70ac38b1e3d7f4d0cb68afc2
 
         $this->source = $this->getSourceContext();
 
-        $this->parent = false;
-
         $this->blocks = [
-            'body' => [$this, 'block_body'],
+            'content' => [$this, 'block_content'],
         ];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 1
+        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -40,13 +44,8 @@ class __TwigTemplate_9d3fa80ad81d1bf2c265089562fd033f28a70ac38b1e3d7f4d0cb68afc2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "login/index.html.twig"));
 
-        // line 1
-        $this->loadTemplate("includes/_head.html.twig", "login/index.html.twig", 1)->display($context);
-        // line 2
-        echo "
-";
-        // line 3
-        $this->displayBlock('body', $context, $blocks);
+        $this->parent = $this->loadTemplate("base.html.twig", "login/index.html.twig", 1);
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -55,14 +54,15 @@ class __TwigTemplate_9d3fa80ad81d1bf2c265089562fd033f28a70ac38b1e3d7f4d0cb68afc2
 
     }
 
-    public function block_body($context, array $blocks = [])
+    // line 3
+    public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
         echo "    ";
@@ -101,10 +101,7 @@ class __TwigTemplate_9d3fa80ad81d1bf2c265089562fd033f28a70ac38b1e3d7f4d0cb68afc2
             </div>
         </div>
     </div>
-
-    ";
-        // line 29
-        $this->loadTemplate("includes/_footer.html.twig", "login/index.html.twig", 29)->display($context);
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -125,14 +122,14 @@ class __TwigTemplate_9d3fa80ad81d1bf2c265089562fd033f28a70ac38b1e3d7f4d0cb68afc2
 
     public function getDebugInfo()
     {
-        return array (  107 => 29,  98 => 23,  89 => 17,  77 => 7,  71 => 5,  68 => 4,  49 => 3,  46 => 2,  44 => 1,);
+        return array (  98 => 23,  89 => 17,  77 => 7,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% include 'includes/_head.html.twig' %}
+        return new Source("{% extends 'base.html.twig' %}
 
-{% block body %}
+{% block content %}
     {% if error %}
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
@@ -157,8 +154,6 @@ class __TwigTemplate_9d3fa80ad81d1bf2c265089562fd033f28a70ac38b1e3d7f4d0cb68afc2
             </div>
         </div>
     </div>
-
-    {% include 'includes/_footer.html.twig' %}
 {% endblock %}", "login/index.html.twig", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\login\\index.html.twig");
     }
 }

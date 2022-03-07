@@ -40,139 +40,132 @@ class __TwigTemplate_3c37e189820a24004d06059c073500167486c70c7991373568886cea9d4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "css/head.css"));
 
         // line 1
-        echo "/* Button connexion */
-.btn{
+        echo "/* Message d'erreur si l'utilisateur n'existe pas dans la base de données */
+p.errorMessage {
+    padding: 25px 10px;
+    color: #ff0000;
+    border-radius: 3px;
+}
+
+/* Bouton de connexion */
+.btn {
     padding-left: 30px;
     padding-right: 30px;
 }
 
-/* Button to go to the register page */
-.button-form-register{
-    background-color: #003304;
-    color: #FFFFFF;
-}
-
-/* Button to go to the register page when you hover */
-.button-form-register:hover{
-    color: #FFFFFF;
-}
-
-/* Profil icon */
-.fa-user-circle{
+/* Icone de profil */
+.fa-user-circle {
     color: #FFFFFF;
     position: absolute;
     margin-left: -20px;
 }
 
-/* Width of the inputs in the form connexion */
-.form-control2{
+/* Taille des input dans le formulaire de connexion */
+.form-control2 {
     width: 30%;
 }
 
-/* Form connexion */
-.form-connexion{
+/* Formulaire de connexion */
+.form-connexion {
     padding: 20px 150px;
 }
 
-/* Footer of connexion page */
-.footer-connexion{
-    background-color: #000000;
-    display: flex;
-    margin-top: 100px;
-}
-
-/* General infos of contact */
-.footer-contact{
-    color: #808080;
-}
-
-/* General infos of contact when you hover */
-.footer-contact:hover{
-    text-decoration: none;
-    color: #808080;
-}
-
-/* Informations de contact */
-.infos-footer{
-    float: left;
-    padding-left: 150px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    color: #FFFFFF;
-}
-
-/* Div with the links for the series */
-.infos-series{
+/* Div avec les liens pour accéder aux séries */
+.infos-accueil {
     float: left;
     padding: 20px 150px;
 }
 
-/* Div with the links for the user */
-.infos-user{
+/* Div avec les liens pour l'utilisateur */
+.infos-user {
     text-align: right;
     padding: 20px 80px;
 }
 
-/* Link forget password */
-.link-forget-password{
+/* Lien mot de passe oublié */
+.lien-mot-de-passe-oublie {
     text-decoration: none;
     color: #000000;
     padding-left: 20px;
 }
 
-/* Link forget password when you hover */
-.link-forget-password:hover{
+/* Lien mot de passe oublié quand il y a le survol de la souris */
+.lien-mot-de-passe-oublie:hover {
     text-decoration: none;
     color: #000000;
 }
 
-/* Link My Series Companion */
-.link-home{
-    background-color: #808080;
+/* Lien Home */
+.link-home {
+    background-color: #FFFFFF;
     padding: 15px 15px 15px 15px;
     text-transform: uppercase;
     font-size: 11px;
 }
 
-/* Links of the navbar */
-.links-navbar{
-    color: #FFFFFF;
-    padding-left: 20px;
+/* Liens de la barre de navigation */
+.links-navbar {
+    color: #9D4907;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 25px;
+    padding-bottom: 20px;
     font-family: 'Roboto', sans-serif;
 }
 
-/* Links of the navbar when you hover */
-.links-navbar:hover{
+.links-navbar-accueil {
+    color: #FFFFFF;
+    padding-left: 30px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: underline;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+/* Liens de la barre de navigation quand il y a le survol de la souris */
+.links-navbar:hover {
+    text-decoration: none;
+    color: #9D4907;
+}
+
+.links-navbar-accueil:hover {
     text-decoration: none;
     color: #FFFFFF;
 }
 
-/* Background and adjustments of the navbar */
-.navbar-background{
-    background-color: #002453;
+/* Fond et ajustements de la barre de navigation */
+.navbar-background {
+    background-color: #B16847;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
 }
 
-/* Question to go to register an account */
-.question-register{
-    font-family: 'Roboto', sans-serif;
+/* Formulaire de connexion */
+.titre-form {
+    padding-top: 40px;
+    padding-left: 5px;
+    font-weight: 500;
+    font-family: inherit;
+    letter-spacing: -3px;
+    font-size: 40px;
 }
 
-/* Responsive of the login and register page */
-@media only screen and (max-width: 1024px){
-    .form-connexion{
+.row {
+    padding-top: 40px;
+    letter-spacing: -1px;
+}
+
+/* Responsive de la page de connexion et d'inscription */
+@media only screen and (max-width: 1024px) {
+    .form-connexion {
         padding: 20px 0px;
     }
 
-    .infos-footer{
-        padding-left: 30px;
-    }
-    .infos-series{
+    .infos-accueil {
         padding: 20px 0px;
     }
 
-    .infos-user{
+    .infos-user {
         padding: 20px 0px;
     }
 }";
@@ -196,139 +189,132 @@ class __TwigTemplate_3c37e189820a24004d06059c073500167486c70c7991373568886cea9d4
 
     public function getSourceContext()
     {
-        return new Source("/* Button connexion */
-.btn{
+        return new Source("/* Message d'erreur si l'utilisateur n'existe pas dans la base de données */
+p.errorMessage {
+    padding: 25px 10px;
+    color: #ff0000;
+    border-radius: 3px;
+}
+
+/* Bouton de connexion */
+.btn {
     padding-left: 30px;
     padding-right: 30px;
 }
 
-/* Button to go to the register page */
-.button-form-register{
-    background-color: #003304;
-    color: #FFFFFF;
-}
-
-/* Button to go to the register page when you hover */
-.button-form-register:hover{
-    color: #FFFFFF;
-}
-
-/* Profil icon */
-.fa-user-circle{
+/* Icone de profil */
+.fa-user-circle {
     color: #FFFFFF;
     position: absolute;
     margin-left: -20px;
 }
 
-/* Width of the inputs in the form connexion */
-.form-control2{
+/* Taille des input dans le formulaire de connexion */
+.form-control2 {
     width: 30%;
 }
 
-/* Form connexion */
-.form-connexion{
+/* Formulaire de connexion */
+.form-connexion {
     padding: 20px 150px;
 }
 
-/* Footer of connexion page */
-.footer-connexion{
-    background-color: #000000;
-    display: flex;
-    margin-top: 100px;
-}
-
-/* General infos of contact */
-.footer-contact{
-    color: #808080;
-}
-
-/* General infos of contact when you hover */
-.footer-contact:hover{
-    text-decoration: none;
-    color: #808080;
-}
-
-/* Informations de contact */
-.infos-footer{
-    float: left;
-    padding-left: 150px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    color: #FFFFFF;
-}
-
-/* Div with the links for the series */
-.infos-series{
+/* Div avec les liens pour accéder aux séries */
+.infos-accueil {
     float: left;
     padding: 20px 150px;
 }
 
-/* Div with the links for the user */
-.infos-user{
+/* Div avec les liens pour l'utilisateur */
+.infos-user {
     text-align: right;
     padding: 20px 80px;
 }
 
-/* Link forget password */
-.link-forget-password{
+/* Lien mot de passe oublié */
+.lien-mot-de-passe-oublie {
     text-decoration: none;
     color: #000000;
     padding-left: 20px;
 }
 
-/* Link forget password when you hover */
-.link-forget-password:hover{
+/* Lien mot de passe oublié quand il y a le survol de la souris */
+.lien-mot-de-passe-oublie:hover {
     text-decoration: none;
     color: #000000;
 }
 
-/* Link My Series Companion */
-.link-home{
-    background-color: #808080;
+/* Lien Home */
+.link-home {
+    background-color: #FFFFFF;
     padding: 15px 15px 15px 15px;
     text-transform: uppercase;
     font-size: 11px;
 }
 
-/* Links of the navbar */
-.links-navbar{
-    color: #FFFFFF;
-    padding-left: 20px;
+/* Liens de la barre de navigation */
+.links-navbar {
+    color: #9D4907;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 25px;
+    padding-bottom: 20px;
     font-family: 'Roboto', sans-serif;
 }
 
-/* Links of the navbar when you hover */
-.links-navbar:hover{
+.links-navbar-accueil {
+    color: #FFFFFF;
+    padding-left: 30px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: underline;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+/* Liens de la barre de navigation quand il y a le survol de la souris */
+.links-navbar:hover {
+    text-decoration: none;
+    color: #9D4907;
+}
+
+.links-navbar-accueil:hover {
     text-decoration: none;
     color: #FFFFFF;
 }
 
-/* Background and adjustments of the navbar */
-.navbar-background{
-    background-color: #002453;
+/* Fond et ajustements de la barre de navigation */
+.navbar-background {
+    background-color: #B16847;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
 }
 
-/* Question to go to register an account */
-.question-register{
-    font-family: 'Roboto', sans-serif;
+/* Formulaire de connexion */
+.titre-form {
+    padding-top: 40px;
+    padding-left: 5px;
+    font-weight: 500;
+    font-family: inherit;
+    letter-spacing: -3px;
+    font-size: 40px;
 }
 
-/* Responsive of the login and register page */
-@media only screen and (max-width: 1024px){
-    .form-connexion{
+.row {
+    padding-top: 40px;
+    letter-spacing: -1px;
+}
+
+/* Responsive de la page de connexion et d'inscription */
+@media only screen and (max-width: 1024px) {
+    .form-connexion {
         padding: 20px 0px;
     }
 
-    .infos-footer{
-        padding-left: 30px;
-    }
-    .infos-series{
+    .infos-accueil {
         padding: 20px 0px;
     }
 
-    .infos-user{
+    .infos-user {
         padding: 20px 0px;
     }
 }", "css/head.css", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\css\\head.css");

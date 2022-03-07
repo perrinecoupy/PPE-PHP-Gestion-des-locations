@@ -24,10 +24,15 @@ class __TwigTemplate_214efa672ad12380f477c3ff456cba9a790fea84808af8d7a6bd487cf09
 
         $this->source = $this->getSourceContext();
 
-        $this->parent = false;
-
         $this->blocks = [
+            'content' => [$this, 'block_content'],
         ];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 1
+        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -39,12 +44,30 @@ class __TwigTemplate_214efa672ad12380f477c3ff456cba9a790fea84808af8d7a6bd487cf09
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "locataires/index.html.twig"));
 
-        // line 1
-        $this->loadTemplate("includes/admin_head.html.twig", "locataires/index.html.twig", 1)->display($context);
-        // line 2
+        $this->parent = $this->loadTemplate("base.html.twig", "locataires/index.html.twig", 1);
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+    }
+
+    // line 3
+    public function block_content($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
+
+        // line 4
         echo "<h1 style=\"float: left\">Gestion des locataires</h1>
 <a href=\"";
-        // line 3
+        // line 5
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajoutLocataire");
         echo "\"><button type=\"button\" class=\"btn btn-success\">Nouveau locataire</button></a>
 <table class=\"table\">
@@ -59,28 +82,28 @@ class __TwigTemplate_214efa672ad12380f477c3ff456cba9a790fea84808af8d7a6bd487cf09
     </thead>
     <tbody>
     ";
-        // line 15
+        // line 17
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($context["users"]);
         foreach ($context['_seq'] as $context["_key"] => $context["users"]) {
-            // line 16
+            // line 18
             echo "        <tr>
             <th scope=\"row\">";
-            // line 17
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "id", [], "any", false, false, false, 17), "html", null, true);
+            // line 19
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "id", [], "any", false, false, false, 19), "html", null, true);
             echo "</th>
             <td>";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "name", [], "any", false, false, false, 18), "html", null, true);
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "name", [], "any", false, false, false, 20), "html", null, true);
             echo "</td>
             <td>";
-            // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "firstname", [], "any", false, false, false, 19), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "firstname", [], "any", false, false, false, 21), "html", null, true);
             echo "</td>
             <td>0</td>
             <td><a href=\"";
-            // line 21
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modificationLocataire", ["id" => twig_get_attribute($this->env, $this->source, $context["users"], "id", [], "any", false, false, false, 21)]), "html", null, true);
+            // line 23
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modificationLocataire", ["id" => twig_get_attribute($this->env, $this->source, $context["users"], "id", [], "any", false, false, false, 23)]), "html", null, true);
             echo "\">Mettre à jour</a></td>
         </tr>
     ";
@@ -88,17 +111,15 @@ class __TwigTemplate_214efa672ad12380f477c3ff456cba9a790fea84808af8d7a6bd487cf09
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['users'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 24
+        // line 26
         echo "    </tbody>
 </table>
 ";
-        // line 26
-        $this->loadTemplate("includes/_footer.html.twig", "locataires/index.html.twig", 26)->display($context);
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
     }
 
@@ -114,12 +135,14 @@ class __TwigTemplate_214efa672ad12380f477c3ff456cba9a790fea84808af8d7a6bd487cf09
 
     public function getDebugInfo()
     {
-        return array (  96 => 26,  92 => 24,  83 => 21,  78 => 19,  74 => 18,  70 => 17,  67 => 16,  63 => 15,  48 => 3,  45 => 2,  43 => 1,);
+        return array (  115 => 26,  106 => 23,  101 => 21,  97 => 20,  93 => 19,  90 => 18,  86 => 17,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% include 'includes/admin_head.html.twig' %}
+        return new Source("{% extends 'base.html.twig' %}
+
+{% block content %}
 <h1 style=\"float: left\">Gestion des locataires</h1>
 <a href=\"{{ path('ajoutLocataire') }}\"><button type=\"button\" class=\"btn btn-success\">Nouveau locataire</button></a>
 <table class=\"table\">
@@ -144,6 +167,7 @@ class __TwigTemplate_214efa672ad12380f477c3ff456cba9a790fea84808af8d7a6bd487cf09
     {% endfor %}
     </tbody>
 </table>
-{% include 'includes/_footer.html.twig' %}", "locataires/index.html.twig", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\locataires\\index.html.twig");
+{% endblock %}
+", "locataires/index.html.twig", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\locataires\\index.html.twig");
     }
 }
