@@ -40,9 +40,9 @@ class __TwigTemplate_267fc34e3954b84eedb229413332e92459fcc757f61d5ca355755b20919
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "reset_password/email.html.twig"));
 
         // line 1
-        echo "<h1>Hi!</h1>
+        echo "<h1>Votre demande de changement de mot de passe.</h1>
 
-<p>To reset your password, please visit the following link</p>
+<p>Vous avez demandé à changer votre mot de passe. Cliquez sur le lien ci-dessous pour réinitialiser votre mot de passe.</p>
 
 <a href=\"";
         // line 5
@@ -51,12 +51,12 @@ class __TwigTemplate_267fc34e3954b84eedb229413332e92459fcc757f61d5ca355755b20919
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_reset_password", ["token" => twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 5, $this->source); })()), "token", [], "any", false, false, false, 5)]), "html", null, true);
         echo "</a>
 
-<p>This link will expire in ";
+<p>Ce lien expirera dans ";
         // line 7
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 7, $this->source); })()), "expirationMessageKey", [], "any", false, false, false, 7), twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 7, $this->source); })()), "expirationMessageData", [], "any", false, false, false, 7), "ResetPasswordBundle"), "html", null, true);
         echo ".</p>
 
-<p>Cheers!</p>
+<p>Ce message a été envoyé depuis une adresse ne gérant que les envois. Veuillez ne pas répondre à ce message.</p>
 ";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -83,15 +83,15 @@ class __TwigTemplate_267fc34e3954b84eedb229413332e92459fcc757f61d5ca355755b20919
 
     public function getSourceContext()
     {
-        return new Source("<h1>Hi!</h1>
+        return new Source("<h1>Votre demande de changement de mot de passe.</h1>
 
-<p>To reset your password, please visit the following link</p>
+<p>Vous avez demandé à changer votre mot de passe. Cliquez sur le lien ci-dessous pour réinitialiser votre mot de passe.</p>
 
 <a href=\"{{ url('app_reset_password', {token: resetToken.token}) }}\">{{ url('app_reset_password', {token: resetToken.token}) }}</a>
 
-<p>This link will expire in {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
+<p>Ce lien expirera dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
 
-<p>Cheers!</p>
+<p>Ce message a été envoyé depuis une adresse ne gérant que les envois. Veuillez ne pas répondre à ce message.</p>
 ", "reset_password/email.html.twig", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\reset_password\\email.html.twig");
     }
 }

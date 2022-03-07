@@ -66,7 +66,7 @@ class __TwigTemplate_35f380ddf3df52032bfd659e13d177f2ed320668c3b676bbb02b3433297
 
         // line 3
         echo "
-        <div style=\"margin-left: 5%;margin-top: 3%\">
+        <div class=\"block\">
             <h1>";
         // line 5
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 5, $this->source); })()), "user", [], "any", false, false, false, 5), "firstname", [], "any", false, false, false, 5), "html", null, true);
@@ -113,7 +113,7 @@ class __TwigTemplate_35f380ddf3df52032bfd659e13d177f2ed320668c3b676bbb02b3433297
         return new Source("{% extends 'base.html.twig' %}
 {% block content %}
 
-        <div style=\"margin-left: 5%;margin-top: 3%\">
+        <div class=\"block\">
             <h1>{{ app.user.firstname }} {{ app.user.name }}</h1>
             <p>Vous êtes inscrit en tant que <strong>{{ app.user.roles[0] }}</strong> sur la plateforme</p>
 

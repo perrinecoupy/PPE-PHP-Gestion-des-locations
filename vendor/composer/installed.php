@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '1ee7ce96af79fda94710ce48b609159754d354ca',
+        'reference' => '2a21005c14d5dd507697f8f64855ab2fecc923e2',
         'name' => '__root__',
         'dev' => true,
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '1ee7ce96af79fda94710ce48b609159754d354ca',
+            'reference' => '2a21005c14d5dd507697f8f64855ab2fecc923e2',
             'dev_requirement' => false,
         ),
         'composer/package-versions-deprecated' => array(
@@ -788,6 +788,15 @@
             'install_path' => __DIR__ . '/../symfony/security-http',
             'aliases' => array(),
             'reference' => 'c25090783bd4209a42f9c43a235280fd23315a62',
+            'dev_requirement' => false,
+        ),
+        'symfony/sendgrid-mailer' => array(
+            'pretty_version' => 'v5.3.14',
+            'version' => '5.3.14.0',
+            'type' => 'symfony-bridge',
+            'install_path' => __DIR__ . '/../symfony/sendgrid-mailer',
+            'aliases' => array(),
+            'reference' => '6fbc372c064b34157e772cce719fdc5b5f935b9f',
             'dev_requirement' => false,
         ),
         'symfony/service-contracts' => array(

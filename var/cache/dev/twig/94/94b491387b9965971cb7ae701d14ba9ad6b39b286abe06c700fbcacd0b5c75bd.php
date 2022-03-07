@@ -65,15 +65,6 @@ class __TwigTemplate_9d3fa80ad81d1bf2c265089562fd033f28a70ac38b1e3d7f4d0cb68afc2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
-        echo "    ";
-        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 4, $this->source); })())) {
-            // line 5
-            echo "        <div>";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 5, $this->source); })()), "messageKey", [], "any", false, false, false, 5), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 5, $this->source); })()), "messageData", [], "any", false, false, false, 5), "security"), "html", null, true);
-            echo "</div>
-    ";
-        }
-        // line 7
         echo "
     <div class=\"form-connexion\">
         <h2 class=\"title-form\">Connectez-vous</h2>
@@ -82,21 +73,31 @@ class __TwigTemplate_9d3fa80ad81d1bf2c265089562fd033f28a70ac38b1e3d7f4d0cb68afc2
                 <form method=\"POST\" action=\"\">
                     <div class=\"form-group\">
                         <label for=\"username\">Email:</label>
-                        <input type=\"text\" id=\"username\" name=\"_username\"/>
+                        <input type=\"text\" id=\"username\" name=\"_username\" class=\"form-control\"/>
                     </div>
                     <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 17
+        // line 14
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\">
                     <div class=\"form-group\">
                         <label for=\"password\">Mot de passe</label>
-                        <input type=\"password\" id=\"password\" name=\"_password\"/>
+                        <input type=\"password\" id=\"password\" name=\"_password\" class=\"form-control\"/>
                     </div>
-                    <button type=\"submit\" class=\"btn btn-success\">Connexion</button>
+                    ";
+        // line 19
+        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 19, $this->source); })())) {
+            // line 20
+            echo "                        <div>";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 20, $this->source); })()), "messageKey", [], "any", false, false, false, 20), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 20, $this->source); })()), "messageData", [], "any", false, false, false, 20), "security"), "html", null, true);
+            echo "</div>
+                    ";
+        }
+        // line 22
+        echo "                    <button type=\"submit\" class=\"btn btn-success\">Connexion</button>
                     <a href=\"";
         // line 23
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_forgot_password_request");
-        echo "\">Mot de passe oublié</a>
+        echo "\" class=\"forgot-password\">Mot de passe oublié</a>
                 </form>
             </div>
         </div>
@@ -122,7 +123,7 @@ class __TwigTemplate_9d3fa80ad81d1bf2c265089562fd033f28a70ac38b1e3d7f4d0cb68afc2
 
     public function getDebugInfo()
     {
-        return array (  98 => 23,  89 => 17,  77 => 7,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  99 => 23,  96 => 22,  90 => 20,  88 => 19,  80 => 14,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -130,9 +131,6 @@ class __TwigTemplate_9d3fa80ad81d1bf2c265089562fd033f28a70ac38b1e3d7f4d0cb68afc2
         return new Source("{% extends 'base.html.twig' %}
 
 {% block content %}
-    {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
 
     <div class=\"form-connexion\">
         <h2 class=\"title-form\">Connectez-vous</h2>
@@ -141,15 +139,18 @@ class __TwigTemplate_9d3fa80ad81d1bf2c265089562fd033f28a70ac38b1e3d7f4d0cb68afc2
                 <form method=\"POST\" action=\"\">
                     <div class=\"form-group\">
                         <label for=\"username\">Email:</label>
-                        <input type=\"text\" id=\"username\" name=\"_username\"/>
+                        <input type=\"text\" id=\"username\" name=\"_username\" class=\"form-control\"/>
                     </div>
                     <input type=\"hidden\" name=\"_csrf_token\" value=\"{{ csrf_token('authenticate') }}\">
                     <div class=\"form-group\">
                         <label for=\"password\">Mot de passe</label>
-                        <input type=\"password\" id=\"password\" name=\"_password\"/>
+                        <input type=\"password\" id=\"password\" name=\"_password\" class=\"form-control\"/>
                     </div>
+                    {% if error %}
+                        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
                     <button type=\"submit\" class=\"btn btn-success\">Connexion</button>
-                    <a href=\"{{ path('app_forgot_password_request')}}\">Mot de passe oublié</a>
+                    <a href=\"{{ path('app_forgot_password_request')}}\" class=\"forgot-password\">Mot de passe oublié</a>
                 </form>
             </div>
         </div>

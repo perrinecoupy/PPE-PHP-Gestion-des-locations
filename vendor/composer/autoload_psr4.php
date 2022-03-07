@@ -41,6 +41,7 @@ return array(
     'Symfony\\Component\\PasswordHasher\\' => array($vendorDir . '/symfony/password-hasher'),
     'Symfony\\Component\\OptionsResolver\\' => array($vendorDir . '/symfony/options-resolver'),
     'Symfony\\Component\\Mime\\' => array($vendorDir . '/symfony/mime'),
+    'Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\' => array($vendorDir . '/symfony/sendgrid-mailer'),
     'Symfony\\Component\\Mailer\\Bridge\\Mailchimp\\' => array($vendorDir . '/symfony/mailchimp-mailer'),
     'Symfony\\Component\\Mailer\\Bridge\\Google\\' => array($vendorDir . '/symfony/google-mailer'),
     'Symfony\\Component\\Mailer\\' => array($vendorDir . '/symfony/mailer'),

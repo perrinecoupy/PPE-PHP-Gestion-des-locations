@@ -11,11 +11,12 @@
     margin-top: 30px;
 }
 
-.user-infos {
+.forgot-password {
     color: #000000;
+    margin-left: 30px;
 }
 
-.user-infos:hover {
+.forgot-password:hover {
     color: #000000;
     text-decoration: none;
 }
@@ -28,3 +29,13 @@
     color: #FFFFFF;
     text-decoration: none;
 }
+
+.user-infos {
+    color: #000000;
+}
+
+.user-infos:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
