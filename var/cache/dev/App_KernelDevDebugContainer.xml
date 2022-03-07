@@ -432,6 +432,9 @@
     <service id="App\Form\LocataireType" class="App\Form\LocataireType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\MandataireType" class="App\Form\MandataireType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -447,6 +450,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\RentRepository" class="App\Repository\RentRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -946,6 +953,7 @@
         <argument>App\Form\CategoryType</argument>
         <argument>App\Form\ChangePasswordFormType</argument>
         <argument>App\Form\LocataireType</argument>
+        <argument>App\Form\MandataireType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\ResetPasswordRequestFormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -1351,7 +1359,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.605kWUJ"/>
+      <argument type="service" id=".service_locator.iVhf.b6"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3270,7 +3278,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.10KKFIx"/>
+      <argument type="service" id=".service_locator.VSGxeFX"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4777,6 +4785,8 @@
     <service id=".abstract.instanceof.App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LocataireType" class="App\Form\LocataireType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\LocataireType" class="App\Form\LocataireType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MandataireType" class="App\Form\MandataireType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\MandataireType" class="App\Form\MandataireType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" abstract="true"/>
@@ -4787,6 +4797,8 @@
     <service id=".abstract.instanceof.App\Repository\AuthorRepository" class="App\Repository\AuthorRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\RentRepository" class="App\Repository\RentRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\RentRepository" class="App\Repository\RentRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
@@ -5155,7 +5167,7 @@
         <argument key="mailer" type="service_closure" id="mailer.mailer"/>
       </argument>
     </service>
-    <service id=".service_locator.C8OB0aG" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.mFdmhOu" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\ArticleController::editArticle" type="service_closure" id=".service_locator.ys8EL7c"/>
@@ -5165,7 +5177,9 @@
         <argument key="App\Controller\AuthorController::showAuthor" type="service_closure" id=".service_locator.BMU75HS"/>
         <argument key="App\Controller\DefaultController::locataires" type="service_closure" id=".service_locator..Ae5NXw"/>
         <argument key="App\Controller\DefaultController::mandataires" type="service_closure" id=".service_locator..Ae5NXw"/>
+        <argument key="App\Controller\LocataireController::editUser" type="service_closure" id=".service_locator..Ae5NXw"/>
         <argument key="App\Controller\LoginController::index" type="service_closure" id=".service_locator.UDgw6Ol"/>
+        <argument key="App\Controller\MandataireController::editUser" type="service_closure" id=".service_locator..Ae5NXw"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.wOdllM6"/>
         <argument key="App\Controller\ResetPasswordController::request" type="service_closure" id=".service_locator.CpaXrFh"/>
         <argument key="App\Controller\ResetPasswordController::reset" type="service_closure" id=".service_locator.wOdllM6"/>
@@ -5182,7 +5196,9 @@
         <argument key="App\Controller\AuthorController:showAuthor" type="service_closure" id=".service_locator.BMU75HS"/>
         <argument key="App\Controller\DefaultController:locataires" type="service_closure" id=".service_locator..Ae5NXw"/>
         <argument key="App\Controller\DefaultController:mandataires" type="service_closure" id=".service_locator..Ae5NXw"/>
+        <argument key="App\Controller\LocataireController:editUser" type="service_closure" id=".service_locator..Ae5NXw"/>
         <argument key="App\Controller\LoginController:index" type="service_closure" id=".service_locator.UDgw6Ol"/>
+        <argument key="App\Controller\MandataireController:editUser" type="service_closure" id=".service_locator..Ae5NXw"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.wOdllM6"/>
         <argument key="App\Controller\ResetPasswordController:request" type="service_closure" id=".service_locator.CpaXrFh"/>
         <argument key="App\Controller\ResetPasswordController:reset" type="service_closure" id=".service_locator.wOdllM6"/>
@@ -5250,13 +5266,14 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.605kWUJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.iVhf.b6" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ArticleType" type="service_closure" id="App\Form\ArticleType"/>
         <argument key="App\Form\CategoryType" type="service_closure" id="App\Form\CategoryType"/>
         <argument key="App\Form\ChangePasswordFormType" type="service_closure" id="App\Form\ChangePasswordFormType"/>
         <argument key="App\Form\LocataireType" type="service_closure" id="App\Form\LocataireType"/>
+        <argument key="App\Form\MandataireType" type="service_closure" id="App\Form\MandataireType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\ResetPasswordRequestFormType" type="service_closure" id="App\Form\ResetPasswordRequestFormType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
@@ -5289,12 +5306,13 @@
       <argument type="service" id="cache.doctrine.orm.default.result"/>
       <factory class="Doctrine\Common\Cache\Psr6\DoctrineProvider" method="wrap"/>
     </service>
-    <service id=".service_locator.10KKFIx" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.VSGxeFX" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\ArticleRepository" type="service_closure" id="App\Repository\ArticleRepository"/>
         <argument key="App\Repository\AuthorRepository" type="service_closure" id="App\Repository\AuthorRepository"/>
         <argument key="App\Repository\CategoryRepository" type="service_closure" id="App\Repository\CategoryRepository"/>
+        <argument key="App\Repository\RentRepository" type="service_closure" id="App\Repository\RentRepository"/>
         <argument key="App\Repository\ResetPasswordRequestRepository" type="service_closure" id="App\Repository\ResetPasswordRequestRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
@@ -5553,12 +5571,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.C8OB0aG"/>
+      <argument type="service" id=".service_locator.mFdmhOu"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.C8OB0aG"/>
+      <argument type="service" id=".service_locator.mFdmhOu"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6336,7 +6354,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.C8OB0aG"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.mFdmhOu"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>

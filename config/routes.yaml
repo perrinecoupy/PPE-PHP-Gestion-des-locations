@@ -16,10 +16,20 @@ ajoutLocataire:
     methods: ["GET", "POST"]
     controller: App\Controller\LocataireController::createUser
 
+modificationLocataire:
+    path: /locataires/edit/{id}
+    methods: ["GET", "POST"]
+    controller: App\Controller\LocataireController::editUser
+
 ajoutMandataire:
     path: /mandataires/create
     methods: ["GET", "POST"]
     controller: App\Controller\MandataireController::createUser
+
+modificationMandataire:
+    path: /mandataires/edit/{id}
+    methods: ["GET", "POST"]
+    controller: App\Controller\MandataireController::editUser
 
 show:
     path: /show/{id}

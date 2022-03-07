@@ -78,7 +78,10 @@ class __TwigTemplate_692917cb78343516ef5a5c50db202247f013903115a5761153a3a3d333f
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "firstname", [], "any", false, false, false, 19), "html", null, true);
             echo "</td>
             <td>0</td>
-            <td><a href=\"#\">Mettre à jour</a></td>
+            <td><a href=\"";
+            // line 21
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modificationMandataire", ["id" => twig_get_attribute($this->env, $this->source, $context["users"], "id", [], "any", false, false, false, 21)]), "html", null, true);
+            echo "\">Mettre à jour</a></td>
         </tr>
     ";
         }
@@ -111,7 +114,7 @@ class __TwigTemplate_692917cb78343516ef5a5c50db202247f013903115a5761153a3a3d333f
 
     public function getDebugInfo()
     {
-        return array (  93 => 26,  89 => 24,  78 => 19,  74 => 18,  70 => 17,  67 => 16,  63 => 15,  48 => 3,  45 => 2,  43 => 1,);
+        return array (  96 => 26,  92 => 24,  83 => 21,  78 => 19,  74 => 18,  70 => 17,  67 => 16,  63 => 15,  48 => 3,  45 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -136,7 +139,7 @@ class __TwigTemplate_692917cb78343516ef5a5c50db202247f013903115a5761153a3a3d333f
             <td>{{ users.name }}</td>
             <td>{{ users.firstname }}</td>
             <td>0</td>
-            <td><a href=\"#\">Mettre à jour</a></td>
+            <td><a href=\"{{ path('modificationMandataire', {id: users.id}) }}\">Mettre à jour</a></td>
         </tr>
     {% endfor %}
     </tbody>

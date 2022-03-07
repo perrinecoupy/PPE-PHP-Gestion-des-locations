@@ -33,7 +33,7 @@ class LocataireType extends AbstractType
                 'required' => true,
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Ajouter',
+                'label' => 'Mettre à jour',
             ]);
     }
 

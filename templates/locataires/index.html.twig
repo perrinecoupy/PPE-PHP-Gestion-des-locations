@@ -18,7 +18,7 @@
             <td>{{ users.name }}</td>
             <td>{{ users.firstname }}</td>
             <td>0</td>
-            <td><a href="#">Mettre à jour</a></td>
+            <td><a href="{{ path('modificationLocataire', {id: users.id}) }}">Mettre à jour</a></td>
         </tr>
     {% endfor %}
     </tbody>

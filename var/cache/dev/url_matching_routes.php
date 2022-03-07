@@ -46,15 +46,17 @@ return [
                     .'|error/(\\d+)(?:\\.([^/]++))?(*:159)'
                 .')'
                 .'|/reset\\-password/reset(?:/([^/]++))?(*:204)'
+                .'|/locataires/edit/([^/]++)(*:237)'
+                .'|/mandataires/edit/([^/]++)(*:271)'
                 .'|/show(?'
-                    .'|/(\\d+)(*:226)'
-                    .'|Author/(\\d+)(*:246)'
+                    .'|/(\\d+)(*:293)'
+                    .'|Author/(\\d+)(*:313)'
                 .')'
                 .'|/a(?'
-                    .'|rticle/(\\d+)(*:272)'
+                    .'|rticle/(\\d+)(*:339)'
                     .'|dmin/(?'
-                        .'|category/edit/([^/]++)(*:310)'
-                        .'|article/edit/([^/]++)(*:339)'
+                        .'|category/edit/([^/]++)(*:377)'
+                        .'|article/edit/([^/]++)(*:406)'
                     .')'
                 .')'
             .')/?$}sDu',
@@ -68,11 +70,13 @@ return [
         124 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         159 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
         204 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
-        226 => [[['_route' => 'show', '_controller' => 'App\\Controller\\DefaultController::show'], ['id'], null, null, false, true, null]],
-        246 => [[['_route' => 'showAuthor', '_controller' => 'App\\Controller\\AuthorController::showAuthor'], ['id'], null, null, false, true, null]],
-        272 => [[['_route' => 'article', '_controller' => 'App\\Controller\\AuthorController::article'], ['id'], null, null, false, true, null]],
-        310 => [[['_route' => 'admin_category_edit', '_controller' => 'App\\Controller\\Admin\\CategoryController::editCategory'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        339 => [
+        237 => [[['_route' => 'modificationLocataire', '_controller' => 'App\\Controller\\LocataireController::editUser'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        271 => [[['_route' => 'modificationMandataire', '_controller' => 'App\\Controller\\MandataireController::editUser'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        293 => [[['_route' => 'show', '_controller' => 'App\\Controller\\DefaultController::show'], ['id'], null, null, false, true, null]],
+        313 => [[['_route' => 'showAuthor', '_controller' => 'App\\Controller\\AuthorController::showAuthor'], ['id'], null, null, false, true, null]],
+        339 => [[['_route' => 'article', '_controller' => 'App\\Controller\\AuthorController::article'], ['id'], null, null, false, true, null]],
+        377 => [[['_route' => 'admin_category_edit', '_controller' => 'App\\Controller\\Admin\\CategoryController::editCategory'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        406 => [
             [['_route' => 'admin_article_edit', '_controller' => 'App\\Controller\\Admin\\ArticleController::editArticle'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
