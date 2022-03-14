@@ -40,20 +40,19 @@ class __TwigTemplate_267fc34e3954b84eedb229413332e92459fcc757f61d5ca355755b20919
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "reset_password/email.html.twig"));
 
         // line 1
-        echo "<h1>Votre demande de changement de mot de passe.</h1>
-
+        echo "
 <p>Vous avez demandé à changer votre mot de passe. Cliquez sur le lien ci-dessous pour réinitialiser votre mot de passe.</p>
 
 <a href=\"";
-        // line 5
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_reset_password", ["token" => twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 5, $this->source); })()), "token", [], "any", false, false, false, 5)]), "html", null, true);
+        // line 4
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_reset_password", ["token" => twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 4, $this->source); })()), "token", [], "any", false, false, false, 4)]), "html", null, true);
         echo "\">";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_reset_password", ["token" => twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 5, $this->source); })()), "token", [], "any", false, false, false, 5)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_reset_password", ["token" => twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 4, $this->source); })()), "token", [], "any", false, false, false, 4)]), "html", null, true);
         echo "</a>
 
 <p>Ce lien expirera dans ";
-        // line 7
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 7, $this->source); })()), "expirationMessageKey", [], "any", false, false, false, 7), twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 7, $this->source); })()), "expirationMessageData", [], "any", false, false, false, 7), "ResetPasswordBundle"), "html", null, true);
+        // line 6
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 6, $this->source); })()), "expirationMessageKey", [], "any", false, false, false, 6), twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 6, $this->source); })()), "expirationMessageData", [], "any", false, false, false, 6), "ResetPasswordBundle"), "html", null, true);
         echo ".</p>
 
 <p>Ce message a été envoyé depuis une adresse ne gérant que les envois. Veuillez ne pas répondre à ce message.</p>
@@ -78,13 +77,12 @@ class __TwigTemplate_267fc34e3954b84eedb229413332e92459fcc757f61d5ca355755b20919
 
     public function getDebugInfo()
     {
-        return array (  56 => 7,  49 => 5,  43 => 1,);
+        return array (  55 => 6,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<h1>Votre demande de changement de mot de passe.</h1>
-
+        return new Source("
 <p>Vous avez demandé à changer votre mot de passe. Cliquez sur le lien ci-dessous pour réinitialiser votre mot de passe.</p>
 
 <a href=\"{{ url('app_reset_password', {token: resetToken.token}) }}\">{{ url('app_reset_password', {token: resetToken.token}) }}</a>
