@@ -94,12 +94,19 @@ class __TwigTemplate_20c54930ca68f0889066b037ae8316a9381ca41a98e4be56ff285b86858
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), "submit", [], "any", false, false, false, 13), 'row', ["attr" => ["class" => "btn btn-success btn-update-infos"]]);
         echo "
                 </div>
+                <div class=\"form-row locations\">
+                    <h2 class=\"title-location\">Liste des locations</h2>
+                    <button class=\"btn btn-success btn-location\"><a href=\"";
+        // line 17
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajoutLocation");
+        echo "\" class=\"link-update\">Ajouter une location</a></button>
+                </div>
             </div>
         </div>
 
 ";
-        // line 18
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'form_end');
+        // line 22
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -122,7 +129,7 @@ class __TwigTemplate_20c54930ca68f0889066b037ae8316a9381ca41a98e4be56ff285b86858
 
     public function getDebugInfo()
     {
-        return array (  102 => 18,  94 => 13,  90 => 12,  86 => 11,  82 => 10,  78 => 9,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  109 => 22,  101 => 17,  94 => 13,  90 => 12,  86 => 11,  82 => 10,  78 => 9,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -140,6 +147,10 @@ class __TwigTemplate_20c54930ca68f0889066b037ae8316a9381ca41a98e4be56ff285b86858
                     {{ form_row(form.email, { 'attr': {'class': 'form-control'} }) }}
                     {{ form_row(form.password, { 'attr': {'class': 'form-control'} }) }}
                     {{ form_row(form.submit, { 'attr': {'class': 'btn btn-success btn-update-infos'} }) }}
+                </div>
+                <div class=\"form-row locations\">
+                    <h2 class=\"title-location\">Liste des locations</h2>
+                    <button class=\"btn btn-success btn-location\"><a href=\"{{ path('ajoutLocation') }}\" class=\"link-update\">Ajouter une location</a></button>
                 </div>
             </div>
         </div>

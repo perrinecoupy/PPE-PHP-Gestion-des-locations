@@ -27,6 +27,8 @@ return [
     'modificationLocataire' => [['id'], ['_controller' => 'App\\Controller\\LocataireController::editUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/locataires/edit']], [], []],
     'ajoutMandataire' => [[], ['_controller' => 'App\\Controller\\MandataireController::createUser'], [], [['text', '/mandataires/create']], [], []],
     'modificationMandataire' => [['id'], ['_controller' => 'App\\Controller\\MandataireController::editUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/mandataires/edit']], [], []],
+    'locations' => [[], ['_controller' => 'App\\Controller\\DefaultController::locations'], [], [['text', '/locations']], [], []],
+    'ajoutLocation' => [[], ['_controller' => 'App\\Controller\\LocationController::createLocation'], [], [['text', '/locations/create']], [], []],
     'show' => [['id'], ['_controller' => 'App\\Controller\\DefaultController::show'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/show']], [], []],
     'series' => [[], ['_controller' => 'App\\Controller\\DefaultController::series'], [], [['text', '/series']], [], []],
     'author' => [[], ['_controller' => 'App\\Controller\\AuthorController::author'], [], [['text', '/author']], [], []],

@@ -350,18 +350,6 @@ return [[
 '[C]App%5CEntity%5CUser%23getFirstname' => 1,
 'App%5CEntity%5CUser%23setFirstname' => 0,
 '[C]App%5CEntity%5CUser%23setFirstname' => 1,
-'App%5CEntity%5CUser%23getOwnerUser' => 0,
-'[C]App%5CEntity%5CUser%23getOwnerUser' => 1,
-'App%5CEntity%5CUser%23addOwnerUser' => 0,
-'[C]App%5CEntity%5CUser%23addOwnerUser' => 1,
-'App%5CEntity%5CUser%23removeOwnerUser' => 0,
-'[C]App%5CEntity%5CUser%23removeOwnerUser' => 1,
-'App%5CEntity%5CUser%23getTenantUser' => 0,
-'[C]App%5CEntity%5CUser%23getTenantUser' => 1,
-'App%5CEntity%5CUser%23addTenantUser' => 0,
-'[C]App%5CEntity%5CUser%23addTenantUser' => 1,
-'App%5CEntity%5CUser%23removeTenantIdUser' => 0,
-'[C]App%5CEntity%5CUser%23removeTenantIdUser' => 1,
 'App%5CEntity%5CUser%24id' => 3,
 '[C]App%5CEntity%5CUser%24id' => 1,
 'App%5CEntity%5CUser%24email' => 9,
@@ -936,7 +924,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1646669271,
+1 => 1647249721,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [

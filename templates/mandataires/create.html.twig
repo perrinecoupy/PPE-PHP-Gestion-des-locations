@@ -4,12 +4,14 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-xs-12">
+                <div class="col-lg-6 col-xs-12 form-mandataire">
                     {{ form_row(form.name, { 'attr': {'class': 'form-control'} }) }}
                     {{ form_row(form.firstname, { 'attr': {'class': 'form-control'} }) }}
                     {{ form_row(form.email, { 'attr': {'class': 'form-control'} }) }}
+                    {{ form_row(form.submit, { 'attr': {'class': 'btn btn-success btn-update-infos'} }) }}
+                </div>
+                <div class="form">
                     {{ form_row(form.password, { 'attr': {'class': 'form-control'} }) }}
-                    {{ form_row(form.submit, { 'attr': {'class': 'btn btn-success'} }) }}
                 </div>
             </div>
         </div>

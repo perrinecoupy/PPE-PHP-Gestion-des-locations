@@ -3,8 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Residence;
 use App\Repository\ArticleRepository;
 use App\Repository\UserRepository;
+use App\Repository\ResidenceRepository;
+use Doctrine\ORM\Mapping\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -37,5 +40,11 @@ class DefaultController extends AbstractController
     {
         //return $this->render('default/article.html.twig', ['articles' => self::ARTICLES]);
         return $this->render('mandataires/index.html.twig', ['users' => $userRepository->findByRoleMandataire()]);
+    }
+
+    public function residence(UserRepository $userRepository): Response
+    {
+        //return $this->render('default/article.html.twig', ['articles' => self::ARTICLES]);
+        return $this->render('locataires/index.html.twig', ['residences' => $userRepository->findByLocations()]);
     }
 }

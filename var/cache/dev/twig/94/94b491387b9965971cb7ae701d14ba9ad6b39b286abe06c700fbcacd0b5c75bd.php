@@ -97,7 +97,7 @@ class __TwigTemplate_9d3fa80ad81d1bf2c265089562fd033f28a70ac38b1e3d7f4d0cb68afc2
                     <a href=\"";
         // line 23
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_forgot_password_request");
-        echo "\" class=\"forgot-password\">Mot de passe oublié</a>
+        echo "\" class=\"forgot-password\">Mot de passe oublié ?</a>
                 </form>
             </div>
         </div>
@@ -150,7 +150,7 @@ class __TwigTemplate_9d3fa80ad81d1bf2c265089562fd033f28a70ac38b1e3d7f4d0cb68afc2
                         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                     {% endif %}
                     <button type=\"submit\" class=\"btn btn-success\">Connexion</button>
-                    <a href=\"{{ path('app_forgot_password_request')}}\" class=\"forgot-password\">Mot de passe oublié</a>
+                    <a href=\"{{ path('app_forgot_password_request')}}\" class=\"forgot-password\">Mot de passe oublié ?</a>
                 </form>
             </div>
         </div>

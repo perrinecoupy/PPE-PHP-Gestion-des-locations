@@ -105,7 +105,7 @@ class __TwigTemplate_692917cb78343516ef5a5c50db202247f013903115a5761153a3a3d333f
                     <td><button class=\"btn btn-secondary\"><a href=\"";
             // line 24
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modificationMandataire", ["id" => twig_get_attribute($this->env, $this->source, $context["users"], "id", [], "any", false, false, false, 24)]), "html", null, true);
-            echo "\" class=\"link-update\">Mettre à jour</a></button></td>
+            echo "\" class=\"link-update\">Mettre à jour les données</a></button></td>
                 </tr>
             ";
         }
@@ -165,7 +165,7 @@ class __TwigTemplate_692917cb78343516ef5a5c50db202247f013903115a5761153a3a3d333f
                     <td>{{ users.name }}</td>
                     <td>{{ users.firstname }}</td>
                     <td>0</td>
-                    <td><button class=\"btn btn-secondary\"><a href=\"{{ path('modificationMandataire', {id: users.id}) }}\" class=\"link-update\">Mettre à jour</a></button></td>
+                    <td><button class=\"btn btn-secondary\"><a href=\"{{ path('modificationMandataire', {id: users.id}) }}\" class=\"link-update\">Mettre à jour les données</a></button></td>
                 </tr>
             {% endfor %}
             </tbody>

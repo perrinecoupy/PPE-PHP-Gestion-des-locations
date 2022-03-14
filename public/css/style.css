@@ -16,9 +16,21 @@
     margin-left: 30px;
 }
 
+.btn-location {
+    margin-left: 20px;
+}
+
+.form {
+    width: 50%;
+}
+
 .forgot-password:hover {
     color: #000000;
     text-decoration: none;
+}
+
+.locations {
+    display: block;
 }
 
 .link-update {
@@ -39,3 +51,6 @@
     text-decoration: none;
 }
 
+.title-location {
+    float: left;
+}

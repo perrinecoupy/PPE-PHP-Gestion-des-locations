@@ -15,7 +15,7 @@ use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
  * @method Residence[]    findAll()
  * @method Residence[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class LocationRepository extends ServiceEntityRepository
+class ResidenceRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {

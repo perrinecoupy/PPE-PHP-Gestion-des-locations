@@ -22,6 +22,8 @@ return [
         '/mandataires' => [[['_route' => 'mandataires', '_controller' => 'App\\Controller\\DefaultController::mandataires'], null, null, null, false, false, null]],
         '/locataires/create' => [[['_route' => 'ajoutLocataire', '_controller' => 'App\\Controller\\LocataireController::createUser'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/mandataires/create' => [[['_route' => 'ajoutMandataire', '_controller' => 'App\\Controller\\MandataireController::createUser'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/locations' => [[['_route' => 'locations', '_controller' => 'App\\Controller\\DefaultController::locations'], null, null, null, false, false, null]],
+        '/locations/create' => [[['_route' => 'ajoutLocation', '_controller' => 'App\\Controller\\LocationController::createLocation'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/series' => [[['_route' => 'series', '_controller' => 'App\\Controller\\DefaultController::series'], null, null, null, false, false, null]],
         '/author' => [[['_route' => 'author', '_controller' => 'App\\Controller\\AuthorController::author'], null, null, null, false, false, null]],
         '/admin/category/create' => [[['_route' => 'admin_category_create', '_controller' => 'App\\Controller\\Admin\\CategoryController::createCategory'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],

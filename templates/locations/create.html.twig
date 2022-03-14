@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    {{ form_start(form) }}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-xs-12">
+                {{ form_row(form.arrival_date, { 'attr': {'class': 'form-control'} }) }}
+                {{ form_row(form.departure_date, { 'attr': {'class': 'form-control'} }) }}
+                {{ form_row(form.id) }}
+                {{ form_row(form.submit, { 'attr': {'class': 'btn btn-success btn-update-infos'} }) }}
+            </div>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

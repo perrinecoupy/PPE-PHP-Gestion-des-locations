@@ -31,6 +31,15 @@ modificationMandataire:
     methods: ["GET", "POST"]
     controller: App\Controller\MandataireController::editUser
 
+locations:
+    path: /locations
+    controller: App\Controller\DefaultController::locations
+
+ajoutLocation:
+    path: /locations/create
+    methods: ["GET", "POST"]
+    controller: App\Controller\LocationController::createLocation
+
 show:
     path: /show/{id}
     controller: App\Controller\DefaultController::show
