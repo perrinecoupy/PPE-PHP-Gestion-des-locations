@@ -31,14 +31,23 @@ Nommage des dossiers/fichiers en minuscule/anglais
 - Fin projet => Fin avril
 - Charge => environ 16 heures/personne
 
+## GUIDE D'INSTALLATION :
+- Télécharger le projet (code) au format ZIP.
+- Récupérer le fichier au format .sql.
+- Ouvrir votre serveur local, accéder à votre interface de phpMyAdmin puis cliquer sur exporter afin d'ajouter la base de données.
+- Placer le projet dans le dossier C:\Users\votre-nom-utilisateur.
+- Démarrez votre serveur local exécutant la commande symfony server -d depuis la racine.
+- Ouvrez votre navigateur et taper "http://127.0.0.1:8000/" afin de pouvoir accéder au projet
+- Vous pouvez accéder au site !
+
 ## RÔLES DE L'EQUIPE :
 Arthur VALENTIM :
-- Gestion des locataires
+- Gestion des mandataires
 - Gestion des locations
 
 Perrine COUPY :
 - Connexion / Mot de passe oublié 
-- Gestion des mandataires
+- Gestion des locataires
 - Gestion des biens
 
 Projet annuel réalisé par Arthur VALENTIM et Perrine COUPY.
