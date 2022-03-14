@@ -42,12 +42,12 @@ Nommage des dossiers/fichiers en minuscule/anglais
 
 ## RÔLES DE L'EQUIPE :
 Arthur VALENTIM :
-- Gestion des locataires
+- Gestion des mandataires
 - Gestion des locations
 
 Perrine COUPY :
 - Connexion / Mot de passe oublié 
-- Gestion des mandataires
+- Gestion des locataires
 - Gestion des biens
 
 Projet annuel réalisé par Arthur VALENTIM et Perrine COUPY.
