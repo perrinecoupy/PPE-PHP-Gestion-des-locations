@@ -5,16 +5,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-xs-12">
-                    <h2>Ajout d'un locataire</h2>
+                    <h2>{{ app.user.firstname }} {{ app.user.name }}</h2>
                     {{ form_row(form.name, { 'attr': {'class': 'form-control'} }) }}
                     {{ form_row(form.firstname, { 'attr': {'class': 'form-control'} }) }}
                     {{ form_row(form.email, { 'attr': {'class': 'form-control'} }) }}
                     {{ form_row(form.password, { 'attr': {'class': 'form-control'} }) }}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Confirmation du mot de passe</label>
+                        <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
                     {{ form_row(form.submit, { 'attr': {'class': 'btn btn-success btn-update-infos'} }) }}
                 </div>
                 <div class="form-row locations">
                     <h2 class="title-location">Liste des locations</h2>
                     <button class="btn btn-success btn-location"><a href="{{ path('ajoutLocation') }}" class="link-update">Ajouter une location</a></button>
+                    {# {% for residence in user.representativeResidences %}
+                        {{ dump(residence.representativeResidences) }}
+                    {% endfor %}#}
                 </div>
             </div>
         </div>

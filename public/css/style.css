@@ -54,3 +54,133 @@
 .title-location {
     float: left;
 }
+
+.title-mandataire {
+    float: left;
+    margin-bottom: 50px;
+}
+
+/* Arrow right */
+.arrow {
+    position: absolute;
+    width: 8vmin;
+    height: 8vmin;
+    background: transparent;
+    border-top: 1vmin solid black;
+    border-right: 1vmin solid black;
+    box-shadow: 0 0 0 lightgray;
+    transition: all 200ms ease;
+}
+
+.arrow.right {
+    transform: translate3d(0, -50%, 0) rotate(45deg);
+    margin-left: 800px;
+    margin-top: -50px;
+}
+
+/* Background color of the status of a serie */
+.bg-status-serie{
+    background-color: #D1D0D0;
+    border-radius: 15px;
+    padding: 0 10px;
+}
+
+/* Background color of a categorie of a serie */
+.bg-categorie-serie{
+    background-color: #C3EFFD;
+    border-radius: 15px;
+    padding: 0 10px;
+}
+
+.btn-acceder {
+    background-color: #B16847;
+    color: #FFFFFF;
+}
+
+.city {
+    float: left;
+    margin-top: 7px;
+    margin-left: 100px;
+}
+
+.custom-select {
+    width: 180px;
+    margin-left: 50px;
+}
+
+/* Description of a serie */
+.description-serie{
+    margin-top: 48px;
+    width: 766px;
+    color: #000000!important;
+}
+
+.description-serie2 {
+    margin-top: 0;
+    width: 766px;
+    color: #000000!important;
+}
+
+/* Principal div of the page */
+.detail-serie{
+    padding: 30px 150px;
+}
+
+/* Picture of a serie */
+.img-serie{
+    width: 230px;
+    height: 200px;
+    float: left;
+}
+
+/* Link to go and see the details of a serie */
+.link-view-serie{
+    text-decoration: none;
+    color: #B16847;
+}
+
+/* Link to go and see the details of a serie when you over*/
+.link-view-serie:hover{
+    text-decoration: none;
+    color: #B16847;
+}
+
+/* Informations of a serie */
+.info-serie{
+    float: left;
+    font-size: 11px;
+    color: #000000!important;
+}
+
+/* Title of the page */
+.title-detail-serie{
+    font-family: 'Roboto', sans-serif;
+    color: #B16847;
+    float: left;
+}
+
+/* Title of a serie */
+.title-series{
+    padding-left: 250px;
+}
+
+/* Spacement of the serie information */
+.space-info{
+    margin-left: 5px;
+}
+
+/* Responsive of the page */
+@media only screen and (max-width: 600px){
+    .detail-serie{
+        padding: 20px 0;
+    }
+
+    .description-serie{
+        width: auto;
+        color: #0a0a0a;
+    }
+
+    .arrow.right{
+        display: none;
+    }
+}

@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ResidenceRepository::class)]
+#[ORM\Table(name: 'residence')]
 class Residence
 {
     #[ORM\Id]
@@ -25,7 +26,7 @@ class Residence
     private $city;
 
     #[ORM\Column(type: 'string', length: 45)]
-    private $zipCode;
+    private $zip_code;
 
     #[ORM\Column(type: 'string', length: 255)]
     private $country;
@@ -33,10 +34,10 @@ class Residence
     #[ORM\Column(type: 'string', length: 255)]
     private $inventoryFile;
 
-    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'owner_id_user')]
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'ownerResidences')]
     private $owner;
 
-    #[ORM\ManyToOne(targetEntity: Rent::class, inversedBy: 'representative_id_residence')]
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'representativeResidences')]
     private $representative;
 
     #[ORM\OneToMany(mappedBy: 'residence_id', targetEntity: Rent::class)]
@@ -117,7 +118,7 @@ class Residence
         return $this->inventoryFile;
     }
 
-    public function setInventoryFile(string $inventory_file): self
+    public function setInventoryFile(string $inventoryFile): self
     {
         $this->inventoryFile = $inventoryFile;
 

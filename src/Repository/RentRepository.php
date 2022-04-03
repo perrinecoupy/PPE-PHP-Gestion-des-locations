@@ -5,9 +5,6 @@ namespace App\Repository;
 use App\Entity\Rent;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
-use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 
 /**
  * @method Rent|null find($id, $lockMode = null, $lockVersion = null)
@@ -15,7 +12,7 @@ use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
  * @method Rent[]    findAll()
  * @method Rent[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class RentRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
+class RentRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {

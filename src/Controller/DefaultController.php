@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Entity\Residence;
 use App\Repository\ArticleRepository;
+use App\Repository\RentRepository;
 use App\Repository\UserRepository;
 use App\Repository\ResidenceRepository;
 use Doctrine\ORM\Mapping\Entity;
@@ -42,9 +43,9 @@ class DefaultController extends AbstractController
         return $this->render('mandataires/index.html.twig', ['users' => $userRepository->findByRoleMandataire()]);
     }
 
-    public function residence(UserRepository $userRepository): Response
+    public function biens(ResidenceRepository $residenceRepository): Response
     {
         //return $this->render('default/article.html.twig', ['articles' => self::ARTICLES]);
-        return $this->render('locataires/index.html.twig', ['residences' => $userRepository->findByLocations()]);
+        return $this->render('biens/index.html.twig', ['residence' => $residenceRepository->findAll()]);
     }
 }

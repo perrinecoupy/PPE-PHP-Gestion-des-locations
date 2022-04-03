@@ -1,18 +1,30 @@
-{% include 'includes/admin_head.html.twig' %}
+{% extends 'base.html.twig' %}
+
+{% block content %}
 <!-- Details of each series -->
 <div class="detail-serie">
-    <h2 class="title-detail-serie">3 biens</h2>
-    <a href="view.php" class="link-view-serie"><div>
-            <img src="ressources/img/test.png" alt="Image de la s�rie" class="img-serie">
-        </div>
-        <div class="title-series">
-            <h4>#</h4>
-            <p class="info-serie"><i class="fas fa-calendar-week"></i>#</p>
-            <p class="info-serie"><i class="fas fa-exclamation-circle space-info"></i>#</p>
-            <p class="info-serie space-info bg-status-serie">#</p>
-            <p class="info-serie space-info bg-categorie-serie">#</p>
-            <p class="description-serie">#</p>
-            <a href="view.php" class="arrow right"></a>
-        </div></a>
+    <h2 class="title-detail-serie">{{ residence |length }} biens</h2>
+    <p class="city">Ville :</p>
+    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Toutes</option>
+        <option value="1">Senlis</option>
+    </select>
+    <button class="btn btn-primary">Afficher</button>
+    <a href="{{ path("ajoutBien") }}"><button class="btn btn-success">Ajouter un bien</button></a>
 </div>
-{% include 'includes/_footer.html.twig' %}
+    {% for residence in residence %}
+        <!-- Details of each series -->
+        <div class="detail-serie">
+            <a href="{{ path('modificationBien', {id: residence.id}) }}" class="link-view-serie"><div>
+                    <img src="{{ asset('img/image.jpg') }}" alt="Image de la série" class="img-serie">
+                </div>
+                <div class="title-series">
+                    <h4>{{ residence.name }}</h4>
+                    <p class="info-serie">Disponible le 1er décembre 2020</p>
+                    <p class="description-serie">Non occupé&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Géré par Arthur VALENTIM</p>
+                    <p class="description-serie2">0 locations au total</p>
+                    <a href="{{ path('modificationBien', {id: residence.id}) }}"><button class="btn btn-acceder">Accéder</button></a>
+                </div></a>
+        </div>
+    {% endfor %}
+{% endblock %}

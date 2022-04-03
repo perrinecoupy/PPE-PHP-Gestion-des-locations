@@ -18,19 +18,19 @@ class LocataireType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'label' => 'Nom',
-                'required' => true,
+                'required' => false,
             ])
             ->add('firstname', TextType::class, [
                 'label' => 'Prénom',
-                'required' => true,
+                'required' => false,
             ])
             ->add('email', EmailType::class, [
                 'label' => 'Email',
-                'required' => true,
+                'required' => false,
             ])
             ->add('password', PasswordType::class, [
                 'label' => 'Mot de passe',
-                'required' => true,
+                'required' => false,
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Mettre à jour',

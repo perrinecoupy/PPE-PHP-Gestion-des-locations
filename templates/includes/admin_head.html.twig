@@ -5,16 +5,16 @@
             <a href="{{ path('index')}}" class="link-home links-navbar">LOGO</a>
             <a href="{{ path('index') }}" class="links-navbar-accueil">ACCUEIL</a>
             {% if is_granted('ROLE_ADMIN') %}
-                <a href="#" class="links-navbar-accueil">BIENS</a>
+                <a href="{{ path('biens') }}" class="links-navbar-accueil">BIENS</a>
                 <a href="{{ path('locataires') }}" class="links-navbar-accueil">LOCATAIRES</a>
                 <a href="{{ path('mandataires') }}" class="links-navbar-accueil">MANDATAIRES</a>
             {% endif %}
             {% if is_granted('ROLE_TENANT') %}
-                <a href="#" class="links-navbar-accueil">BIENS</a>
+                <a href="{{ path('biens') }}" class="links-navbar-accueil">BIENS</a>
                 <a href="{{ path('mandataires') }}" class="links-navbar-accueil">MANDATAIRES</a>
             {% endif %}
             {% if is_granted('ROLE_REPRESENTATIVE') %}
-                <a href="#" class="links-navbar-accueil">BIENS</a>
+                <a href="{{ path('biens') }}" class="links-navbar-accueil">BIENS</a>
             {% endif %}
         </div>
         <div class="infos-user">

@@ -72,6 +72,7 @@ class LocataireController extends AbstractController
 
         return $this->render('locataires/create.html.twig', [
             'form' => $form->createView(),
+            'user'=> $user,
         ]);
     }
 }
