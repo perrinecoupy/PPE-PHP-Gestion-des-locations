@@ -6,6 +6,7 @@ use App\Entity\Residence;
 use App\Entity\Rent;
 use App\Form\LocataireType;
 use App\Form\LocationType;
+use App\Repository\RentRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class LocationController extends AbstractController
 {
-    public function createLocation(Request $request): Response
+    public function createLocation(Request $request, RentRepository $rentRepository): Response
     {
 
         $rent = new Rent();
@@ -43,8 +44,11 @@ class LocationController extends AbstractController
             }
         }
 
+        $rent = $rentRepository->findAll();
+
         return $this->render('locations/create.html.twig', [
             'form' => $form->createView(),
+            'rent' => $rent,
         ]);
     }
 }

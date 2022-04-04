@@ -40,11 +40,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToOne(targetEntity: Residence::class, inversedBy: 'representative')]
     private $representativeResidences;
 
-    public function __construct()
-    {
-        $this->ownerResidences = new ArrayCollection();
-        $this->representativeResidences = new ArrayCollection();
-    }
+    #public function __construct()
+    #{
+        #$this->ownerResidences = new ArrayCollection();
+        #$this->representativeResidences = new ArrayCollection();
+    #}
 
     public function getId(): ?int
     {

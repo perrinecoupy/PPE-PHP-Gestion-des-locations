@@ -48,4 +48,10 @@ class DefaultController extends AbstractController
         //return $this->render('default/article.html.twig', ['articles' => self::ARTICLES]);
         return $this->render('biens/index.html.twig', ['residence' => $residenceRepository->findAll()]);
     }
+
+    public function locations(RentRepository $rentRepository): Response
+    {
+        //return $this->render('default/article.html.twig', ['articles' => self::ARTICLES]);
+        return $this->render('locations/create.html.twig', ['rent' =>$rentRepository->findAll()]);
+    }
 }

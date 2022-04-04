@@ -148,7 +148,7 @@ class __TwigTemplate_6ff1f8145f805486058ebc332b2e9ec397dfbea4423662595b6131daba6
 {% block content %}
 <!-- Details of each series -->
 <div class=\"detail-serie\">
-    <h2 class=\"title-detail-serie\">{{ residence |length }} biens</h2>
+    <h2 class=\"title-detail-serie\">{{ residence | length }} biens</h2>
     <p class=\"city\">Ville :</p>
     <select class=\"custom-select mr-sm-2\" id=\"inlineFormCustomSelect\">
         <option selected>Toutes</option>

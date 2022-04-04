@@ -82,11 +82,4 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->getQuery()
             ->getResult();
     }
-
-    public function findByLocations()
-    {
-        return $this->createQueryBuilder('residence')
-            ->getQuery()
-            ->getResult();
-    }
 }

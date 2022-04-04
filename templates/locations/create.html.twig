@@ -5,6 +5,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-xs-12">
+                <h2>{{ app.user.firstname }} {{ app.user.name }}</h2>
+                <div class="form-group">
                     <label class="mr-sm-2" for="inlineFormCustomSelect">Location</label>
                     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
                         <option selected>Sélectionner une location</option>
@@ -12,12 +14,39 @@
                         <option value="2">Location 2</option>
                         <option value="3">Location 3</option>
                     </select>
-                {{ form_row(form.arrival_date, { 'attr': {'class': 'form-control'} }) }}
-                {{ form_row(form.departure_date, { 'attr': {'class': 'form-control'} }) }}
-                {{ form_row(form.id) }}
-                {{ form_row(form.submit, { 'attr': {'class': 'btn btn-success btn-update-infos'} }) }}
+                    {{ form_row(form.arrival_date, { 'attr': {'class': 'form-control'} }) }}
+                    {{ form_row(form.departure_date, { 'attr': {'class': 'form-control'} }) }}
+                    {{ form_row(form.id) }}
+                    {{ form_row(form.submit, { 'attr': {'class': 'btn btn-success btn-update-infos'} }) }}
+                </div>
+            </div>
+            <div class="form-row locations">
+                <h2 class="title-location">Mes locations</h2>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Date entrée</th>
+                        <th scope="col">Date sortie</th>
+                        <th scope="col">Locataire</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for rent in rent %}
+                    <tr>
+                        <th scope="row">{{ rent.id }}</th>
+                        <td>{{ rent.arrivalDate | date("d/m/Y") }}</td>
+                        <td>{{ rent.departureDate | date("d/m/Y") }}</td>
+                        <td>{{ app.user.firstname }} {{ app.user.name }}</td>
+                        <td><a href="#"><button class="btn btn-acceder">Accéder</button></a></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+
     {{ form_end(form) }}
 {% endblock %}

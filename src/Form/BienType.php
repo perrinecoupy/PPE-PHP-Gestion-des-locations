@@ -37,7 +37,7 @@ class BienType extends AbstractType
                 'required' => true,
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Mettre à jour',
+                'label' => 'Mettre à jour les données',
             ]);
     }
 

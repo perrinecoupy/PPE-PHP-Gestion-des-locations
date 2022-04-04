@@ -73,27 +73,45 @@ class __TwigTemplate_267f2055282145893de564edece4b08d55ee137405b6d468d13177cff9c
 
     <div class=\"container\">
         <div class=\"row\">
-            <div class=\"col-lg-6 col-xs-12\">
-                <h2>Ajout d'un bien</h2>
+            <div class=\"col-lg-3 col-xs-12\">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-lg-4 col-xs-12\">
+                <img src=\"";
+        // line 19
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/image.jpg"), "html", null, true);
+        echo "\" alt=\"Image de la série\" class=\"img-serie2\">
                 ";
-        // line 11
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), "name", [], "any", false, false, false, 11), 'row', ["attr" => ["class" => "form-control"]]);
+        // line 20
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), "name", [], "any", false, false, false, 20), 'row', ["attr" => ["class" => "form-control"]]);
         echo "
                 ";
-        // line 12
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), "address", [], "any", false, false, false, 12), 'row', ["attr" => ["class" => "form-control"]]);
+        // line 21
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), "address", [], "any", false, false, false, 21), 'row', ["attr" => ["class" => "form-control"]]);
         echo "
-                ";
-        // line 13
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), "zip_code", [], "any", false, false, false, 13), 'row', ["attr" => ["class" => "form-control"]]);
+                <div class=\"form-row\">
+                    <div class=\"form-group col-md-6\" style=\"margin-bottom: 0\">
+                        ";
+        // line 24
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), "zip_code", [], "any", false, false, false, 24), 'row', ["attr" => ["class" => "form-control"]]);
         echo "
-                ";
-        // line 14
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()), "city", [], "any", false, false, false, 14), 'row', ["attr" => ["class" => "form-control"]]);
+                    </div>
+                    <div class=\"form-group col-md-6\" style=\"margin-bottom: 0\">
+                        ";
+        // line 27
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 27, $this->source); })()), "city", [], "any", false, false, false, 27), 'row', ["attr" => ["class" => "form-control"]]);
         echo "
+                    </div>
+                </div>
                 ";
-        // line 15
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), "country", [], "any", false, false, false, 15), 'row', ["attr" => ["class" => "form-control"]]);
+        // line 30
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 30, $this->source); })()), "country", [], "any", false, false, false, 30), 'row', ["attr" => ["class" => "form-control"]]);
         echo "
                 <label>Gabarit inventaire</label>
                 <div class=\"input-group\">
@@ -116,16 +134,69 @@ class __TwigTemplate_267f2055282145893de564edece4b08d55ee137405b6d468d13177cff9c
                     </div>
                 </div>
                 ";
-        // line 36
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 36, $this->source); })()), "submit", [], "any", false, false, false, 36), 'row', ["attr" => ["class" => "btn btn-success btn-update-infos"]]);
+        // line 51
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 51, $this->source); })()), "submit", [], "any", false, false, false, 51), 'row', ["attr" => ["class" => "btn btn-success btn-update-infos"]]);
         echo "
+            </div>
+            <div class=\"form-row locations\">
+                <a href=\"\"><button class=\"btn btn-success\">Ajouter une location</button></a>
+                <h2 class=\"title-location\">";
+        // line 55
+        echo twig_escape_filter($this->env, twig_length_filter($this->env, (isset($context["rent"]) || array_key_exists("rent", $context) ? $context["rent"] : (function () { throw new RuntimeError('Variable "rent" does not exist.', 55, $this->source); })())), "html", null, true);
+        echo " Locations</h2>
+                <table class=\"table\">
+                    <thead>
+                    <tr>
+                        <th scope=\"col\">#</th>
+                        <th scope=\"col\">Date entrée</th>
+                        <th scope=\"col\">Date sortie</th>
+                        <th scope=\"col\">Locataire</th>
+                        <th scope=\"col\">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    ";
+        // line 67
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($context["rent"]);
+        foreach ($context['_seq'] as $context["_key"] => $context["rent"]) {
+            // line 68
+            echo "                    <tr>
+                        <th scope=\"row\">";
+            // line 69
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rent"], "id", [], "any", false, false, false, 69), "html", null, true);
+            echo "</th>
+                        <td>";
+            // line 70
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rent"], "arrivalDate", [], "any", false, false, false, 70), "d/m/Y"), "html", null, true);
+            echo "</td>
+                        <td>";
+            // line 71
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rent"], "departureDate", [], "any", false, false, false, 71), "d/m/Y"), "html", null, true);
+            echo "</td>
+                        <td>";
+            // line 72
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 72, $this->source); })()), "user", [], "any", false, false, false, 72), "firstname", [], "any", false, false, false, 72), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 72, $this->source); })()), "user", [], "any", false, false, false, 72), "name", [], "any", false, false, false, 72), "html", null, true);
+            echo "</td>
+                        <td><a href=\"#\"><button class=\"btn btn-acceder\">Accéder</button></a></td>
+                    </tr>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rent'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 76
+        echo "                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 
     ";
-        // line 41
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 41, $this->source); })()), 'form_end');
+        // line 82
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 82, $this->source); })()), 'form_end');
         echo "
 
 ";
@@ -149,7 +220,7 @@ class __TwigTemplate_267f2055282145893de564edece4b08d55ee137405b6d468d13177cff9c
 
     public function getDebugInfo()
     {
-        return array (  128 => 41,  120 => 36,  96 => 15,  92 => 14,  88 => 13,  84 => 12,  80 => 11,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  199 => 82,  191 => 76,  179 => 72,  175 => 71,  171 => 70,  167 => 69,  164 => 68,  160 => 67,  145 => 55,  138 => 51,  114 => 30,  108 => 27,  102 => 24,  96 => 21,  92 => 20,  88 => 19,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -162,12 +233,27 @@ class __TwigTemplate_267f2055282145893de564edece4b08d55ee137405b6d468d13177cff9c
 
     <div class=\"container\">
         <div class=\"row\">
-            <div class=\"col-lg-6 col-xs-12\">
-                <h2>Ajout d'un bien</h2>
+            <div class=\"col-lg-3 col-xs-12\">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-lg-4 col-xs-12\">
+                <img src=\"{{ asset('img/image.jpg') }}\" alt=\"Image de la série\" class=\"img-serie2\">
                 {{ form_row(form.name, { 'attr': {'class': 'form-control'} }) }}
                 {{ form_row(form.address, { 'attr': {'class': 'form-control'} }) }}
-                {{ form_row(form.zip_code, { 'attr': {'class': 'form-control'} }) }}
-                {{ form_row(form.city, { 'attr': {'class': 'form-control'} }) }}
+                <div class=\"form-row\">
+                    <div class=\"form-group col-md-6\" style=\"margin-bottom: 0\">
+                        {{ form_row(form.zip_code, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                    <div class=\"form-group col-md-6\" style=\"margin-bottom: 0\">
+                        {{ form_row(form.city, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                </div>
                 {{ form_row(form.country, { 'attr': {'class': 'form-control'} }) }}
                 <label>Gabarit inventaire</label>
                 <div class=\"input-group\">
@@ -190,6 +276,32 @@ class __TwigTemplate_267f2055282145893de564edece4b08d55ee137405b6d468d13177cff9c
                     </div>
                 </div>
                 {{ form_row(form.submit, { 'attr': {'class': 'btn btn-success btn-update-infos'} }) }}
+            </div>
+            <div class=\"form-row locations\">
+                <a href=\"\"><button class=\"btn btn-success\">Ajouter une location</button></a>
+                <h2 class=\"title-location\">{{ rent | length }} Locations</h2>
+                <table class=\"table\">
+                    <thead>
+                    <tr>
+                        <th scope=\"col\">#</th>
+                        <th scope=\"col\">Date entrée</th>
+                        <th scope=\"col\">Date sortie</th>
+                        <th scope=\"col\">Locataire</th>
+                        <th scope=\"col\">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for rent in rent %}
+                    <tr>
+                        <th scope=\"row\">{{ rent.id }}</th>
+                        <td>{{ rent.arrivalDate | date(\"d/m/Y\") }}</td>
+                        <td>{{ rent.departureDate | date(\"d/m/Y\") }}</td>
+                        <td>{{ app.user.firstname }} {{ app.user.name }}</td>
+                        <td><a href=\"#\"><button class=\"btn btn-acceder\">Accéder</button></a></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

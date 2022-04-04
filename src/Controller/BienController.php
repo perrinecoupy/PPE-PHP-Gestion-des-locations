@@ -5,13 +5,14 @@ namespace App\Controller;
 use App\Entity\Residence;
 use App\Form\BienType;
 use App\Repository\ResidenceRepository;
+use App\Repository\RentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class BienController extends AbstractController
 {
-    public function createBien(Request $request): Response
+    public function createBien(Request $request, RentRepository $rentRepository): Response
     {
 
         $bien = new Residence();
@@ -41,12 +42,15 @@ class BienController extends AbstractController
             }
         }
 
+        $bien = $rentRepository->findAll();
+
         return $this->render('biens/create.html.twig', [
             'form' => $form->createView(),
+            'rent' => $bien,
         ]);
     }
 
-    public function editBien(ResidenceRepository $residenceRepository, Request $request, int $id)
+    public function editBien(ResidenceRepository $residenceRepository, Request $request, int $id, RentRepository $rentRepository)
     {
         $bien = $residenceRepository->find($id);
 
@@ -70,9 +74,12 @@ class BienController extends AbstractController
                 'id' => $bien->getId()]);
         }
 
+        $bien = $rentRepository->findAll();
+
         return $this->render('biens/create.html.twig', [
             'form' => $form->createView(),
             'user'=> $bien,
+            'rent' => $bien,
         ]);
     }
 }
