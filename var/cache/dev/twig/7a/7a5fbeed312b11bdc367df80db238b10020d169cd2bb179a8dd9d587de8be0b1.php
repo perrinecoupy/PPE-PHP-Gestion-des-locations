@@ -77,39 +77,45 @@ class __TwigTemplate_6ff1f8145f805486058ebc332b2e9ec397dfbea4423662595b6131daba6
         <option value=\"1\">Senlis</option>
     </select>
     <button class=\"btn btn-primary\">Afficher</button>
-    <a href=\"";
-        // line 13
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajoutBien");
-        echo "\"><button class=\"btn btn-success\">Ajouter un bien</button></a>
-</div>
     ";
-        // line 15
+        // line 13
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 14
+            echo "        <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajoutBien");
+            echo "\"><button class=\"btn btn-success\">Ajouter un bien</button></a>
+    ";
+        }
+        // line 16
+        echo "</div>
+    ";
+        // line 17
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($context["residence"]);
         foreach ($context['_seq'] as $context["_key"] => $context["residence"]) {
-            // line 16
+            // line 18
             echo "        <!-- Details of each series -->
         <div class=\"detail-serie\">
             <a href=\"";
-            // line 18
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modificationBien", ["id" => twig_get_attribute($this->env, $this->source, $context["residence"], "id", [], "any", false, false, false, 18)]), "html", null, true);
+            // line 20
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modificationBien", ["id" => twig_get_attribute($this->env, $this->source, $context["residence"], "id", [], "any", false, false, false, 20)]), "html", null, true);
             echo "\" class=\"link-view-serie\"><div>
                     <img src=\"";
-            // line 19
+            // line 21
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/image.jpg"), "html", null, true);
             echo "\" alt=\"Image de la série\" class=\"img-serie\">
                 </div>
                 <div class=\"title-series\">
                     <h4>";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["residence"], "name", [], "any", false, false, false, 22), "html", null, true);
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["residence"], "name", [], "any", false, false, false, 24), "html", null, true);
             echo "</h4>
                     <p class=\"info-serie\">Disponible le 1er décembre 2020</p>
                     <p class=\"description-serie\">Non occupé&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Géré par Arthur VALENTIM</p>
                     <p class=\"description-serie2\">0 locations au total</p>
                     <a href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modificationBien", ["id" => twig_get_attribute($this->env, $this->source, $context["residence"], "id", [], "any", false, false, false, 26)]), "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modificationBien", ["id" => twig_get_attribute($this->env, $this->source, $context["residence"], "id", [], "any", false, false, false, 28)]), "html", null, true);
             echo "\"><button class=\"btn btn-acceder\">Accéder</button></a>
                 </div></a>
         </div>
@@ -138,7 +144,7 @@ class __TwigTemplate_6ff1f8145f805486058ebc332b2e9ec397dfbea4423662595b6131daba6
 
     public function getDebugInfo()
     {
-        return array (  112 => 26,  105 => 22,  99 => 19,  95 => 18,  91 => 16,  87 => 15,  82 => 13,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  118 => 28,  111 => 24,  105 => 21,  101 => 20,  97 => 18,  93 => 17,  90 => 16,  84 => 14,  82 => 13,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -155,7 +161,9 @@ class __TwigTemplate_6ff1f8145f805486058ebc332b2e9ec397dfbea4423662595b6131daba6
         <option value=\"1\">Senlis</option>
     </select>
     <button class=\"btn btn-primary\">Afficher</button>
-    <a href=\"{{ path(\"ajoutBien\") }}\"><button class=\"btn btn-success\">Ajouter un bien</button></a>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href=\"{{ path(\"ajoutBien\") }}\"><button class=\"btn btn-success\">Ajouter un bien</button></a>
+    {% endif %}
 </div>
     {% for residence in residence %}
         <!-- Details of each series -->
