@@ -76,22 +76,18 @@ class __TwigTemplate_6675e19671da418f1e8030af96d14b552111908688d1219c9da879f2668
             echo "                <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("biens");
             echo "\" class=\"links-navbar-accueil\">BIENS</a>
-                <a href=\"";
-            // line 14
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mandataires");
-            echo "\" class=\"links-navbar-accueil\">MANDATAIRES</a>
             ";
         }
-        // line 16
+        // line 15
         echo "            ";
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_REPRESENTATIVE")) {
-            // line 17
+            // line 16
             echo "                <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("biens");
             echo "\" class=\"links-navbar-accueil\">BIENS</a>
             ";
         }
-        // line 19
+        // line 18
         echo "        </div>
         <div class=\"infos-user\">
             <a href=\"#\" class=\"links-navbar profil\"><i class=\"far fa-user-circle fa-2x\"></i>MON PROFIL</a>
@@ -117,7 +113,7 @@ class __TwigTemplate_6675e19671da418f1e8030af96d14b552111908688d1219c9da879f2668
 
     public function getDebugInfo()
     {
-        return array (  95 => 19,  89 => 17,  86 => 16,  81 => 14,  76 => 13,  73 => 12,  68 => 10,  64 => 9,  59 => 8,  57 => 7,  53 => 6,  49 => 5,  43 => 1,);
+        return array (  91 => 18,  85 => 16,  82 => 15,  76 => 13,  73 => 12,  68 => 10,  64 => 9,  59 => 8,  57 => 7,  53 => 6,  49 => 5,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -135,7 +131,6 @@ class __TwigTemplate_6675e19671da418f1e8030af96d14b552111908688d1219c9da879f2668
             {% endif %}
             {% if is_granted('ROLE_TENANT') %}
                 <a href=\"{{ path('biens') }}\" class=\"links-navbar-accueil\">BIENS</a>
-                <a href=\"{{ path('mandataires') }}\" class=\"links-navbar-accueil\">MANDATAIRES</a>
             {% endif %}
             {% if is_granted('ROLE_REPRESENTATIVE') %}
                 <a href=\"{{ path('biens') }}\" class=\"links-navbar-accueil\">BIENS</a>
