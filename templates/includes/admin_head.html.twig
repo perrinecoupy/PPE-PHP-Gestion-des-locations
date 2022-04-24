@@ -9,9 +9,6 @@
                 <a href="{{ path('locataires') }}" class="links-navbar-accueil">LOCATAIRES</a>
                 <a href="{{ path('mandataires') }}" class="links-navbar-accueil">MANDATAIRES</a>
             {% endif %}
-            {% if is_granted('ROLE_TENANT') %}
-                <a href="{{ path('biens') }}" class="links-navbar-accueil">BIENS</a>
-            {% endif %}
             {% if is_granted('ROLE_REPRESENTATIVE') %}
                 <a href="{{ path('biens') }}" class="links-navbar-accueil">BIENS</a>
             {% endif %}

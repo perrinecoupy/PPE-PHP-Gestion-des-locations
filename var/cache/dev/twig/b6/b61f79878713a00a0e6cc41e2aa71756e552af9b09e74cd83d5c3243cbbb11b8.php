@@ -71,7 +71,7 @@ class __TwigTemplate_316af53266f1b626e91fa59c3055bc9e1b8273c7bcbb8c4dda1730f1ecb
         }
         // line 12
         echo "            ";
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_TENANT")) {
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_REPRESENTATIVE")) {
             // line 13
             echo "                <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("biens");
@@ -79,15 +79,6 @@ class __TwigTemplate_316af53266f1b626e91fa59c3055bc9e1b8273c7bcbb8c4dda1730f1ecb
             ";
         }
         // line 15
-        echo "            ";
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_REPRESENTATIVE")) {
-            // line 16
-            echo "                <a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("biens");
-            echo "\" class=\"links-navbar-accueil\">BIENS</a>
-            ";
-        }
-        // line 18
         echo "        </div>
         <div class=\"infos-user\">
             <a href=\"#\" class=\"links-navbar profil\"><i class=\"far fa-user-circle fa-2x\"></i>MON PROFIL</a>
@@ -113,7 +104,7 @@ class __TwigTemplate_316af53266f1b626e91fa59c3055bc9e1b8273c7bcbb8c4dda1730f1ecb
 
     public function getDebugInfo()
     {
-        return array (  91 => 18,  85 => 16,  82 => 15,  76 => 13,  73 => 12,  68 => 10,  64 => 9,  59 => 8,  57 => 7,  53 => 6,  49 => 5,  43 => 1,);
+        return array (  82 => 15,  76 => 13,  73 => 12,  68 => 10,  64 => 9,  59 => 8,  57 => 7,  53 => 6,  49 => 5,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -128,9 +119,6 @@ class __TwigTemplate_316af53266f1b626e91fa59c3055bc9e1b8273c7bcbb8c4dda1730f1ecb
                 <a href=\"{{ path('biens') }}\" class=\"links-navbar-accueil\">BIENS</a>
                 <a href=\"{{ path('locataires') }}\" class=\"links-navbar-accueil\">LOCATAIRES</a>
                 <a href=\"{{ path('mandataires') }}\" class=\"links-navbar-accueil\">MANDATAIRES</a>
-            {% endif %}
-            {% if is_granted('ROLE_TENANT') %}
-                <a href=\"{{ path('biens') }}\" class=\"links-navbar-accueil\">BIENS</a>
             {% endif %}
             {% if is_granted('ROLE_REPRESENTATIVE') %}
                 <a href=\"{{ path('biens') }}\" class=\"links-navbar-accueil\">BIENS</a>
