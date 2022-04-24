@@ -79,8 +79,17 @@ class __TwigTemplate_35f380ddf3df52032bfd659e13d177f2ed320668c3b676bbb02b3433297
         echo "</strong> sur la plateforme</p>
 
             <h2>Actions :</h2>
-            <a href=\"#\" class=\"user-infos\">>Afficher mes locations</a>
-            <br><a href=\"#\" class=\"user-infos\">>Supprimer mon compte</a>
+            ";
+        // line 9
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_TENANT")) {
+            // line 10
+            echo "            <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showLocations");
+            echo "\" class=\"user-infos\">>Afficher mes locations</a>
+            ";
+        }
+        // line 12
+        echo "            <br><a href=\"#\" class=\"user-infos\">>Supprimer mon compte</a>
         </div>
 
         </div>
@@ -105,7 +114,7 @@ class __TwigTemplate_35f380ddf3df52032bfd659e13d177f2ed320668c3b676bbb02b3433297
 
     public function getDebugInfo()
     {
-        return array (  78 => 6,  72 => 5,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  92 => 12,  86 => 10,  84 => 9,  78 => 6,  72 => 5,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -118,7 +127,9 @@ class __TwigTemplate_35f380ddf3df52032bfd659e13d177f2ed320668c3b676bbb02b3433297
             <p>Vous êtes inscrit en tant que <strong>{{ app.user.roles[0] }}</strong> sur la plateforme</p>
 
             <h2>Actions :</h2>
-            <a href=\"#\" class=\"user-infos\">>Afficher mes locations</a>
+            {% if is_granted('ROLE_TENANT') %}
+            <a href=\"{{ path('showLocations') }}\" class=\"user-infos\">>Afficher mes locations</a>
+            {% endif %}
             <br><a href=\"#\" class=\"user-infos\">>Supprimer mon compte</a>
         </div>
 

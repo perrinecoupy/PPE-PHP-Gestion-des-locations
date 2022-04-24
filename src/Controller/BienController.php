@@ -44,7 +44,7 @@ class BienController extends AbstractController
 
         $bien = $rentRepository->findAll();
 
-        return $this->render('biens/create.html.twig', [
+        return $this->render('biens/createB.html.twig', [
             'form' => $form->createView(),
             'rent' => $bien,
         ]);
