@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cefe9744-1f9e-4256-877a-27b52c0e1de2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/locataires/createL.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/admin_head.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/admin_head.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LocataireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LocataireController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +179,7 @@
       <workItem from="1650630352150" duration="140000" />
       <workItem from="1650630835899" duration="3505000" />
       <workItem from="1650719708759" duration="809000" />
-      <workItem from="1650813395256" duration="1461000" />
+      <workItem from="1650813395256" duration="2871000" />
     </task>
     <servers />
   </component>

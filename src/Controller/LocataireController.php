@@ -44,7 +44,7 @@ class LocataireController extends AbstractController
 
         $user = $residenceRepository->findAll();
 
-        return $this->render('locataires/create.html.twig', [
+        return $this->render('locataires/createL.html.twig', [
             'form' => $form->createView(),
             'residence' => $user,
         ]);

@@ -42,7 +42,7 @@ class MandataireController extends AbstractController
             }
         }
 
-        return $this->render('mandataires/create.html.twig', [
+        return $this->render('mandataires/createM.html.twig', [
             'form' => $form->createView(),
         ]);
     }
