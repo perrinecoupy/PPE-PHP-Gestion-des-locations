@@ -45,6 +45,10 @@
     width: 50%;
 }
 
+.form-control {
+    font-weight: 700!important;
+}
+
 .forgot-password:hover {
     color: #000000;
     text-decoration: none;

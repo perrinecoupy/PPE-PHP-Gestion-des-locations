@@ -144,7 +144,10 @@ class __TwigTemplate_267f2055282145893de564edece4b08d55ee137405b6d468d13177cff9c
         echo twig_escape_filter($this->env, twig_length_filter($this->env, (isset($context["rent"]) || array_key_exists("rent", $context) ? $context["rent"] : (function () { throw new RuntimeError('Variable "rent" does not exist.', 54, $this->source); })())), "html", null, true);
         echo " Locations</h2>
                 <a href=\"\"><button class=\"btn disponible\">Disponible à la location</button></a>
-                <a href=\"\"><button class=\"btn btn-success\">Ajouter une location</button></a>
+                <a href=\"";
+        // line 56
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajoutLocation");
+        echo "\"><button class=\"btn btn-success\">Ajouter une location</button></a>
                 <table class=\"table\">
                     <thead>
                     <tr>
@@ -223,7 +226,7 @@ class __TwigTemplate_267f2055282145893de564edece4b08d55ee137405b6d468d13177cff9c
 
     public function getDebugInfo()
     {
-        return array (  202 => 86,  194 => 80,  186 => 77,  180 => 73,  176 => 72,  172 => 71,  168 => 70,  165 => 69,  161 => 68,  144 => 54,  138 => 51,  114 => 30,  108 => 27,  102 => 24,  96 => 21,  92 => 20,  88 => 19,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  205 => 86,  197 => 80,  189 => 77,  183 => 73,  179 => 72,  175 => 71,  171 => 70,  168 => 69,  164 => 68,  149 => 56,  144 => 54,  138 => 51,  114 => 30,  108 => 27,  102 => 24,  96 => 21,  92 => 20,  88 => 19,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -283,7 +286,7 @@ class __TwigTemplate_267f2055282145893de564edece4b08d55ee137405b6d468d13177cff9c
             <div class=\"form-row locations\">
                 <h2 class=\"title-location\">{{ rent | length }} Locations</h2>
                 <a href=\"\"><button class=\"btn disponible\">Disponible à la location</button></a>
-                <a href=\"\"><button class=\"btn btn-success\">Ajouter une location</button></a>
+                <a href=\"{{ path(\"ajoutLocation\") }}\"><button class=\"btn btn-success\">Ajouter une location</button></a>
                 <table class=\"table\">
                     <thead>
                     <tr>
