@@ -95,15 +95,35 @@ class __TwigTemplate_9681c41e227cddee5823f1781dbf66cfad0c7fc856b4245f13a093fb911
             </div>
             ";
         // line 17
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), "submit", [], "any", false, false, false, 17), 'row', ["attr" => ["class" => "btn btn-success btn-update-infos"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), "address", [], "any", false, false, false, 17), 'row', ["attr" => ["class" => "form-control"]]);
+        echo "
+            ";
+        // line 18
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), "complementAddress", [], "any", false, false, false, 18), 'row', ["attr" => ["class" => "form-control"]]);
+        echo "
+            ";
+        // line 19
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), "zipCode", [], "any", false, false, false, 19), 'row', ["attr" => ["class" => "form-control"]]);
+        echo "
+            ";
+        // line 20
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), "city", [], "any", false, false, false, 20), 'row', ["attr" => ["class" => "form-control"]]);
+        echo "
+            ";
+        // line 21
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), "phone", [], "any", false, false, false, 21), 'row', ["attr" => ["class" => "form-control"]]);
+        echo "
+            ";
+        // line 22
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), "submit", [], "any", false, false, false, 22), 'row', ["attr" => ["class" => "btn btn-success btn-update-infos"]]);
         echo "
         </div>
     </div>
 </div>
 
     ";
-        // line 22
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), 'form_end');
+        // line 27
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 27, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -126,7 +146,7 @@ class __TwigTemplate_9681c41e227cddee5823f1781dbf66cfad0c7fc856b4245f13a093fb911
 
     public function getDebugInfo()
     {
-        return array (  106 => 22,  98 => 17,  90 => 12,  86 => 11,  82 => 10,  78 => 9,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  126 => 27,  118 => 22,  114 => 21,  110 => 20,  106 => 19,  102 => 18,  98 => 17,  90 => 12,  86 => 11,  82 => 10,  78 => 9,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -147,6 +167,11 @@ class __TwigTemplate_9681c41e227cddee5823f1781dbf66cfad0c7fc856b4245f13a093fb911
                 <label for=\"exampleInputEmail1\">Confirmation du mot de passe</label>
                 <input type=\"password\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\">
             </div>
+            {{ form_row(form.address, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_row(form.complementAddress, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_row(form.zipCode, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_row(form.city, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_row(form.phone, { 'attr': {'class': 'form-control'} }) }}
             {{ form_row(form.submit, { 'attr': {'class': 'btn btn-success btn-update-infos'} }) }}
         </div>
     </div>

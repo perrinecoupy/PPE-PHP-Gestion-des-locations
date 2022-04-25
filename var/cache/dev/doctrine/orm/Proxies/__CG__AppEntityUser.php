@@ -66,10 +66,10 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'name', '' . "\0" . 'App\\Entity\\User' . "\0" . 'firstname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'ownerResidences', '' . "\0" . 'App\\Entity\\User' . "\0" . 'representativeResidences'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'name', '' . "\0" . 'App\\Entity\\User' . "\0" . 'firstname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'ownerResidences', '' . "\0" . 'App\\Entity\\User' . "\0" . 'representativeResidences', '' . "\0" . 'App\\Entity\\User' . "\0" . 'address', '' . "\0" . 'App\\Entity\\User' . "\0" . 'complementAddress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'zipCode', '' . "\0" . 'App\\Entity\\User' . "\0" . 'city', '' . "\0" . 'App\\Entity\\User' . "\0" . 'phone'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'name', '' . "\0" . 'App\\Entity\\User' . "\0" . 'firstname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'ownerResidences', '' . "\0" . 'App\\Entity\\User' . "\0" . 'representativeResidences'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'name', '' . "\0" . 'App\\Entity\\User' . "\0" . 'firstname', '' . "\0" . 'App\\Entity\\User' . "\0" . 'ownerResidences', '' . "\0" . 'App\\Entity\\User' . "\0" . 'representativeResidences', '' . "\0" . 'App\\Entity\\User' . "\0" . 'address', '' . "\0" . 'App\\Entity\\User' . "\0" . 'complementAddress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'zipCode', '' . "\0" . 'App\\Entity\\User' . "\0" . 'city', '' . "\0" . 'App\\Entity\\User' . "\0" . 'phone'];
     }
 
     /**
@@ -387,6 +387,116 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRepresentativeResidences', [$representativeResidences]);
 
         parent::setRepresentativeResidences($representativeResidences);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAddress(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAddress', []);
+
+        return parent::getAddress();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setAddress(?string $address): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAddress', [$address]);
+
+        return parent::setAddress($address);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getComplementAddress(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getComplementAddress', []);
+
+        return parent::getComplementAddress();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setComplementAddress(?string $complementAddress): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setComplementAddress', [$complementAddress]);
+
+        return parent::setComplementAddress($complementAddress);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getZipCode(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getZipCode', []);
+
+        return parent::getZipCode();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setZipCode(?string $zipCode): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setZipCode', [$zipCode]);
+
+        return parent::setZipCode($zipCode);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCity(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCity', []);
+
+        return parent::getCity();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCity(?string $city): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCity', [$city]);
+
+        return parent::setCity($city);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPhone(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPhone', []);
+
+        return parent::getPhone();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPhone(?string $phone): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPhone', [$phone]);
+
+        return parent::setPhone($phone);
     }
 
 }

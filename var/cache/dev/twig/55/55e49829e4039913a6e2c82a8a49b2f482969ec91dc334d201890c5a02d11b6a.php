@@ -44,14 +44,14 @@ class __TwigTemplate_6250085511ccc7b66792a7b421317f85add7a2038f36209851ab3ee6fe0
     <div id=\"footerText\">
         <div class=\"footerLeft\">
             <ul>
-                <li class=\"infos\">Gestion locative</li>
-                <li class=\"infos\">Contact telephone : 06 06 06 06 06</li>
-                <li class=\"email-contact\">Contact email : contact@gestionlocative.fr</li>
+                <li class=\"infos li\">Gestion locative</li>
+                <li class=\"infos li\">Contact telephone : 06 06 06 06 06</li>
+                <li class=\"email-contact li\">Contact email : contact@gestionlocative.fr</li>
             </ul>
         </div>
         <div class=\"footerRight\">
             <ul>
-                <li class=\"infos-version\">Version 1.0</li>
+                <li class=\"infos-version li\">Version 1.0</li>
             </ul>
         </div>
     </div>";
@@ -79,14 +79,14 @@ class __TwigTemplate_6250085511ccc7b66792a7b421317f85add7a2038f36209851ab3ee6fe0
     <div id=\"footerText\">
         <div class=\"footerLeft\">
             <ul>
-                <li class=\"infos\">Gestion locative</li>
-                <li class=\"infos\">Contact telephone : 06 06 06 06 06</li>
-                <li class=\"email-contact\">Contact email : contact@gestionlocative.fr</li>
+                <li class=\"infos li\">Gestion locative</li>
+                <li class=\"infos li\">Contact telephone : 06 06 06 06 06</li>
+                <li class=\"email-contact li\">Contact email : contact@gestionlocative.fr</li>
             </ul>
         </div>
         <div class=\"footerRight\">
             <ul>
-                <li class=\"infos-version\">Version 1.0</li>
+                <li class=\"infos-version li\">Version 1.0</li>
             </ul>
         </div>
     </div>", "includes/_footer.html.twig", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\includes\\_footer.html.twig");

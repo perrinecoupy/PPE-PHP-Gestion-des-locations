@@ -18,23 +18,23 @@ class BienType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'label' => 'Nom de la résidence',
-                'required' => true,
+                'required' => false,
             ])
             ->add('address', TextType::class, [
                 'label' => 'Adresse',
-                'required' => true,
+                'required' => false,
             ])
             ->add('zip_code', TextType::class, [
                 'label' => 'Code postal',
-                'required' => true,
+                'required' => false,
             ])
             ->add('city', TextType::class, [
                 'label' => 'Ville',
-                'required' => true,
+                'required' => false,
             ])
             ->add('country', TextType::class, [
                 'label' => 'Pays',
-                'required' => true,
+                'required' => false,
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Mettre à jour les données',

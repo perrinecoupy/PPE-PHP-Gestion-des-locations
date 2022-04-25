@@ -40,6 +40,21 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToOne(targetEntity: Residence::class, inversedBy: 'representative')]
     private $representativeResidences;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $address;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $complementAddress;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $zipCode;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $city;
+
+    #[ORM\Column(type: 'string', length: 10, nullable: true)]
+    private $phone;
+
     #public function __construct()
     #{
         #$this->ownerResidences = new ArrayCollection();
@@ -51,6 +66,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->id;
     }
 
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
     public function getEmail(): ?string
     {
         return $this->email;
@@ -136,6 +154,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
     public function getName(): ?string
     {
         return $this->name;
@@ -148,6 +169,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
     public function getFirstname(): ?string
     {
         return $this->firstname;
@@ -190,6 +214,75 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setRepresentativeResidences(Collection $representativeResidences): void
     {
         $this->representativeResidences = $representativeResidences;
+    }
+
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
+    public function getAddress(): ?string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(?string $address): self
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    public function getComplementAddress(): ?string
+    {
+        return $this->complementAddress;
+    }
+
+    public function setComplementAddress(?string $complementAddress): self
+    {
+        $this->complementAddress = $complementAddress;
+
+        return $this;
+    }
+
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
+    public function getZipCode(): ?string
+    {
+        return $this->zipCode;
+    }
+
+    public function setZipCode(?string $zipCode): self
+    {
+        $this->zipCode = $zipCode;
+
+        return $this;
+    }
+
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(?string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(?string $phone): self
+    {
+        $this->phone = $phone;
+
+        return $this;
     }
 
 
