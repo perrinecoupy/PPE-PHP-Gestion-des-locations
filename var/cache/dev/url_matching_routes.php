@@ -25,6 +25,7 @@ return [
         '/mandataires/create' => [[['_route' => 'ajoutMandataire', '_controller' => 'App\\Controller\\MandataireController::createUser'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/biens/create' => [[['_route' => 'ajoutBien', '_controller' => 'App\\Controller\\BienController::createBien'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/locations/show' => [[['_route' => 'showLocations', '_controller' => 'App\\Controller\\DefaultController::showLocations'], null, null, null, false, false, null]],
+        '/locations/showLocation' => [[['_route' => 'showLocation', '_controller' => 'App\\Controller\\DefaultController::showLocation'], null, null, null, false, false, null]],
         '/locations' => [[['_route' => 'locations', '_controller' => 'App\\Controller\\DefaultController::locations'], null, null, null, false, false, null]],
         '/locations/create' => [[['_route' => 'ajoutLocation', '_controller' => 'App\\Controller\\LocationController::createLocation'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/series' => [[['_route' => 'series', '_controller' => 'App\\Controller\\DefaultController::series'], null, null, null, false, false, null]],

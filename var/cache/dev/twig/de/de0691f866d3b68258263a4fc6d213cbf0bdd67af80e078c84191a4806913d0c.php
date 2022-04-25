@@ -180,14 +180,16 @@ class __TwigTemplate_267f2055282145893de564edece4b08d55ee137405b6d468d13177cff9c
             echo " ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 72, $this->source); })()), "user", [], "any", false, false, false, 72), "name", [], "any", false, false, false, 72), "html", null, true);
             echo "</td>
-                        <td><a href=\"#\"><button class=\"btn btn-acceder\">Accéder</button></a></td>
+                        ";
+            // line 76
+            echo "                        <td><a href=\"#\"><button class=\"btn btn-acceder\">Accéder</button></a></td>
                     </tr>
                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rent'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 76
+        // line 79
         echo "                    </tbody>
                 </table>
             </div>
@@ -195,8 +197,8 @@ class __TwigTemplate_267f2055282145893de564edece4b08d55ee137405b6d468d13177cff9c
     </div>
 
     ";
-        // line 82
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 82, $this->source); })()), 'form_end');
+        // line 85
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 85, $this->source); })()), 'form_end');
         echo "
 
 ";
@@ -220,7 +222,7 @@ class __TwigTemplate_267f2055282145893de564edece4b08d55ee137405b6d468d13177cff9c
 
     public function getDebugInfo()
     {
-        return array (  199 => 82,  191 => 76,  179 => 72,  175 => 71,  171 => 70,  167 => 69,  164 => 68,  160 => 67,  145 => 55,  138 => 51,  114 => 30,  108 => 27,  102 => 24,  96 => 21,  92 => 20,  88 => 19,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  201 => 85,  193 => 79,  185 => 76,  179 => 72,  175 => 71,  171 => 70,  167 => 69,  164 => 68,  160 => 67,  145 => 55,  138 => 51,  114 => 30,  108 => 27,  102 => 24,  96 => 21,  92 => 20,  88 => 19,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -297,6 +299,9 @@ class __TwigTemplate_267f2055282145893de564edece4b08d55ee137405b6d468d13177cff9c
                         <td>{{ rent.arrivalDate | date(\"d/m/Y\") }}</td>
                         <td>{{ rent.departureDate | date(\"d/m/Y\") }}</td>
                         <td>{{ app.user.firstname }} {{ app.user.name }}</td>
+                        {# {% for residence in residence %}
+                        <td><a href=\"{{ path('showLocation', {id: residence.id}) }}\"><button class=\"btn btn-acceder\">Accéder</button></a></td>
+                        {% endfor %} #}
                         <td><a href=\"#\"><button class=\"btn btn-acceder\">Accéder</button></a></td>
                     </tr>
                     {% endfor %}

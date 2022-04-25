@@ -70,6 +70,9 @@
                         <td>{{ rent.arrivalDate | date("d/m/Y") }}</td>
                         <td>{{ rent.departureDate | date("d/m/Y") }}</td>
                         <td>{{ app.user.firstname }} {{ app.user.name }}</td>
+                        {# {% for residence in residence %}
+                        <td><a href="{{ path('showLocation', {id: residence.id}) }}"><button class="btn btn-acceder">Accéder</button></a></td>
+                        {% endfor %} #}
                         <td><a href="#"><button class="btn btn-acceder">Accéder</button></a></td>
                     </tr>
                     {% endfor %}

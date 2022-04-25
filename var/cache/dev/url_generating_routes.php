@@ -31,6 +31,7 @@ return [
     'ajoutBien' => [[], ['_controller' => 'App\\Controller\\BienController::createBien'], [], [['text', '/biens/create']], [], []],
     'modificationBien' => [['id'], ['_controller' => 'App\\Controller\\BienController::editBien'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/biens/edit']], [], []],
     'showLocations' => [[], ['_controller' => 'App\\Controller\\DefaultController::showLocations'], [], [['text', '/locations/show']], [], []],
+    'showLocation' => [[], ['_controller' => 'App\\Controller\\DefaultController::showLocation'], [], [['text', '/locations/showLocation']], [], []],
     'locations' => [[], ['_controller' => 'App\\Controller\\DefaultController::locations'], [], [['text', '/locations']], [], []],
     'ajoutLocation' => [[], ['_controller' => 'App\\Controller\\LocationController::createLocation'], [], [['text', '/locations/create']], [], []],
     'show' => [['id'], ['_controller' => 'App\\Controller\\DefaultController::show'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/show']], [], []],
