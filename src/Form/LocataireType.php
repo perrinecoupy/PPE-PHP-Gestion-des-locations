@@ -32,6 +32,22 @@ class LocataireType extends AbstractType
                 'label' => 'Mot de passe',
                 'required' => false,
             ])
+            ->add('address', TextType::class, [
+                'label' => 'Adresse',
+                'required' => false,
+            ])
+            ->add('complementAddress', TextType::class, [
+                'label' => 'Complément d\'adresse',
+                'required' => false,
+            ])
+            ->add('zipCode', TextType::class, [
+                'label' => 'Code postal',
+                'required' => false,
+            ])
+            ->add('city', TextType::class, [
+                'label' => 'Ville',
+                'required' => false,
+            ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Mettre à jour',
             ]);

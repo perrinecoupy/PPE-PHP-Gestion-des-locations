@@ -40,6 +40,21 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToOne(targetEntity: Residence::class, inversedBy: 'representative')]
     private $representativeResidences;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $address;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $complementAddress;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $zipCode;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $city;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $numPhone;
+
     #public function __construct()
     #{
         #$this->ownerResidences = new ArrayCollection();
@@ -190,6 +205,66 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setRepresentativeResidences(Collection $representativeResidences): void
     {
         $this->representativeResidences = $representativeResidences;
+    }
+
+    public function getAddress(): ?string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(?string $address): self
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    public function getComplementAddress(): ?string
+    {
+        return $this->complementAddress;
+    }
+
+    public function setComplementAddress(?string $complementAddress): self
+    {
+        $this->complementAddress = $complementAddress;
+
+        return $this;
+    }
+
+    public function getZipCode(): ?string
+    {
+        return $this->zipCode;
+    }
+
+    public function setZipCode(?string $zipCode): self
+    {
+        $this->zipCode = $zipCode;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(?string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    public function getNumPhone(): ?string
+    {
+        return $this->numPhone;
+    }
+
+    public function setNumPhone(?string $numPhone): self
+    {
+        $this->numPhone = $numPhone;
+
+        return $this;
     }
 
 
