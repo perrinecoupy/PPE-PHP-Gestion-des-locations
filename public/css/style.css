@@ -52,7 +52,7 @@
 
 .locations {
     display: block;
-    margin-left: 60px;
+    margin-left: 20px;
 }
 
 .link-update {
@@ -185,6 +185,7 @@
     width: 230px;
     height: 200px;
     float: left;
+    padding-right: 20px;
 }
 
 .img-serie2 {
@@ -231,7 +232,7 @@
 }
 
 .title-series2{
-    padding-left: 0px;
+    padding-top: 21px;
 }
 
 /* Spacement of the serie information */
