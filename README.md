@@ -27,8 +27,8 @@ Dans ce site internet, il sera possible à un utilisateur de :
 Nommage des dossiers/fichiers en minuscule/anglais
 
 ## DUREE DU PROJET :
-- Début projet => Fin décembre 
-- Fin projet => Fin avril
+- Début projet => 03/01/2022 
+- Fin projet => 25/04/2022
 - Charge => environ 16 heures/personne
 
 ## GUIDE D'INSTALLATION :
@@ -44,6 +44,7 @@ Nommage des dossiers/fichiers en minuscule/anglais
 Arthur VALENTIM :
 - Gestion des mandataires
 - Gestion des locations
+- Gestion des biens
 
 Perrine COUPY :
 - Connexion / Mot de passe oublié 
