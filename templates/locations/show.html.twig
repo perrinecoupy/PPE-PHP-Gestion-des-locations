@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="block_locataire">
+        <h1 class="title-location">Gestion des locations</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Date d'arrivée</th>
+                <th scope="col">Date de départ</th>
+                <th scope="col">Signature du locataire</th>
+                <th scope="col">Signature du mandataire</th>
+                <th scope="col" style="width: 71rem;">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for rent in rent %}
+                <tr>
+                    <th scope="row">{{ rent.id }}</th>
+                    <td>{{ rent.arrivalDate | date("d/m/Y") }}</td>
+                    <td>{{ rent.departureDate | date("d/m/Y") }}</td>
+                    <td>{{ rent.tenantSignature }}</td>
+                    <td>{{ rent.representativeSignature }}</td>
+                    <td><button class="btn btn-secondary"><a href="#" class="link-update">Accéder à la location</a></button></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -6,7 +6,9 @@
             <p>Vous êtes inscrit en tant que <strong>{{ app.user.roles[0] }}</strong> sur la plateforme</p>
 
             <h2>Actions :</h2>
-            <a href="#" class="user-infos">>Afficher mes locations</a>
+            {% if is_granted('ROLE_TENANT') %}
+            <a href="{{ path('showLocations') }}" class="user-infos">>Afficher mes locations</a>
+            {% endif %}
             <br><a href="#" class="user-infos">>Supprimer mon compte</a>
         </div>
 

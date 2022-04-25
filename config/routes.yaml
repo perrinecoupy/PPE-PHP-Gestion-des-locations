@@ -45,6 +45,10 @@ modificationBien:
     methods: ["GET", "POST"]
     controller: App\Controller\BienController::editBien
 
+showLocations:
+    path: /locations/show
+    controller: App\Controller\DefaultController::showLocations
+
 locations:
     path: /locations
     controller: App\Controller\DefaultController::locations
