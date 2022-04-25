@@ -33,20 +33,38 @@ class DefaultController extends AbstractController
 
 	public function locataires(UserRepository $userRepository): Response
 	{
-		//return $this->render('default/article.html.twig', ['articles' => self::ARTICLES]);
-		return $this->render('locataires/index.html.twig', ['users' => $userRepository->findByRoleLocataire()]);
+        if($this->getUser()){
+            $user = $this->getDoctrine()->getRepository(User::class)->find($this->getUser());
+            return $this->render('locataires/index.html.twig',[
+                'users' => $userRepository->findByRoleLocataire(),
+                'user'=>$user
+            ]);
+        }
+        return $this->redirectToRoute('login');
 	}
 
     public function mandataires(UserRepository $userRepository): Response
     {
-        //return $this->render('default/article.html.twig', ['articles' => self::ARTICLES]);
-        return $this->render('mandataires/index.html.twig', ['users' => $userRepository->findByRoleMandataire()]);
+        if($this->getUser()){
+            $user = $this->getDoctrine()->getRepository(User::class)->find($this->getUser());
+            return $this->render('mandataires/index.html.twig',[
+                'users' => $userRepository->findByRoleMandataire(),
+                'user'=>$user
+            ]);
+        }
+        return $this->redirectToRoute('login');
     }
 
     public function biens(ResidenceRepository $residenceRepository): Response
     {
-        //return $this->render('default/article.html.twig', ['articles' => self::ARTICLES]);
-        return $this->render('biens/index.html.twig', ['residence' => $residenceRepository->findAll()]);
+        if($this->getUser()){
+            $user = $this->getDoctrine()->getRepository(User::class)->find($this->getUser());
+            return $this->render('biens/index.html.twig',[
+                'residence' => $residenceRepository->findAll(),
+                'user'=>$user
+            ]);
+        }
+        return $this->redirectToRoute('login');
     }
 
     public function locations(RentRepository $rentRepository): Response
