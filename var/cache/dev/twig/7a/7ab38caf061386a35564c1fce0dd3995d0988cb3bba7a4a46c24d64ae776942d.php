@@ -77,34 +77,59 @@ class __TwigTemplate_214efa672ad12380f477c3ff456cba9a790fea84808af8d7a6bd487cf09
                 <th scope=\"col\">#</th>
                 <th scope=\"col\">Nom</th>
                 <th scope=\"col\">Prénom</th>
-                <th scope=\"col\">Nombre de locations</th>
+                <th scope=\"col\">Adresse</th>
+                <th scope=\"col\">Complément Adresse</th>
+                <th scope=\"col\">CP</th>
+                <th scope=\"col\">Ville</th>
+                <th scope=\"col\">Num tel</th>
+                <th scope=\"col\">Nbr de locations</th>
                 <th scope=\"col\" style=\"width: 71rem;\">Action</th>
             </tr>
             </thead>
             <tbody>
             ";
-        // line 18
+        // line 23
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($context["users"]);
         foreach ($context['_seq'] as $context["_key"] => $context["users"]) {
-            // line 19
+            // line 24
             echo "                <tr>
                     <th scope=\"row\">";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "id", [], "any", false, false, false, 20), "html", null, true);
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "id", [], "any", false, false, false, 25), "html", null, true);
             echo "</th>
                     <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "name", [], "any", false, false, false, 21), "html", null, true);
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "name", [], "any", false, false, false, 26), "html", null, true);
             echo "</td>
                     <td>";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "firstname", [], "any", false, false, false, 22), "html", null, true);
+            // line 27
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "firstname", [], "any", false, false, false, 27), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 28
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "address", [], "any", false, false, false, 28), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "complementAddress", [], "any", false, false, false, 29), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 30
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "zipCode", [], "any", false, false, false, 30), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "city", [], "any", false, false, false, 31), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["users"], "phone", [], "any", false, false, false, 32), "html", null, true);
             echo "</td>
                     <td>0</td>
                     <td><button class=\"btn btn-secondary\"><a href=\"";
-            // line 24
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modificationLocataire", ["id" => twig_get_attribute($this->env, $this->source, $context["users"], "id", [], "any", false, false, false, 24)]), "html", null, true);
+            // line 34
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modificationLocataire", ["id" => twig_get_attribute($this->env, $this->source, $context["users"], "id", [], "any", false, false, false, 34)]), "html", null, true);
             echo "\" class=\"link-update\">Mettre à jour les données</a></button></td>
                 </tr>
             ";
@@ -112,7 +137,7 @@ class __TwigTemplate_214efa672ad12380f477c3ff456cba9a790fea84808af8d7a6bd487cf09
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['users'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
+        // line 37
         echo "            </tbody>
         </table>
     </div>
@@ -137,7 +162,7 @@ class __TwigTemplate_214efa672ad12380f477c3ff456cba9a790fea84808af8d7a6bd487cf09
 
     public function getDebugInfo()
     {
-        return array (  116 => 27,  107 => 24,  102 => 22,  98 => 21,  94 => 20,  91 => 19,  87 => 18,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  141 => 37,  132 => 34,  127 => 32,  123 => 31,  119 => 30,  115 => 29,  111 => 28,  107 => 27,  103 => 26,  99 => 25,  96 => 24,  92 => 23,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -154,7 +179,12 @@ class __TwigTemplate_214efa672ad12380f477c3ff456cba9a790fea84808af8d7a6bd487cf09
                 <th scope=\"col\">#</th>
                 <th scope=\"col\">Nom</th>
                 <th scope=\"col\">Prénom</th>
-                <th scope=\"col\">Nombre de locations</th>
+                <th scope=\"col\">Adresse</th>
+                <th scope=\"col\">Complément Adresse</th>
+                <th scope=\"col\">CP</th>
+                <th scope=\"col\">Ville</th>
+                <th scope=\"col\">Num tel</th>
+                <th scope=\"col\">Nbr de locations</th>
                 <th scope=\"col\" style=\"width: 71rem;\">Action</th>
             </tr>
             </thead>
@@ -164,6 +194,11 @@ class __TwigTemplate_214efa672ad12380f477c3ff456cba9a790fea84808af8d7a6bd487cf09
                     <th scope=\"row\">{{ users.id }}</th>
                     <td>{{ users.name }}</td>
                     <td>{{ users.firstname }}</td>
+                    <td>{{ users.address }}</td>
+                    <td>{{ users.complementAddress }}</td>
+                    <td>{{ users.zipCode }}</td>
+                    <td>{{ users.city }}</td>
+                    <td>{{ users.phone }}</td>
                     <td>0</td>
                     <td><button class=\"btn btn-secondary\"><a href=\"{{ path('modificationLocataire', {id: users.id}) }}\" class=\"link-update\">Mettre à jour les données</a></button></td>
                 </tr>
@@ -171,6 +206,7 @@ class __TwigTemplate_214efa672ad12380f477c3ff456cba9a790fea84808af8d7a6bd487cf09
             </tbody>
         </table>
     </div>
-{% endblock %}", "locataires/index.html.twig", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\locataires\\index.html.twig");
+{% endblock %}
+", "locataires/index.html.twig", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\locataires\\index.html.twig");
     }
 }
