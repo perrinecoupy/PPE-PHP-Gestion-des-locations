@@ -22,6 +22,9 @@
                     <td>{{ rent.departureDate | date("d/m/Y") }}</td>
                     <td>{{ rent.tenantSignature }}</td>
                     <td>{{ rent.representativeSignature }}</td>
+                    {# {% for residence in residence %}
+                    <td><button class="btn btn-secondary"><a href="{{ path('showLocation', {id: residence.id}) }}" class="link-update">Accéder à la location</a></button></td>
+                    {% endfor %} #}
                     <td><button class="btn btn-secondary"><a href="#" class="link-update">Accéder à la location</a></button></td>
                 </tr>
             {% endfor %}

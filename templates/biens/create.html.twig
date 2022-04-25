@@ -53,7 +53,7 @@
             <div class="form-row locations">
                 <h2 class="title-location">{{ rent | length }} Locations</h2>
                 <a href=""><button class="btn disponible">Disponible à la location</button></a>
-                <a href=""><button class="btn btn-success">Ajouter une location</button></a>
+                <a href="{{ path("ajoutLocation") }}"><button class="btn btn-success">Ajouter une location</button></a>
                 <table class="table">
                     <thead>
                     <tr>
@@ -71,6 +71,9 @@
                         <td>{{ rent.arrivalDate | date("d/m/Y") }}</td>
                         <td>{{ rent.departureDate | date("d/m/Y") }}</td>
                         <td>{{ app.user.firstname }} {{ app.user.name }}</td>
+                        {# {% for residence in residence %}
+                        <td><a href="{{ path('showLocation', {id: residence.id}) }}"><button class="btn btn-acceder">Accéder</button></a></td>
+                        {% endfor %} #}
                         <td><a href="#"><button class="btn btn-acceder">Accéder</button></a></td>
                     </tr>
                     {% endfor %}

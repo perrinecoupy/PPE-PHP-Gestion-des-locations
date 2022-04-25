@@ -49,6 +49,10 @@ showLocations:
     path: /locations/show
     controller: App\Controller\DefaultController::showLocations
 
+showLocation:
+    path: /locations/showLocation
+    controller: App\Controller\DefaultController::showLocation
+
 locations:
     path: /locations
     controller: App\Controller\DefaultController::locations
