@@ -15,6 +15,13 @@ class UserFixtures extends Fixture
         $user->setEmail('valentin.arthur1000@gmail.com');
         $user->setRoles(["ROLE_ADMIN"]);
         $user->setPassword('arthurvalentim');
+        $user->setName('Valentim');
+        $user->setFirstname('Arthur');
+        $user->setAddress('1 Rue Avenue de la liberté');
+        $user->setComplementAddress('20 ème étage');
+        $user->setZipCode('75000');
+        $user->setCity('Paris');
+        $user->setPhone('0123456789');
         $manager->persist($user);
         $manager->flush();
     }

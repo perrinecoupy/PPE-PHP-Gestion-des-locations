@@ -52,8 +52,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $city;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private $numPhone;
+    #[ORM\Column(type: 'string', length: 10, nullable: true)]
+    private $phone;
 
     #public function __construct()
     #{
@@ -66,6 +66,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->id;
     }
 
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
     public function getEmail(): ?string
     {
         return $this->email;
@@ -151,6 +154,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
     public function getName(): ?string
     {
         return $this->name;
@@ -163,6 +169,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
     public function getFirstname(): ?string
     {
         return $this->firstname;
@@ -207,6 +216,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->representativeResidences = $representativeResidences;
     }
 
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
     public function getAddress(): ?string
     {
         return $this->address;
@@ -231,6 +243,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
     public function getZipCode(): ?string
     {
         return $this->zipCode;
@@ -243,6 +258,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
     public function getCity(): ?string
     {
         return $this->city;
@@ -255,14 +273,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getNumPhone(): ?string
+    public function getPhone(): ?string
     {
-        return $this->numPhone;
+        return $this->phone;
     }
 
-    public function setNumPhone(?string $numPhone): self
+    public function setPhone(?string $phone): self
     {
-        $this->numPhone = $numPhone;
+        $this->phone = $phone;
 
         return $this;
     }

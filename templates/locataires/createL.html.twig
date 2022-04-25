@@ -15,6 +15,10 @@
                 <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             {{ form_row(form.address, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_row(form.complementAddress, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_row(form.zipCode, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_row(form.city, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_row(form.phone, { 'attr': {'class': 'form-control'} }) }}
             {{ form_row(form.submit, { 'attr': {'class': 'btn btn-success btn-update-infos'} }) }}
         </div>
     </div>

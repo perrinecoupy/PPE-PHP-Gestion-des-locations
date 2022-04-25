@@ -48,6 +48,10 @@ class LocataireType extends AbstractType
                 'label' => 'Ville',
                 'required' => false,
             ])
+            ->add('phone', TextType::class, [
+                'label' => 'Numéro de téléphone',
+                'required' => false,
+            ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Mettre à jour',
             ]);

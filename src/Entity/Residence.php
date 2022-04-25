@@ -6,6 +6,7 @@ use App\Repository\ResidenceRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ResidenceRepository::class)]
 #[ORM\Table(name: 'residence')]
@@ -53,6 +54,9 @@ class Residence
         return $this->id;
     }
 
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
     public function getName(): ?string
     {
         return $this->name;
@@ -65,6 +69,9 @@ class Residence
         return $this;
     }
 
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
     public function getAddress(): ?string
     {
         return $this->address;
@@ -77,6 +84,9 @@ class Residence
         return $this;
     }
 
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
     public function getCity(): ?string
     {
         return $this->city;
@@ -89,6 +99,9 @@ class Residence
         return $this;
     }
 
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
     public function getZipCode(): ?string
     {
         return $this->zip_code;
@@ -101,6 +114,9 @@ class Residence
         return $this;
     }
 
+    /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     */
     public function getCountry(): ?string
     {
         return $this->country;

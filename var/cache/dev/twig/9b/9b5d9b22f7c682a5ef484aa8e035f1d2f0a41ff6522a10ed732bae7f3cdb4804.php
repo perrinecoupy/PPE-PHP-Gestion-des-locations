@@ -65,7 +65,8 @@ li {
 
 .footerDiv {
 \twidth: 50%;
-}";
+}
+";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -111,6 +112,7 @@ li {
 
 .footerDiv {
 \twidth: 50%;
-}", "css/footer.css", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\css\\footer.css");
+}
+", "css/footer.css", "C:\\Users\\valen\\perrinecoupy\\PPE-PHP-Gestion-des-locations\\templates\\css\\footer.css");
     }
 }
