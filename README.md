@@ -44,6 +44,7 @@ Nommage des dossiers/fichiers en minuscule/anglais
 Arthur VALENTIM :
 - Gestion des mandataires
 - Gestion des locations
+- Gestion des biens
 
 Perrine COUPY :
 - Connexion / Mot de passe oublié 
