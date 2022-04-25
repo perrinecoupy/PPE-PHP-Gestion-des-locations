@@ -10,7 +10,12 @@
                 <th scope="col">#</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Prénom</th>
-                <th scope="col">Nombre de locations</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Complément Adresse</th>
+                <th scope="col">CP</th>
+                <th scope="col">Ville</th>
+                <th scope="col">Num tel</th>
+                <th scope="col">Nbr de locations</th>
                 <th scope="col" style="width: 71rem;">Action</th>
             </tr>
             </thead>
@@ -20,6 +25,11 @@
                     <th scope="row">{{ users.id }}</th>
                     <td>{{ users.name }}</td>
                     <td>{{ users.firstname }}</td>
+                    <td>{{ users.address }}</td>
+                    <td>{{ users.complementAddress }}</td>
+                    <td>{{ users.zipCode }}</td>
+                    <td>{{ users.city }}</td>
+                    <td>{{ users.phone }}</td>
                     <td>0</td>
                     <td><button class="btn btn-secondary"><a href="{{ path('modificationLocataire', {id: users.id}) }}" class="link-update">Mettre à jour les données</a></button></td>
                 </tr>

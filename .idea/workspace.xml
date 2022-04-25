@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="cefe9744-1f9e-4256-877a-27b52c0e1de2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/biens/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/biens/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/locataires/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/locataires/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/locataires/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/locataires/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/doctrine/orm/Proxies/__CG__AppEntityUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/doctrine/orm/Proxies/__CG__AppEntityUser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/34/34d40c92d450a3c975d92e2265c625d4e56d0f0b16bcdb1cb2b0f5c6d3f332a6.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/34/34d40c92d450a3c975d92e2265c625d4e56d0f0b16bcdb1cb2b0f5c6d3f332a6.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/36/36d7d8e8e59c561448e3c4ed61d06321ceb15fc969142680c3dedb514fae6663.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/36/36d7d8e8e59c561448e3c4ed61d06321ceb15fc969142680c3dedb514fae6663.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/url_generating_routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/url_generating_routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/url_matching_routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/url_matching_routes.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

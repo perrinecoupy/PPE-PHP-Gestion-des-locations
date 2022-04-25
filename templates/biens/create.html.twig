@@ -51,8 +51,9 @@
                 {{ form_row(form.submit, { 'attr': {'class': 'btn btn-success btn-update-infos'} }) }}
             </div>
             <div class="form-row locations">
-                <a href=""><button class="btn btn-success">Ajouter une location</button></a>
                 <h2 class="title-location">{{ rent | length }} Locations</h2>
+                <a href=""><button class="btn disponible">Disponible à la location</button></a>
+                <a href=""><button class="btn btn-success">Ajouter une location</button></a>
                 <table class="table">
                     <thead>
                     <tr>
