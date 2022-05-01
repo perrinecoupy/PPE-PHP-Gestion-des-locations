@@ -29,6 +29,7 @@ class LocationType extends AbstractType
             ->add('id', CheckboxType::class, [
                 'label' => 'Notifier le locataire',
                 'required' => true,
+                'mapped' => false,
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Ajouter',

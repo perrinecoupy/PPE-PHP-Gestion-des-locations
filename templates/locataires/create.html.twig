@@ -23,7 +23,9 @@
                 </div>
                 <div class="form-row locations">
                     <h2 class="title-location">Liste des locations</h2>
-                    <button class="btn btn-success btn-location"><a href="{{ path('ajoutLocation') }}" class="link-update">Ajouter une location</a></button>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <button class="btn btn-success btn-location"><a href="{{ path('ajoutLocation') }}" class="link-update">Ajouter une location</a></button>
+                    {% endif %}
                     {% for residence in residence %}
                     <div class="detail-serie2">
                         <a href="#" class="link-view-serie"><div>

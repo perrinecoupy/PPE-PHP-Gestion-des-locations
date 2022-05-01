@@ -216,9 +216,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->representativeResidences = $representativeResidences;
     }
 
-    /**
-     * @Assert\NotBlank(message="Veuillez remplir ce champ")
-     */
     public function getAddress(): ?string
     {
         return $this->address;
@@ -243,9 +240,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
-     * @Assert\NotBlank(message="Veuillez remplir ce champ")
-     */
     public function getZipCode(): ?string
     {
         return $this->zipCode;
@@ -258,9 +252,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
-     * @Assert\NotBlank(message="Veuillez remplir ce champ")
-     */
     public function getCity(): ?string
     {
         return $this->city;

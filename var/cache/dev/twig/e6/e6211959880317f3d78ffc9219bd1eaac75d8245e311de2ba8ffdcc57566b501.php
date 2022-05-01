@@ -107,27 +107,15 @@ class __TwigTemplate_fc894ea59d45b0f94353e1fe2240986662334e8c0c8a472197818314d43
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rent"], "representativeSignature", [], "any", false, false, false, 24), "html", null, true);
             echo "</td>
                     ";
-            // line 25
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable($context["residence"]);
-            foreach ($context['_seq'] as $context["_key"] => $context["residence"]) {
-                // line 26
-                echo "                    <td><button class=\"btn btn-secondary\"><a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showLocation", ["id" => twig_get_attribute($this->env, $this->source, $context["residence"], "id", [], "any", false, false, false, 26)]), "html", null, true);
-                echo "\" class=\"link-update\">Accéder à la location</a></button></td>
-                    ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['residence'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
             // line 28
-            echo "                </tr>
+            echo "                    <td><button class=\"btn btn-secondary\"><a href=\"#\" class=\"link-update\">Accéder à la location</a></button></td>
+                </tr>
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rent'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 31
         echo "            </tbody>
         </table>
     </div>
@@ -152,7 +140,7 @@ class __TwigTemplate_fc894ea59d45b0f94353e1fe2240986662334e8c0c8a472197818314d43
 
     public function getDebugInfo()
     {
-        return array (  131 => 30,  124 => 28,  115 => 26,  111 => 25,  107 => 24,  103 => 23,  99 => 22,  95 => 21,  91 => 20,  88 => 19,  84 => 18,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  119 => 31,  111 => 28,  107 => 24,  103 => 23,  99 => 22,  95 => 21,  91 => 20,  88 => 19,  84 => 18,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -181,9 +169,10 @@ class __TwigTemplate_fc894ea59d45b0f94353e1fe2240986662334e8c0c8a472197818314d43
                     <td>{{ rent.departureDate | date(\"d/m/Y\") }}</td>
                     <td>{{ rent.tenantSignature }}</td>
                     <td>{{ rent.representativeSignature }}</td>
-                    {% for residence in residence %}
+                    {# {% for residence in residence %}
                     <td><button class=\"btn btn-secondary\"><a href=\"{{ path('showLocation', {id: residence.id}) }}\" class=\"link-update\">Accéder à la location</a></button></td>
-                    {% endfor %}
+                    {% endfor %} #}
+                    <td><button class=\"btn btn-secondary\"><a href=\"#\" class=\"link-update\">Accéder à la location</a></button></td>
                 </tr>
             {% endfor %}
             </tbody>
