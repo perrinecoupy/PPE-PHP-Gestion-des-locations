@@ -16,31 +16,31 @@ class Rent
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $inventoryFile;
 
-    #[ORM\Column(type: 'datetime')]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $arrivalDate;
 
-    #[ORM\Column(type: 'datetime')]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $departureDate;
 
-    #[ORM\Column(type: 'text')]
+    #[ORM\Column(type: 'text', nullable: true)]
     private $tenantComments;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $tenantSignature;
 
-    #[ORM\Column(type: 'string', length: 45)]
+    #[ORM\Column(type: 'string', length: 45, nullable: true)]
     private $tenantValidatedAt;
 
-    #[ORM\Column(type: 'text')]
+    #[ORM\Column(type: 'text', nullable: true)]
     private $representativeComments;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $representativeSignature;
 
-    #[ORM\Column(type: 'datetime')]
+    #[ORM\Column(type: 'datetime', nullable: true)]
     private $representativeValidatedAt;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'tenant_id_user')]
@@ -66,24 +66,24 @@ class Rent
         return $this;
     }
 
-    public function getArrivalDate(): ?\DateTimeInterface
+    public function getArrivalDate(): ?string
     {
         return $this->arrivalDate;
     }
 
-    public function setArrivalDate(\DateTimeInterface $arrivalDate): self
+    public function setArrivalDate(string $arrivalDate): self
     {
         $this->arrivalDate = $arrivalDate;
 
         return $this;
     }
 
-    public function getDepartureDate(): ?\DateTimeInterface
+    public function getDepartureDate(): ?string
     {
         return $this->departureDate;
     }
 
-    public function setDepartureDate(\DateTimeInterface $departureDate): self
+    public function setDepartureDate(string $departureDate): self
     {
         $this->departureDate = $departureDate;
 

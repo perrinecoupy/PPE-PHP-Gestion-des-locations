@@ -55,7 +55,7 @@ class Residence
     }
 
     /**
-     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     * @Assert\NotBlank(message="Veuillez remplir ce champ")
      */
     public function getName(): ?string
     {
@@ -70,7 +70,7 @@ class Residence
     }
 
     /**
-     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     * @Assert\NotBlank(message="Veuillez remplir ce champ")
      */
     public function getAddress(): ?string
     {
@@ -85,7 +85,7 @@ class Residence
     }
 
     /**
-     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     * @Assert\NotBlank(message="Veuillez remplir ce champ")
      */
     public function getCity(): ?string
     {
@@ -100,7 +100,7 @@ class Residence
     }
 
     /**
-     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     * @Assert\NotBlank(message="Veuillez remplir ce champ")
      */
     public function getZipCode(): ?string
     {
@@ -115,7 +115,7 @@ class Residence
     }
 
     /**
-     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     * @Assert\NotBlank(message="Veuillez remplir ce champ")
      */
     public function getCountry(): ?string
     {

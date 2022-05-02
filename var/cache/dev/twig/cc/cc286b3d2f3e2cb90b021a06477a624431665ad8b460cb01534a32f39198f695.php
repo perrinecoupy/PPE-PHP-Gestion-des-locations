@@ -90,6 +90,10 @@ class __TwigTemplate_35f380ddf3df52032bfd659e13d177f2ed320668c3b676bbb02b3433297
         }
         // line 12
         echo "            <br><a href=\"#\" class=\"user-infos\">>Supprimer mon compte</a>
+            <br><a href=\"";
+        // line 13
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
+        echo "\" class=\"user-infos\">>Déconnexion</a>
         </div>
 
         </div>
@@ -114,7 +118,7 @@ class __TwigTemplate_35f380ddf3df52032bfd659e13d177f2ed320668c3b676bbb02b3433297
 
     public function getDebugInfo()
     {
-        return array (  92 => 12,  86 => 10,  84 => 9,  78 => 6,  72 => 5,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  95 => 13,  92 => 12,  86 => 10,  84 => 9,  78 => 6,  72 => 5,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -131,6 +135,7 @@ class __TwigTemplate_35f380ddf3df52032bfd659e13d177f2ed320668c3b676bbb02b3433297
             <a href=\"{{ path('showLocations') }}\" class=\"user-infos\">>Afficher mes locations</a>
             {% endif %}
             <br><a href=\"#\" class=\"user-infos\">>Supprimer mon compte</a>
+            <br><a href=\"{{ path('login') }}\" class=\"user-infos\">>Déconnexion</a>
         </div>
 
         </div>

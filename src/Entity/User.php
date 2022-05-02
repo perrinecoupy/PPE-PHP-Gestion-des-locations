@@ -67,7 +67,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     * @Assert\NotBlank(message="Veuillez remplir ce champ")
      */
     public function getEmail(): ?string
     {
@@ -155,7 +155,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     * @Assert\NotBlank(message="Veuillez remplir ce champ")
      */
     public function getName(): ?string
     {
@@ -170,7 +170,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     * @Assert\NotBlank(message="Veuillez remplir ce champ")
      */
     public function getFirstname(): ?string
     {
@@ -216,9 +216,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->representativeResidences = $representativeResidences;
     }
 
-    /**
-     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
-     */
     public function getAddress(): ?string
     {
         return $this->address;
@@ -243,9 +240,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
-     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
-     */
     public function getZipCode(): ?string
     {
         return $this->zipCode;
@@ -258,9 +252,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
-     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
-     */
     public function getCity(): ?string
     {
         return $this->city;

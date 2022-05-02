@@ -125,34 +125,39 @@ class __TwigTemplate_20c54930ca68f0889066b037ae8316a9381ca41a98e4be56ff285b86858
                 </div>
                 <div class=\"form-row locations\">
                     <h2 class=\"title-location\">Liste des locations</h2>
-                    <button class=\"btn btn-success btn-location\"><a href=\"";
-        // line 26
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajoutLocation");
-        echo "\" class=\"link-update\">Ajouter une location</a></button>
                     ";
-        // line 27
+        // line 26
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 27
+            echo "                        <button class=\"btn btn-success btn-location\"><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajoutLocation");
+            echo "\" class=\"link-update\">Ajouter une location</a></button>
+                    ";
+        }
+        // line 29
+        echo "                    ";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($context["residence"]);
         foreach ($context['_seq'] as $context["_key"] => $context["residence"]) {
-            // line 28
+            // line 30
             echo "                    <div class=\"detail-serie2\">
                         <a href=\"#\" class=\"link-view-serie\"><div>
                                 <img src=\"";
-            // line 30
+            // line 32
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/image.jpg"), "html", null, true);
             echo "\" alt=\"Image de la série\" class=\"img-serie\">
                             </div>
                             <div class=\"title-series2\">
                                 <h4>";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["residence"], "name", [], "any", false, false, false, 33), "html", null, true);
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["residence"], "name", [], "any", false, false, false, 35), "html", null, true);
             echo "</h4>
                                 <p class=\"info-serie2\">Disponible le 1er décembre 2020</p>
                                 <p class=\"description-serie3\">Géré par ";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 35, $this->source); })()), "user", [], "any", false, false, false, 35), "firstname", [], "any", false, false, false, 35), "html", null, true);
+            // line 37
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 37, $this->source); })()), "user", [], "any", false, false, false, 37), "firstname", [], "any", false, false, false, 37), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 35, $this->source); })()), "user", [], "any", false, false, false, 35), "name", [], "any", false, false, false, 35), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 37, $this->source); })()), "user", [], "any", false, false, false, 37), "name", [], "any", false, false, false, 37), "html", null, true);
             echo "</p>
                                 <p class=\"description-serie4\">0 locations au total</p>
                                 <a href=\"#\"><button class=\"btn btn-acceder\">Accéder à la location</button></a>
@@ -163,14 +168,14 @@ class __TwigTemplate_20c54930ca68f0889066b037ae8316a9381ca41a98e4be56ff285b86858
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['residence'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 41
+        // line 43
         echo "                </div>
             </div>
         </div>
 
     ";
-        // line 45
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 45, $this->source); })()), 'form_end');
+        // line 47
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 47, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -193,7 +198,7 @@ class __TwigTemplate_20c54930ca68f0889066b037ae8316a9381ca41a98e4be56ff285b86858
 
     public function getDebugInfo()
     {
-        return array (  173 => 45,  167 => 41,  153 => 35,  148 => 33,  142 => 30,  138 => 28,  134 => 27,  130 => 26,  123 => 22,  115 => 17,  111 => 16,  107 => 15,  103 => 14,  99 => 13,  95 => 12,  91 => 11,  87 => 10,  83 => 9,  77 => 8,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  178 => 47,  172 => 43,  158 => 37,  153 => 35,  147 => 32,  143 => 30,  138 => 29,  132 => 27,  130 => 26,  123 => 22,  115 => 17,  111 => 16,  107 => 15,  103 => 14,  99 => 13,  95 => 12,  91 => 11,  87 => 10,  83 => 9,  77 => 8,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -223,7 +228,9 @@ class __TwigTemplate_20c54930ca68f0889066b037ae8316a9381ca41a98e4be56ff285b86858
                 </div>
                 <div class=\"form-row locations\">
                     <h2 class=\"title-location\">Liste des locations</h2>
-                    <button class=\"btn btn-success btn-location\"><a href=\"{{ path('ajoutLocation') }}\" class=\"link-update\">Ajouter une location</a></button>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <button class=\"btn btn-success btn-location\"><a href=\"{{ path('ajoutLocation') }}\" class=\"link-update\">Ajouter une location</a></button>
+                    {% endif %}
                     {% for residence in residence %}
                     <div class=\"detail-serie2\">
                         <a href=\"#\" class=\"link-view-serie\"><div>
